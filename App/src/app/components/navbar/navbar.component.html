@@ -1,0 +1,49 @@
+<header class="site-header" [class.scrolled]="scrolled()">
+  <nav class="nav-bar container">
+    <button type="button" class="brand" (click)="navigate('accueil')" aria-label="Accueil">
+      <span class="brand-mark">MJ</span>
+      <span class="brand-name">Mouheb Jerou</span>
+    </button>
+
+    <ul class="nav-links desktop-only">
+      <li *ngFor="let link of navLinks">
+        <button type="button" class="nav-link" (click)="navigate(link.target)">
+          {{ state.t().nav[link.key] }}
+        </button>
+      </li>
+    </ul>
+
+    <div class="nav-actions">
+      <button type="button" class="control-button control-pill" (click)="state.toggleLocale()" aria-label="Toggle language">
+        <svg class="icon icon-sm"><use href="#i-globe"></use></svg>
+        <span>{{ state.locale() === 'fr' ? 'EN' : 'FR' }}</span>
+      </button>
+
+      <button type="button" class="control-button icon-button" (click)="state.toggleTheme()" aria-label="Toggle theme">
+        <svg class="icon icon-sm" *ngIf="state.darkTheme(); else moonIcon"><use href="#i-sun"></use></svg>
+        <ng-template #moonIcon>
+          <svg class="icon icon-sm"><use href="#i-moon"></use></svg>
+        </ng-template>
+      </button>
+
+      <button type="button" class="control-button icon-button mobile-only" (click)="toggleMenu()" aria-label="Toggle menu">
+        <svg class="icon" *ngIf="mobileOpen(); else menuIcon"><use href="#i-close"></use></svg>
+        <ng-template #menuIcon>
+          <svg class="icon"><use href="#i-menu"></use></svg>
+        </ng-template>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-panel" *ngIf="mobileOpen()">
+    <div class="container">
+      <ul class="nav-links mobile-links">
+        <li *ngFor="let link of navLinks">
+          <button type="button" class="nav-link mobile-nav-link" (click)="navigate(link.target)">
+            {{ state.t().nav[link.key] }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

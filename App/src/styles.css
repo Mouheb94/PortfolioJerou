@@ -1,0 +1,89 @@
+:root {
+  color-scheme: dark;
+  --background: oklch(0.14 0.015 250);
+  --foreground: oklch(0.93 0.005 250);
+  --card: oklch(0.18 0.015 250);
+  --card-foreground: oklch(0.93 0.005 250);
+  --primary: oklch(0.65 0.18 175);
+  --primary-foreground: oklch(0.14 0.015 250);
+  --secondary: oklch(0.22 0.015 250);
+  --muted: oklch(0.22 0.015 250);
+  --muted-foreground: oklch(0.65 0.01 250);
+  --border: oklch(0.28 0.015 250);
+  --input: oklch(0.28 0.015 250);
+  --ring: oklch(0.65 0.18 175);
+  --primary-soft: oklch(0.65 0.18 175 / 0.14);
+  --primary-border: oklch(0.65 0.18 175 / 0.25);
+  --header-bg: oklch(0.14 0.015 250 / 0.8);
+  --shadow-primary: 0 18px 40px oklch(0.65 0.18 175 / 0.14);
+  --shadow-card: 0 18px 44px rgba(3, 10, 20, 0.16);
+  --shadow-modal: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+:root:not(.dark) {
+  color-scheme: light;
+  --background: oklch(0.985 0.002 250);
+  --foreground: oklch(0.15 0.01 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 250);
+  --primary: oklch(0.55 0.15 180);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.005 250);
+  --muted: oklch(0.95 0.005 250);
+  --muted-foreground: oklch(0.5 0.01 250);
+  --border: oklch(0.91 0.005 250);
+  --input: oklch(0.91 0.005 250);
+  --ring: oklch(0.55 0.15 180);
+  --primary-soft: oklch(0.55 0.15 180 / 0.12);
+  --primary-border: oklch(0.55 0.15 180 / 0.22);
+  --header-bg: oklch(0.985 0.002 250 / 0.82);
+  --shadow-primary: 0 18px 40px oklch(0.55 0.15 180 / 0.12);
+  --shadow-card: 0 18px 44px rgba(15, 18, 25, 0.08);
+  --shadow-modal: 0 24px 80px rgba(15, 18, 25, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+}
+
+body.modal-open {
+  overflow: hidden;
+}

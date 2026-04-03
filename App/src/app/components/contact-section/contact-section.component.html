@@ -1,0 +1,65 @@
+<section id="contact" class="section">
+  <div class="container contact-container">
+    <div class="section-heading narrow">
+      <p class="eyebrow">{{ state.t().contact.title }}</p>
+      <h2>{{ state.t().contact.subtitle }}</h2>
+      <p class="section-copy">{{ state.t().contact.description }}</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-side">
+        <article class="glass-card contact-card">
+          <div class="contact-icon">
+            <svg class="icon icon-sm"><use href="#i-mail"></use></svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <p class="contact-value">mouheb.jerou&#64;email.com</p>
+          </div>
+        </article>
+
+        <article class="glass-card contact-card">
+          <div class="contact-icon">
+            <svg class="icon icon-sm"><use href="#i-map-pin"></use></svg>
+          </div>
+          <div>
+            <p class="contact-label">Location</p>
+            <p class="contact-value">Tunisie</p>
+          </div>
+        </article>
+
+        <div class="social-row">
+          <a class="social-link" href="#" aria-label="GitHub">
+            <svg class="icon icon-sm"><use href="#i-github"></use></svg>
+          </a>
+          <a class="social-link" href="#" aria-label="LinkedIn">
+            <svg class="icon icon-sm"><use href="#i-linkedin"></use></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="glass-card contact-form">
+        <div class="form-grid">
+          <label class="field">
+            <span>{{ state.t().contact.name }}</span>
+            <input type="text" [placeholder]="state.t().contact.namePlaceholder" />
+          </label>
+          <label class="field">
+            <span>{{ state.t().contact.email }}</span>
+            <input type="email" [placeholder]="state.t().contact.emailPlaceholder" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>{{ state.t().contact.message }}</span>
+          <textarea rows="5" [placeholder]="state.t().contact.messagePlaceholder"></textarea>
+        </label>
+
+        <button type="button" class="btn btn-primary form-submit">
+          <svg class="icon icon-sm"><use href="#i-send"></use></svg>
+          {{ state.t().contact.send }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

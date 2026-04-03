@@ -1,0 +1,79 @@
+<section id="realisations" class="section section-muted">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">{{ state.t().projects.title }}</p>
+      <h2>{{ state.t().projects.subtitle }}</h2>
+    </div>
+
+    <div class="projects-grid">
+      <button
+        type="button"
+        class="project-card"
+        *ngFor="let project of projects; trackBy: trackByProject"
+        (click)="openProject(project)"
+      >
+        <div class="project-media">
+          <img [src]="project.image" [alt]="project.title[state.locale()]" />
+          <div class="project-overlay"></div>
+          <span class="project-link-indicator">
+            <svg class="icon icon-sm"><use href="#i-external-link"></use></svg>
+          </span>
+        </div>
+
+        <div class="project-copy">
+          <h3>{{ project.title[state.locale()] }}</h3>
+          <p>{{ project.shortDesc[state.locale()] }}</p>
+          <div class="chip-row">
+            <span class="chip skill-chip" *ngFor="let skillId of project.skills">{{ getSkillName(skillId) }}</span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="modal-backdrop" *ngIf="selectedProject() as project" (click)="closeProject()">
+  <section
+    class="modal-window modal-project"
+    (click)="$event.stopPropagation()"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="project.title[state.locale()]"
+  >
+    <button type="button" class="modal-close" (click)="closeProject()" [attr.aria-label]="state.t().projects.close">
+      <svg class="icon icon-sm"><use href="#i-close"></use></svg>
+    </button>
+
+    <div class="modal-header">
+      <div>
+        <h3>{{ project.title[state.locale()] }}</h3>
+        <p class="modal-copy">{{ project.shortDesc[state.locale()] }}</p>
+      </div>
+    </div>
+
+    <div class="modal-image">
+      <img [src]="project.image" [alt]="project.title[state.locale()]" />
+    </div>
+
+    <div>
+      <p class="modal-label">{{ state.t().projects.description }}</p>
+      <p class="modal-copy modal-copy-strong">{{ project.fullDesc[state.locale()] }}</p>
+    </div>
+
+    <div>
+      <p class="modal-label">{{ state.t().projects.techUsed }}</p>
+      <div class="modal-skill-actions">
+        <button
+          type="button"
+          class="skill-action"
+          *ngFor="let skillId of project.skills"
+          (click)="jumpToSkill(skillId)"
+        >
+          <span>{{ getSkillName(skillId) }}</span>
+          <svg class="icon icon-xs"><use href="#i-arrow-up-right"></use></svg>
+        </button>
+      </div>
+      <p class="modal-note">{{ state.t().projects.goToSkill }}</p>
+    </div>
+  </section>
+</div>

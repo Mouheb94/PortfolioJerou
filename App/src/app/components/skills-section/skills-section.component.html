@@ -1,0 +1,87 @@
+<section id="competences" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">{{ state.t().skills.title }}</p>
+      <h2>{{ state.t().skills.subtitle }}</h2>
+    </div>
+
+    <div class="skills-grid">
+      <article
+        class="glass-card skill-card"
+        *ngFor="let skill of skills; trackBy: trackBySkill"
+        [id]="'skill-' + skill.id"
+      >
+        <div class="skill-header">
+          <div class="skill-meta">
+            <div class="skill-icon">{{ skill.icon }}</div>
+            <div>
+              <h3>{{ skill.name }}</h3>
+              <span class="chip category-chip" [ngClass]="categoryClass(skill.category)">{{ skill.category }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-block">
+          <div class="progress-labels">
+            <span>{{ state.t().skills.level }}</span>
+            <span>{{ skill.level }}%</span>
+          </div>
+          <div class="progress-bar">
+            <span class="progress-fill" [style.width.%]="skill.level"></span>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-card" (click)="openSkill(skill)">
+          <svg class="icon icon-xs"><use href="#i-eye"></use></svg>
+          {{ state.t().skills.seeDetail }}
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="modal-backdrop" *ngIf="selectedSkill() as skill" (click)="closeSkill()">
+  <section
+    class="modal-window"
+    (click)="$event.stopPropagation()"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="skill.name"
+  >
+    <button type="button" class="modal-close" (click)="closeSkill()" [attr.aria-label]="state.t().skills.close">
+      <svg class="icon icon-sm"><use href="#i-close"></use></svg>
+    </button>
+
+    <div class="modal-header skill-modal-header">
+      <div class="skill-icon skill-icon-lg">{{ skill.icon }}</div>
+      <div>
+        <h3>{{ skill.name }}</h3>
+        <span class="chip category-chip" [ngClass]="categoryClass(skill.category)">{{ skill.category }}</span>
+      </div>
+    </div>
+
+    <p class="modal-copy">{{ skill.description[state.locale()] }}</p>
+
+    <div class="modal-stats">
+      <article class="stat-card">
+        <span>{{ state.t().skills.experience }}</span>
+        <strong>{{ skill.experience[state.locale()] }}</strong>
+      </article>
+      <article class="stat-card">
+        <span>{{ state.t().skills.level }}</span>
+        <strong>{{ skill.level }}%</strong>
+      </article>
+    </div>
+
+    <div class="progress-bar progress-bar-modal">
+      <span class="progress-fill" [style.width.%]="skill.level"></span>
+    </div>
+
+    <div>
+      <p class="modal-label">{{ state.t().skills.projects }}</p>
+      <div class="chip-row">
+        <span class="chip skill-chip" *ngFor="let item of skill.projects[state.locale()]">{{ item }}</span>
+      </div>
+    </div>
+  </section>
+</div>

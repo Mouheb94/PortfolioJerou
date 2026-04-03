@@ -1,0 +1,45 @@
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.7rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 700;
+}
+
+.footer-mark {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.7rem;
+  font-size: 0.8rem;
+}
+
+.footer-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.footer-inner p {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}

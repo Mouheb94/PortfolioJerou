@@ -1,0 +1,28 @@
+<section id="parcours" class="section section-muted">
+  <div class="container timeline-container">
+    <div class="section-heading">
+      <p class="eyebrow">{{ state.t().parcours.title }}</p>
+      <h2>{{ state.t().parcours.subtitle }}</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <article
+        class="timeline-item"
+        *ngFor="let item of state.t().parcours.items; let even = even"
+      >
+        <div class="timeline-node"></div>
+        <div class="timeline-card glass-card" [class.align-right]="!even">
+          <span class="timeline-year">{{ item.year }}</span>
+          <h3>{{ item.title }}</h3>
+          <div class="timeline-org">
+            <svg class="icon icon-xs"><use href="#i-briefcase"></use></svg>
+            <span>{{ item.org }}</span>
+          </div>
+          <p>{{ item.description }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

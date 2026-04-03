@@ -1,0 +1,19 @@
+<section id="presentation" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">{{ state.t().about.title }}</p>
+      <h2>{{ state.t().about.subtitle }}</h2>
+    </div>
+
+    <div class="about-grid">
+      <article class="glass-card about-card" *ngFor="let card of cards">
+        <div class="feature-icon">
+          <svg class="icon icon-lg">
+            <use [attr.href]="iconHref(card.icon)"></use>
+          </svg>
+        </div>
+        <p>{{ state.t().about[card.textKey] }}</p>
+      </article>
+    </div>
+  </div>
+</section>

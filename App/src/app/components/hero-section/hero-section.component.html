@@ -1,0 +1,22 @@
+<section id="accueil" class="hero section">
+  <div class="hero-blur hero-blur-top"></div>
+  <div class="hero-blur hero-blur-bottom"></div>
+
+  <div class="container hero-content">
+    <p class="eyebrow">{{ state.t().hero.greeting }}</p>
+    <h1>Mouheb Jerou</h1>
+    <p class="hero-role">{{ state.t().hero.role }}</p>
+    <p class="hero-copy">{{ state.t().hero.description }}</p>
+
+    <div class="hero-actions">
+      <button type="button" class="btn btn-primary" (click)="state.scrollTo('realisations')">
+        {{ state.t().hero.cta }}
+        <svg class="icon icon-sm"><use href="#i-arrow-down"></use></svg>
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="state.scrollTo('contact')">
+        <svg class="icon icon-sm"><use href="#i-mail"></use></svg>
+        {{ state.t().hero.contact }}
+      </button>
+    </div>
+  </div>
+</section>
