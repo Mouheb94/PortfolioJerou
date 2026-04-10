@@ -82,8 +82,8 @@ export const translations: Record<Locale, TranslationSet> = {
     },
     hero: {
       greeting: 'Bonjour, je suis',
-      role: 'Developpeur Full Stack',
-      description: 'Je concois et developpe des applications web modernes, performantes et accessibles.',
+      role: 'Developpeur Full Stack/Testeur QA Automatisation',
+      description: 'Testeur automatisé / Qualité logicielle, avec une forte appétence pour le développement logiciel et l’automatisation des tests, fort d’une expérience professionnelle chez Harmonie Mutuelle.',
       cta: 'Decouvrir mes projets',
       contact: 'Me contacter',
     },
