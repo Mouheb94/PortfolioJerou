@@ -1,15 +1,20 @@
 <header class="site-header" [class.scrolled]="scrolled()">
   <nav class="nav-bar container">
-    <button type="button" class="brand" (click)="navigate('accueil')" aria-label="Accueil">
+    <a class="brand" routerLink="/accueil" aria-label="Accueil" (click)="closeMenu()">
       <span class="brand-mark">MJ</span>
       <span class="brand-name">Mouheb Jerou</span>
-    </button>
+    </a>
 
     <ul class="nav-links desktop-only">
       <li *ngFor="let link of navLinks">
-        <button type="button" class="nav-link" (click)="navigate(link.target)">
+        <a
+          class="nav-link"
+          [routerLink]="link.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           {{ state.t().nav[link.key] }}
-        </button>
+        </a>
       </li>
     </ul>
 
@@ -39,9 +44,15 @@
     <div class="container">
       <ul class="nav-links mobile-links">
         <li *ngFor="let link of navLinks">
-          <button type="button" class="nav-link mobile-nav-link" (click)="navigate(link.target)">
+          <a
+            class="nav-link mobile-nav-link"
+            [routerLink]="link.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
+          >
             {{ state.t().nav[link.key] }}
-          </button>
+          </a>
         </li>
       </ul>
     </div>

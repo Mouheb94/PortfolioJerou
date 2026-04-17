@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { TranslationSet } from '../../data/translations';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
@@ -8,13 +9,13 @@ type NavKey = keyof TranslationSet['nav'];
 
 interface NavLink {
   key: NavKey;
-  target: string;
+  route: string;
 }
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -22,12 +23,12 @@ export class NavbarComponent {
   readonly state = inject(PortfolioStateService);
 
   readonly navLinks: NavLink[] = [
-    { key: 'accueil', target: 'accueil' },
-    { key: 'presentation', target: 'presentation' },
-    { key: 'parcours', target: 'parcours' },
-    { key: 'competences', target: 'competences' },
-    { key: 'realisations', target: 'realisations' },
-    { key: 'contact', target: 'contact' },
+    { key: 'accueil', route: '/accueil' },
+    { key: 'presentation', route: '/presentation' },
+    { key: 'parcours', route: '/parcours' },
+    { key: 'competences', route: '/competences' },
+    { key: 'realisations', route: '/realisations' },
+    { key: 'contact', route: '/contact' },
   ];
 
   readonly scrolled = signal(false);
@@ -43,9 +44,8 @@ export class NavbarComponent {
     this.mobileOpen.set(false);
   }
 
-  navigate(target: string): void {
+  closeMenu(): void {
     this.mobileOpen.set(false);
-    this.state.scrollTo(target);
   }
 
   toggleMenu(): void {

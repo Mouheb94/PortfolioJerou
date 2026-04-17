@@ -57,7 +57,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-QPOIZNY4.js";
+} from "./chunk-MMZIFNCW.js";
 import {
   __async,
   __spreadProps,
@@ -3706,7 +3706,7 @@ var PlatformNavigation = class _PlatformNavigation {
 function registerLocaleData2(data, localeId, extraData) {
   return registerLocaleData(data, localeId, extraData);
 }
-var VERSION = new Version("19.2.20");
+var VERSION = new Version("19.2.21");
 var ViewportScroller = class _ViewportScroller {
   // De-sugared tree-shakable injection
   // See #23917
@@ -5146,9 +5146,9 @@ export {
 @angular/common/fesm2022/platform_navigation-B45Jeakb.mjs:
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v19.2.20
+   * @license Angular v19.2.21
    * (c) 2010-2025 Google LLC. https://angular.io/
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-FNAVSDCS.js.map
+//# sourceMappingURL=chunk-EOIASN7M.js.map
