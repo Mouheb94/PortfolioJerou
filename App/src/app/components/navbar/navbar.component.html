@@ -1,29 +1,23 @@
 <header class="site-header" [class.scrolled]="scrolled()">
   <nav class="nav-bar container">
-    <a class="brand" routerLink="/accueil" aria-label="Accueil" (click)="closeMenu()">
+    <button type="button" class="brand" aria-label="Accueil" (click)="navigate('/accueil')">
       <span class="brand-mark">MJ</span>
       <span class="brand-name">Mouheb Jerou</span>
-    </a>
+    </button>
 
     <ul class="nav-links desktop-only">
       <li *ngFor="let link of navLinks">
-        <a
+        <button
+          type="button"
           class="nav-link"
-          [routerLink]="link.route"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="navigate(link.route)"
         >
           {{ state.t().nav[link.key] }}
-        </a>
+        </button>
       </li>
     </ul>
 
     <div class="nav-actions">
-      <button type="button" class="control-button control-pill" (click)="state.toggleLocale()" aria-label="Toggle language">
-        <svg class="icon icon-sm"><use href="#i-globe"></use></svg>
-        <span>{{ state.locale() === 'fr' ? 'EN' : 'FR' }}</span>
-      </button>
-
       <button type="button" class="control-button icon-button" (click)="state.toggleTheme()" aria-label="Toggle theme">
         <svg class="icon icon-sm" *ngIf="state.darkTheme(); else moonIcon"><use href="#i-sun"></use></svg>
         <ng-template #moonIcon>
@@ -44,15 +38,13 @@
     <div class="container">
       <ul class="nav-links mobile-links">
         <li *ngFor="let link of navLinks">
-          <a
+          <button
+            type="button"
             class="nav-link mobile-nav-link"
-            [routerLink]="link.route"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeMenu()"
+            (click)="navigate(link.route)"
           >
             {{ state.t().nav[link.key] }}
-          </a>
+          </button>
         </li>
       </ul>
     </div>

@@ -9,14 +9,14 @@
     <p class="hero-copy">{{ state.t().hero.description }}</p>
 
     <div class="hero-actions">
-      <a class="btn btn-primary" routerLink="/realisations">
+      <button type="button" class="btn btn-primary" (click)="navigate('/presentation')">
         {{ state.t().hero.cta }}
         <svg class="icon icon-sm"><use href="#i-arrow-down"></use></svg>
-      </a>
-      <a class="btn btn-secondary" routerLink="/contact">
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="navigate('/contact')">
         <svg class="icon icon-sm"><use href="#i-mail"></use></svg>
         {{ state.t().hero.contact }}
-      </a>
+      </button>
     </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { TranslationSet } from '../../data/translations';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
@@ -15,12 +15,13 @@ interface NavLink {
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   readonly state = inject(PortfolioStateService);
+  private readonly router = inject(Router);
 
   readonly navLinks: NavLink[] = [
     { key: 'accueil', route: '/accueil' },
@@ -46,6 +47,11 @@ export class NavbarComponent {
 
   closeMenu(): void {
     this.mobileOpen.set(false);
+  }
+
+  navigate(route: string): void {
+    this.mobileOpen.set(false);
+    void this.router.navigateByUrl(route);
   }
 
   toggleMenu(): void {

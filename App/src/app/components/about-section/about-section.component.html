@@ -7,12 +7,22 @@
 
     <div class="about-grid">
       <article class="glass-card about-card" *ngFor="let card of cards">
-        <div class="feature-icon">
-          <svg class="icon icon-lg">
-            <use [attr.href]="iconHref(card.icon)"></use>
-          </svg>
+        <h3>{{ card.title }}</h3>
+        <ng-container *ngIf="card.paragraphs?.length; else singleDescription">
+          <div class="about-paragraphs">
+            <p *ngFor="let paragraph of card.paragraphs">{{ paragraph }}</p>
+          </div>
+        </ng-container>
+        <ng-template #singleDescription>
+          <p>{{ card.description }}</p>
+        </ng-template>
+
+        <div class="interest-list" *ngIf="card.interests?.length">
+          <article class="interest-item" *ngFor="let interest of card.interests">
+            <h4>{{ interest.title }}</h4>
+            <p>{{ interest.description }}</p>
+          </article>
         </div>
-        <p>{{ state.t().about[card.textKey] }}</p>
       </article>
     </div>
   </div>

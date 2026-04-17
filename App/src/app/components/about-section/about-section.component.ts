@@ -3,8 +3,15 @@ import { Component, inject } from '@angular/core';
 
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
-type AboutKey = 'p1' | 'p2' | 'p3';
-type IconKey = 'code' | 'palette' | 'zap';
+interface AboutCard {
+  title: string;
+  description: string;
+  paragraphs?: string[];
+  interests?: Array<{
+    title: string;
+    description: string;
+  }>;
+}
 
 @Component({
   selector: 'app-about-section',
@@ -16,13 +23,23 @@ type IconKey = 'code' | 'palette' | 'zap';
 export class AboutSectionComponent {
   readonly state = inject(PortfolioStateService);
 
-  readonly cards: Array<{ icon: IconKey; textKey: AboutKey }> = [
-    { icon: 'code', textKey: 'p1' },
-    { icon: 'palette', textKey: 'p2' },
-    { icon: 'zap', textKey: 'p3' },
-  ];
+  get cards(): AboutCard[] {
+    const cards = this.state.t().about.cards;
 
-  iconHref(icon: IconKey): string {
-    return { code: '#i-code', palette: '#i-palette', zap: '#i-zap' }[icon];
+    return [
+      {
+        title: cards[0].title,
+        description: cards[0].description,
+        paragraphs: cards[0].paragraphs,
+      },
+      { title: cards[1].title, description: cards[1].description },
+      { title: cards[2].title, description: cards[2].description },
+      { title: cards[3].title, description: cards[3].description },
+      {
+        title: cards[4].title,
+        description: cards[4].description,
+        interests: cards[4].interests,
+      },
+    ];
   }
 }

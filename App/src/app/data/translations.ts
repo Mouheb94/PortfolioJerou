@@ -26,9 +26,15 @@ export interface TranslationSet {
   about: {
     title: string;
     subtitle: string;
-    p1: string;
-    p2: string;
-    p3: string;
+    cards: Array<{
+      title: string;
+      description: string;
+      paragraphs?: string[];
+      interests?: Array<{
+        title: string;
+        description: string;
+      }>;
+    }>;
   };
   parcours: {
     title: string;
@@ -59,10 +65,12 @@ export interface TranslationSet {
     description: string;
     name: string;
     email: string;
+    subject: string;
     message: string;
     send: string;
     namePlaceholder: string;
     emailPlaceholder: string;
+    subjectPlaceholder: string;
     messagePlaceholder: string;
   };
   footer: {
@@ -70,179 +78,134 @@ export interface TranslationSet {
   };
 }
 
-export const translations: Record<Locale, TranslationSet> = {
-  fr: {
+export const translations: TranslationSet = {
     nav: {
       accueil: 'Accueil',
-      presentation: 'Presentation',
+      presentation: 'Présentation',
       parcours: 'Mon parcours',
-      competences: 'Competences',
-      realisations: 'Realisations',
-      contact: 'Contact',
+      competences: 'Compétences',
+      realisations: 'Réalisations',
+      contact: 'Contact',   
     },
     hero: {
       greeting: 'Bonjour, je suis',
-      role: 'Developpeur Full Stack/Testeur QA Automatisation',
-      description: 'Testeur automatisé / Qualité logicielle, avec une forte appétence pour le développement logiciel et l’automatisation des tests, fort d’une expérience professionnelle chez Harmonie Mutuelle.',
-      cta: 'Decouvrir mes projets',
+      role: 'Expert en ingénierie logicielle / testeur QA en automatisation',
+      description: 'Testeur automaticien  avec une forte appétence pour le développement logiciel et l’automatisation des tests.',
+      cta: 'Présentation',
       contact: 'Me contacter',
     },
     about: {
-      title: 'Presentation',
-      subtitle: 'A propos de moi',
-      p1: 'Passionne par le developpement web et les nouvelles technologies, je cree des experiences numeriques qui allient esthetique et performance.',
-      p2: 'Avec une solide expertise en developpement front-end et back-end, je m efforce de livrer des solutions qui repondent aux besoins des utilisateurs tout en respectant les meilleures pratiques du secteur.',
-      p3: 'Je suis constamment a la recherche de nouveaux defis et de technologies innovantes pour perfectionner mon savoir-faire.',
+      title: 'Présentation',
+      subtitle: 'À propos de moi',
+      cards: [
+        {
+          title: 'Présentation générale',
+          description: '',
+          paragraphs: [
+            'Actuellement en alternance chez Harmonie Mutuelle, je travaille en tant que testeur automaticien au sein d’un environnement orienté qualité logicielle et fiabilité des applications.',
+            'Je participe à la création et à la maintenance de tests automatisés, aussi bien sur des applications web front-end que sur des API back-end. J’interviens également sur le lancement des campagnes de tests de non-régression (TNR), ainsi que sur le suivi des mises en production mensuelles.',
+            'En parallèle, je poursuis un diplôme d’Expert en Ingénierie Logicielle, avec pour objectif de renforcer mes compétences en qualité logicielle et en automatisation, afin de contribuer à la mise en place de solutions robustes et fiables.',
+          ],
+        },
+        {
+          title: 'Mes valeurs',
+          description: 'Rigueur, amélioration continue et sens du détail guident ma façon de travailler au quotidien.',
+        },
+        {
+          title: 'Projet professionnel',
+          description: 'Évoluer dans un environnement où je peux combiner automatisation des tests, qualité logicielle et développement d’applications.',
+        },
+        {
+          title: 'Qualités humaines',
+          description: 'Je suis curieux, impliqué, à l’écoute et j’apprécie le travail en équipe dans un cadre collaboratif.',
+        },
+        {
+          title: 'Centres d’intérêt',
+          description: 'Voici quelques centres d’intérêt qui me définissent en dehors du travail.',
+          interests: [
+            {
+              title: 'Automobile',
+              description: 'J’aime l’univers automobile, entre technologie, design et performance.',
+            },
+            {
+              title: 'Voyage',
+              description: 'Voyager me permet de découvrir de nouveaux lieux, cultures et points de vue.',
+            },
+            {
+              title: 'Football',
+              description: 'Le football reste un vrai moment de partage, de passion et d’esprit d’équipe.',
+            },
+            {
+              title: 'Jeux vidéo',
+              description: 'Les jeux vidéo stimulent ma curiosité, ma logique et mon sens de la stratégie.',
+            },
+          ],
+        },
+      ],
     },
     parcours: {
       title: 'Mon parcours',
-      subtitle: 'Experience & Formation',
+      subtitle: 'Expérience & Formation',
       items: [
         {
-          year: '2024 - Present',
-          title: 'Developpeur Full Stack Senior',
+          year: '2024 - Présent',
+          title: 'Développeur Full Stack Senior',
           org: 'Entreprise Tech',
-          description: 'Developpement d applications web complexes avec React, Node.js et bases de donnees SQL/NoSQL.',
+          description: 'Développement d’applications web complexes avec React, Node.js et bases de données SQL/NoSQL.',
         },
         {
           year: '2022 - 2024',
-          title: 'Developpeur Front-End',
+          title: 'Développeur Front-End',
           org: 'Agence Digitale',
-          description: 'Creation d interfaces utilisateur reactives et accessibles avec Angular et TypeScript.',
+          description: 'Création d’interfaces utilisateur réactives et accessibles avec Angular et TypeScript.',
         },
         {
           year: '2020 - 2022',
-          title: 'Developpeur Junior',
+          title: 'Développeur Junior',
           org: 'Startup Innovation',
-          description: 'Participation au developpement de plateformes SaaS avec des technologies modernes.',
+          description: 'Participation au développement de plateformes SaaS avec des technologies modernes.',
         },
         {
           year: '2017 - 2020',
-          title: 'Licence en Informatique',
-          org: 'Universite',
-          description: 'Formation complete en informatique : algorithmique, structures de donnees, genie logiciel.',
+          title: 'Licence en informatique',
+          org: 'Université',
+          description: 'Formation complète en informatique : algorithmique, structures de données, génie logiciel.',
         },
       ],
     },
     skills: {
-      title: 'Competences',
+      title: 'Compétences',
       subtitle: 'Technologies & Outils',
       seeDetail: 'Voir le detail',
       close: 'Fermer',
-      experience: 'Experience',
+      experience: 'Expérience',
       level: 'Niveau',
       projects: 'Projets',
     },
     projects: {
-      title: 'Realisations',
-      subtitle: 'Projets recents',
+      title: 'Réalisations',
+      subtitle: 'Projets récents',
       seeProject: 'Voir le projet',
-      techUsed: 'Technologies utilisees',
+      techUsed: 'Technologies utilisées',
       description: 'Description',
       close: 'Fermer',
-      goToSkill: 'Voir cette competence',
+      goToSkill: 'Voir cette compétence',
     },
     contact: {
       title: 'Contact',
-      subtitle: 'Travaillons ensemble',
-      description: 'Vous avez un projet en tete ou souhaitez discuter ? N hesitez pas a me contacter.',
+      subtitle: 'Contactez-moi',
+      description:'Contactez-moi pour toute demande de collaboration ou de renseignements.',
       name: 'Nom',
       email: 'Email',
+      subject: 'Sujet',
       message: 'Message',
-      send: 'Envoyer le message',
+      send: 'Envoyer',
       namePlaceholder: 'Votre nom',
-      emailPlaceholder: 'votre@email.com',
-      messagePlaceholder: 'Decrivez votre projet...',
+      emailPlaceholder: 'vous@exemple.com',
+      subjectPlaceholder: 'Objet de votre message',
+      messagePlaceholder: 'Écrivez votre message…',
     },
     footer: {
-      rights: 'Tous droits reserves.',
+      rights: 'Tous droits réservés.',
     },
-  },
-  en: {
-    nav: {
-      accueil: 'Home',
-      presentation: 'About',
-      parcours: 'Experience',
-      competences: 'Skills',
-      realisations: 'Projects',
-      contact: 'Contact',
-    },
-    hero: {
-      greeting: 'Hi, I\'m',
-      role: 'Full Stack Developer',
-      description: 'I design and develop modern, high-performance, and accessible web applications.',
-      cta: 'Discover my projects',
-      contact: 'Contact me',
-    },
-    about: {
-      title: 'About',
-      subtitle: 'About me',
-      p1: 'Passionate about web development and new technologies, I create digital experiences that combine aesthetics and performance.',
-      p2: 'With solid expertise in front-end and back-end development, I strive to deliver solutions that meet user needs while following industry best practices.',
-      p3: 'I am constantly looking for new challenges and innovative technologies to perfect my skills.',
-    },
-    parcours: {
-      title: 'Experience',
-      subtitle: 'Experience & Education',
-      items: [
-        {
-          year: '2024 - Present',
-          title: 'Senior Full Stack Developer',
-          org: 'Tech Company',
-          description: 'Development of complex web applications with React, Node.js and SQL/NoSQL databases.',
-        },
-        {
-          year: '2022 - 2024',
-          title: 'Front-End Developer',
-          org: 'Digital Agency',
-          description: 'Creating reactive and accessible user interfaces with Angular and TypeScript.',
-        },
-        {
-          year: '2020 - 2022',
-          title: 'Junior Developer',
-          org: 'Innovation Startup',
-          description: 'Participation in the development of SaaS platforms with modern technologies.',
-        },
-        {
-          year: '2017 - 2020',
-          title: 'Bachelor\'s in Computer Science',
-          org: 'University',
-          description: 'Comprehensive training in CS: algorithms, data structures, software engineering.',
-        },
-      ],
-    },
-    skills: {
-      title: 'Skills',
-      subtitle: 'Technologies & Tools',
-      seeDetail: 'See details',
-      close: 'Close',
-      experience: 'Experience',
-      level: 'Level',
-      projects: 'Projects',
-    },
-    projects: {
-      title: 'Projects',
-      subtitle: 'Recent work',
-      seeProject: 'View project',
-      techUsed: 'Technologies used',
-      description: 'Description',
-      close: 'Close',
-      goToSkill: 'View this skill',
-    },
-    contact: {
-      title: 'Contact',
-      subtitle: 'Let\'s work together',
-      description: 'Have a project in mind or want to chat? Don\'t hesitate to reach out.',
-      name: 'Name',
-      email: 'Email',
-      message: 'Message',
-      send: 'Send message',
-      namePlaceholder: 'Your name',
-      emailPlaceholder: 'your@email.com',
-      messagePlaceholder: 'Describe your project...',
-    },
-    footer: {
-      rights: 'All rights reserved.',
-    },
-  },
 };
