@@ -101,15 +101,27 @@ export const translations: TranslationSet = {
         {
           title: 'Présentation générale',
           description: '',
-          paragraphs: [
-            'Actuellement en alternance chez Harmonie Mutuelle, je travaille en tant que testeur automaticien au sein d’un environnement orienté qualité logicielle et fiabilité des applications.',
-            'Je participe à la création et à la maintenance de tests automatisés, aussi bien sur des applications web front-end que sur des API back-end. J’interviens également sur le lancement des campagnes de tests de non-régression (TNR), ainsi que sur le suivi des mises en production mensuelles.',
-            'En parallèle, je poursuis un diplôme d’Expert en Ingénierie Logicielle, avec pour objectif de renforcer mes compétences en qualité logicielle et en automatisation, afin de contribuer à la mise en place de solutions robustes et fiables.',
-          ],
+paragraphs: [
+  "Actuellement en alternance chez Harmonie Mutuelle, je travaille en tant que testeur automaticien dans un environnement axé sur la qualité logicielle et la fiabilité des applications. En parallèle, je poursuis un diplôme d’Expert en Ingénierie Logicielle afin de renforcer mes compétences en automatisation et en qualité.",
+  
+  "Au quotidien, je participe à la création et à la maintenance de tests automatisés, aussi bien sur des applications web que sur des API. J’interviens également sur le lancement des campagnes de tests de non-régression (TNR) et le suivi des mises en production.",
+  
+  "Lors de mon expérience chez MSPE en tant que testeur QA, j’ai participé à des campagnes de tests fonctionnels et de non-régression, y compris en production. J’ai contribué à la conception des cas de tests, à la préparation des données et à la validation des résultats, tout en travaillant avec les utilisateurs lors des phases de recette.",
+  
+  "J’y ai également occupé un rôle de responsable qualité, avec des missions de suivi de la qualité des produits, de gestion des anomalies et d’amélioration continue des pratiques.",
+  
+  "En complément, j’ai obtenu la certification “ISTQB (11/2023, GASQ) ainsi que la certification “Appliquer la méthode DevOps pour optimiser le cycle de vie des applications” (09/2024, Simplon.co), ce qui m’a permis de consolider mes bases en qualité logicielle et en automatisation.."
+]
         },
         {
           title: 'Mes valeurs',
-          description: 'Rigueur, amélioration continue et sens du détail guident ma façon de travailler au quotidien.',
+          description: '',
+            paragraphs: [
+              "Au fil de mon parcours en qualité logicielle et en automatisation des tests, j’ai développé une approche basée sur la rigueur, la fiabilité et le sens des responsabilités. La qualité du code, la stabilité des applications et la pertinence des tests sont au cœur de ma manière de travailler.",
+              "J’accorde une attention particulière à la qualité du code de test, à sa maintenabilité ainsi qu’à la clarté de la documentation des cas de test et des résultats. La fiabilité des scénarios automatisés et leur capacité à évoluer dans le temps sont pour moi essentielles.",
+              "Le travail en équipe occupe également une place importante, notamment avec les développeurs et les équipes métier, afin de garantir une bonne compréhension des besoins et une couverture de test pertinente. Enfin, je suis dans une démarche constante d’amélioration continue, que ce soit dans l’optimisation des processus de test ou l’automatisation des tâches répétitives.",
+            ]
+
         },
         {
           title: 'Projet professionnel',
