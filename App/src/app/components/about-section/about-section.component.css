@@ -4,6 +4,16 @@
   grid-template-columns: 1fr;
 }
 
+#presentation .eyebrow {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  letter-spacing: 0.16em;
+}
+
+#presentation .section-heading h2 {
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  line-height: 1.35;
+}
+
 .about-card {
   padding: 1.8rem;
 }

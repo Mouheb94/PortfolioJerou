@@ -96,7 +96,7 @@ export const translations: TranslationSet = {
     },
     about: {
       title: 'Présentation',
-      subtitle: 'À propos de moi',
+      subtitle: 'Présentation de mon parcours, mes valeurs et mon projet professionnel.',
       cards: [
         {
           title: 'Présentation générale',
