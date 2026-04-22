@@ -124,20 +124,31 @@ paragraphs: [
 
         },
         {
-          title: 'Projet professionnel',
-          description: 'Évoluer dans un environnement où je peux combiner automatisation des tests, qualité logicielle et développement d’applications.',
+          title: 'Projet professionnel et personnel',
+          description: "",
+          paragraphs: [
+            "Mon projet professionnel s’oriente vers l’automatisation des tests et l’amélioration de la qualité logicielle, avec un intérêt pour l’ingénierie logicielle et la conception de solutions fiables. À court et moyen terme, je souhaite renforcer mes compétences dans la conception et la maintenance de tests automatisés, ainsi que dans leur intégration au sein de pipelines CI/CD, avec pour objectif de passer la certification ISTQB spécialisée en test automation. Mon objectif est d’évoluer vers des rôles spécialisés en automatisation et en qualité logicielle, en contribuant à la mise en place de solutions robustes et efficaces.",
+            "Sur le plan personnel, j’accorde une grande importance à l’équilibre entre vie professionnelle et personnelle, en consacrant du temps à ma famille. J’apprécie également voyager et découvrir de nouvelles cultures, ce qui nourrit ma curiosité et mon ouverture d’esprit. Je porte aussi un intérêt particulier au domaine automobile, avec l’envie d’en apprendre davantage sur ses évolutions et ses technologies.",
+          ]
         },
         {
           title: 'Qualités humaines',
-          description: 'Je suis curieux, impliqué, à l’écoute et j’apprécie le travail en équipe dans un cadre collaboratif.',
+          description: '',
+          paragraphs: [
+            "Rigueur et sens du détail dans la validation des applications et la qualité du code.",
+            "Capacité d’analyse et esprit critique pour identifier les anomalies et anticiper les risques.",
+            "Autonomie et sens des responsabilités dans la gestion des tests et des campagnes de validation.",
+            "Travail collaboratif et communication claire avec les équipes techniques et métier.",
+            "Curiosité et volonté d’apprentissage continu, notamment autour des outils de test et des pratiques DevOps.",
+          ]
         },
         {
           title: 'Centres d’intérêt',
-          description: 'Voici quelques centres d’intérêt qui me définissent en dehors du travail.',
+          description: '',
           interests: [
             {
               title: 'Automobile',
-              description: 'J’aime l’univers automobile, entre technologie, design et performance.',
+              description: 'Je m’intéresse à l’univers automobile, notamment à l’évolution des technologies, au design, aux performances et à la fiabilité des véhicules.',
             },
             {
               title: 'Voyage',
@@ -145,11 +156,11 @@ paragraphs: [
             },
             {
               title: 'Football',
-              description: 'Le football reste un vrai moment de partage, de passion et d’esprit d’équipe.',
+              description: 'Passionné de football, je suis particulièrement les matchs de Manchester United ainsi que les compétitions comme la Premier League et la UEFA Champions League. J’apprécie ce sport pour l’esprit d’équipe, la stratégie et l’intensité des matchs',
             },
             {
               title: 'Jeux vidéo',
-              description: 'Les jeux vidéo stimulent ma curiosité, ma logique et mon sens de la stratégie.',
+              description: 'Les jeux vidéo, notamment League of Legends, qui me permet de développer ma réactivité, ma prise de décision et mon sens de la stratégie, tout en évoluant dans un environnement compétitif et en équipe.',
             },
           ],
         },

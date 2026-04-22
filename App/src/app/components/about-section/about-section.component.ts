@@ -37,8 +37,16 @@ export class AboutSectionComponent {
         description: cards[1].description,
         paragraphs: cards[1].paragraphs,
       },
-      { title: cards[2].title, description: cards[2].description },
-      { title: cards[3].title, description: cards[3].description },
+      {
+        title: cards[2].title,
+        description: cards[2].description,
+        paragraphs: cards[2].paragraphs,
+      },
+      {
+        title: cards[3].title,
+        description: cards[3].description,
+        paragraphs: cards[3].paragraphs,
+      },
       {
         title: cards[4].title,
         description: cards[4].description,
