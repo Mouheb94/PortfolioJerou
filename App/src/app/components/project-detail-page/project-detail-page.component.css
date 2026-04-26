@@ -1,0 +1,86 @@
+.project-detail-section {
+  padding-top: 7rem;
+}
+
+.back-link {
+  display: inline-flex;
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.82rem;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+.back-link:hover {
+  border-color: var(--primary-border);
+  color: var(--foreground);
+}
+
+.project-detail-card {
+  padding: 1.35rem;
+}
+
+.project-context {
+  display: inline-flex;
+  margin: 0;
+  border: 1px solid var(--primary-border);
+  border-radius: 999px;
+  padding: 0.22rem 0.58rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.project-detail-card h1 {
+  margin: 0.6rem 0 0;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+}
+
+.project-intro {
+  margin-top: 0.7rem;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.project-detail-card h2 {
+  margin: 1.25rem 0 0.55rem;
+  color: var(--primary);
+}
+
+.project-detail-card p,
+.project-detail-card li {
+  line-height: 1.75;
+}
+
+.linked-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.linked-skill {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  font-weight: 600;
+}
+
+.linked-skill:hover {
+  border-color: var(--primary-border);
+  color: var(--foreground);
+}
+
+@media (max-width: 780px) {
+  .project-detail-section {
+    padding-top: 6.2rem;
+  }
+
+  .project-detail-card {
+    padding: 1.05rem;
+  }
+}

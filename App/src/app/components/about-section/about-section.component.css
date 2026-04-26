@@ -5,8 +5,13 @@
 }
 
 #presentation .eyebrow {
+  color: var(--primary);
   font-size: clamp(1.3rem, 2.2vw, 1.8rem);
   letter-spacing: 0.16em;
+}
+
+:host-context(.dark) #presentation .eyebrow {
+  color: var(--primary);
 }
 
 #presentation .section-heading h2 {
@@ -61,6 +66,6 @@
 }
 
 :host-context(.dark) #presentation p {
-  color: #c0c0c0;
+  color: var(--muted-foreground);
 }
 

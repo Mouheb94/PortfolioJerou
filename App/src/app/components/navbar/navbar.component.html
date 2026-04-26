@@ -7,13 +7,52 @@
 
     <ul class="nav-links desktop-only">
       <li *ngFor="let link of navLinks">
-        <button
-          type="button"
-          class="nav-link"
-          (click)="navigate(link.route)"
-        >
-          {{ state.t().nav[link.key] }}
-        </button>
+        <ng-container *ngIf="link.key === 'competences'; else simpleLink">
+          <div class="nav-link-group" [class.suppress-hover]="suppressSkillsHover()">
+            <button
+              type="button"
+              class="nav-link nav-link-parent"
+              (click)="navigate(link.route)"
+            >
+              {{ state.t().nav[link.key] }}
+            </button>
+            <ul class="skills-dropdown">
+              <li class="skills-group-item">
+                <button type="button" class="skill-sub-link group-link" (click)="navigate('/competences')">
+                  Competences techniques
+                </button>
+                <ul class="skills-flyout">
+                  <li *ngFor="let skill of technicalSkillLinks">
+                    <button type="button" class="skill-sub-link" (click)="navigateToSkill(skill.id)">
+                      {{ skill.name }}
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li class="skills-group-item">
+                <button type="button" class="skill-sub-link group-link" (click)="navigate('/competences')">
+                  Competences humaines
+                </button>
+                <ul class="skills-flyout">
+                  <li *ngFor="let skill of humanSkillLinks">
+                    <button type="button" class="skill-sub-link" (click)="navigateToSkill(skill.id)">
+                      {{ skill.name }}
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+        <ng-template #simpleLink>
+          <button
+            type="button"
+            class="nav-link"
+            (click)="navigate(link.route)"
+          >
+            {{ state.t().nav[link.key] }}
+          </button>
+        </ng-template>
       </li>
     </ul>
 
@@ -38,13 +77,38 @@
     <div class="container">
       <ul class="nav-links mobile-links">
         <li *ngFor="let link of navLinks">
-          <button
-            type="button"
-            class="nav-link mobile-nav-link"
-            (click)="navigate(link.route)"
-          >
-            {{ state.t().nav[link.key] }}
-          </button>
+          <ng-container *ngIf="link.key === 'competences'; else simpleMobileLink">
+            <button
+              type="button"
+              class="nav-link mobile-nav-link"
+              (click)="navigate(link.route)"
+            >
+              {{ state.t().nav[link.key] }}
+            </button>
+            <ul class="mobile-skill-submenu">
+              <li class="mobile-skill-group-title">Competences techniques</li>
+              <li *ngFor="let skill of technicalSkillLinks">
+                <button type="button" class="mobile-skill-link" (click)="navigateToSkill(skill.id)">
+                  {{ skill.name }}
+                </button>
+              </li>
+              <li class="mobile-skill-group-title">Competences humaines</li>
+              <li *ngFor="let skill of humanSkillLinks">
+                <button type="button" class="mobile-skill-link" (click)="navigateToSkill(skill.id)">
+                  {{ skill.name }}
+                </button>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-template #simpleMobileLink>
+            <button
+              type="button"
+              class="nav-link mobile-nav-link"
+              (click)="navigate(link.route)"
+            >
+              {{ state.t().nav[link.key] }}
+            </button>
+          </ng-template>
         </li>
       </ul>
     </div>

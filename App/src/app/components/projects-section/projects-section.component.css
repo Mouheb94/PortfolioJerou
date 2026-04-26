@@ -22,52 +22,26 @@
   box-shadow: var(--shadow-primary);
 }
 
-.project-media {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
-.project-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 500ms ease;
-}
-
-.project-card:hover .project-media img {
-  transform: scale(1.05);
-}
-
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 30%, color-mix(in srgb, var(--card) 85%, transparent) 100%);
-}
-
-.project-link-indicator {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  display: inline-grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--primary) 90%, transparent);
-  color: var(--primary-foreground);
-  opacity: 0;
-  transform: translateY(0.35rem);
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.project-card:hover .project-link-indicator {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .project-copy {
-  padding: 1.6rem;
+  padding: 1.25rem 1.35rem;
+}
+
+.project-context {
+  display: inline-flex;
+  margin-bottom: 0.55rem;
+  border: 1px solid var(--primary-border);
+  border-radius: 999px;
+  padding: 0.22rem 0.56rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.project-context-school {
+  border-color: color-mix(in srgb, #3b82f6 72%, var(--border));
+  color: #2563eb;
+  background: color-mix(in srgb, #3b82f6 14%, transparent);
 }
 
 .project-copy h3 {
@@ -90,21 +64,12 @@
   overflow: hidden;
 }
 
+.skill-chip {
+  color: var(--muted-foreground);
+}
+
 .modal-project {
   width: min(100%, 42rem);
-}
-
-.modal-image {
-  margin-top: 1.25rem;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  border-radius: 1rem;
-}
-
-.modal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 @media (max-width: 768px) {

@@ -1,15 +1,9 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, computed, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { Skill, skills } from '../../data/portfolio-data';
+import { CompetencyDomain, competencies } from '../../data/competencies-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
-
-const CATEGORY_MAP: Record<string, string> = {
-  Frontend: 'category-frontend',
-  Backend: 'category-backend',
-  Languages: 'category-languages',
-  DevOps: 'category-devops',
-};
 
 @Component({
   selector: 'app-skills-section',
@@ -20,33 +14,36 @@ const CATEGORY_MAP: Record<string, string> = {
 })
 export class SkillsSectionComponent {
   readonly state = inject(PortfolioStateService);
-  private readonly doc = inject(DOCUMENT);
+  private readonly router = inject(Router);
 
-  readonly skills = skills;
-  readonly selectedSkill = signal<Skill | null>(null);
+  readonly competencies = competencies;
+  readonly missingLegacyAnchors = ['typescript', 'nodejs', 'react', 'tailwind', 'postgresql'];
 
-  @HostListener('document:keydown.escape')
-  onEscape(): void {
-    if (this.selectedSkill()) {
-      this.closeSkill();
+  readonly rankedCompetencies = [...this.competencies].sort((a, b) => b.level - a.level);
+  readonly technicalCompetencies = computed(() =>
+    this.rankedCompetencies.filter((skill) => skill.domain === 'technical'),
+  );
+  readonly humanCompetencies = computed(() =>
+    this.rankedCompetencies.filter((skill) => skill.domain === 'human'),
+  );
+
+  domainTitle(domain: CompetencyDomain): string {
+    const locale = this.state.locale();
+    if (domain === 'technical') {
+      return locale === 'fr' ? 'Competences techniques' : 'Technical competencies';
     }
+    return locale === 'fr' ? 'Competences humaines' : 'Human competencies';
   }
 
-  openSkill(skill: Skill): void {
-    this.selectedSkill.set(skill);
-    this.doc.body.classList.add('modal-open');
+  masteryScore(level: number): string {
+    return `${Math.round(level / 10)}/10`;
   }
 
-  closeSkill(): void {
-    this.selectedSkill.set(null);
-    this.doc.body.classList.remove('modal-open');
+  competencyTypeLabel(domain: CompetencyDomain): string {
+    return domain === 'technical' ? 'Competence technique' : 'Competence humaine';
   }
 
-  categoryClass(category: string): string {
-    return CATEGORY_MAP[category] ?? '';
-  }
-
-  trackBySkill(_: number, skill: Skill): string {
-    return skill.id;
+  openSkill(id: string): void {
+    void this.router.navigate(['/competences', id]);
   }
 }

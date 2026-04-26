@@ -1,87 +1,84 @@
 <section id="competences" class="section">
   <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">{{ state.t().skills.title }}</p>
-      <h2>{{ state.t().skills.subtitle }}</h2>
+    <div class="section-heading skills-section-heading">
+      <h2 class="skills-main-title">{{ state.t().skills.title }}</h2>
+      <p class="skills-subtitle">{{ state.t().skills.subtitle }}</p>
     </div>
 
-    <div class="skills-grid">
-      <article
-        class="glass-card skill-card"
-        *ngFor="let skill of skills; trackBy: trackBySkill"
-        [id]="'skill-' + skill.id"
-      >
-        <div class="skill-header">
-          <div class="skill-meta">
-            <div class="skill-icon">{{ skill.icon }}</div>
-            <div>
-              <h3>{{ skill.name }}</h3>
-              <span class="chip category-chip" [ngClass]="categoryClass(skill.category)">{{ skill.category }}</span>
+    <div class="comparison-grid">
+      <article class="glass-card domain-card">
+        <header class="domain-header">
+          <h3>{{ domainTitle('technical') }}</h3>
+          <span class="domain-count">6</span>
+        </header>
+
+        <ol class="competency-list" aria-label="Liste des competences techniques">
+          @for (skill of technicalCompetencies(); track skill.id) {
+          <li
+            class="competency-row"
+            [id]="'skill-' + skill.id"
+            tabindex="0"
+            role="link"
+            (click)="openSkill(skill.id)"
+            (keydown.enter)="openSkill(skill.id)"
+            (keydown.space)="openSkill(skill.id); $event.preventDefault()"
+          >
+            <div class="competency-top">
+              <h4 class="competency-title">
+                <span class="skill-logo" aria-hidden="true">
+                  <img class="skill-logo-img" [src]="skill.logo" [alt]="skill.name + ' logo'" loading="lazy" />
+                </span>
+                <span>{{ skill.name }}</span>
+              </h4>
             </div>
-          </div>
-        </div>
-
-        <div class="progress-block">
-          <div class="progress-labels">
-            <span>{{ state.t().skills.level }}</span>
-            <span>{{ skill.level }}%</span>
-          </div>
-          <div class="progress-bar">
-            <span class="progress-fill" [style.width.%]="skill.level"></span>
-          </div>
-        </div>
-
-        <button type="button" class="btn btn-card" (click)="openSkill(skill)">
-          <svg class="icon icon-xs"><use href="#i-eye"></use></svg>
-          {{ state.t().skills.seeDetail }}
-        </button>
+            <p class="competency-meta">{{ competencyTypeLabel(skill.domain) }} • Niveau {{ masteryScore(skill.level) }}</p>
+            <div class="progress-bar">
+              <span class="progress-fill" [style.width.%]="skill.level"></span>
+            </div>
+            <p>{{ skill.summary[state.locale()] }}</p>
+          </li>
+          }
+        </ol>
       </article>
+
+      <article class="glass-card domain-card">
+        <header class="domain-header">
+          <h3>{{ domainTitle('human') }}</h3>
+          <span class="domain-count">4</span>
+        </header>
+
+        <ol class="competency-list" aria-label="Liste des competences humaines">
+          @for (skill of humanCompetencies(); track skill.id) {
+          <li
+            class="competency-row"
+            [id]="'skill-' + skill.id"
+            tabindex="0"
+            role="link"
+            (click)="openSkill(skill.id)"
+            (keydown.enter)="openSkill(skill.id)"
+            (keydown.space)="openSkill(skill.id); $event.preventDefault()"
+          >
+            <div class="competency-top">
+              <h4 class="competency-title">
+                <span class="skill-logo" aria-hidden="true">
+                  <img class="skill-logo-img" [src]="skill.logo" [alt]="skill.name + ' logo'" loading="lazy" />
+                </span>
+                <span>{{ skill.name }}</span>
+              </h4>
+            </div>
+            <p class="competency-meta">{{ competencyTypeLabel(skill.domain) }} • Niveau {{ masteryScore(skill.level) }}</p>
+            <div class="progress-bar">
+              <span class="progress-fill" [style.width.%]="skill.level"></span>
+            </div>
+            <p>{{ skill.summary[state.locale()] }}</p>
+          </li>
+          }
+        </ol>
+      </article>
+
+      @for (anchor of missingLegacyAnchors; track anchor) {
+      <span class="skill-anchor" [id]="'skill-' + anchor" aria-hidden="true"></span>
+      }
     </div>
   </div>
 </section>
-
-<div class="modal-backdrop" *ngIf="selectedSkill() as skill" (click)="closeSkill()">
-  <section
-    class="modal-window"
-    (click)="$event.stopPropagation()"
-    role="dialog"
-    aria-modal="true"
-    [attr.aria-label]="skill.name"
-  >
-    <button type="button" class="modal-close" (click)="closeSkill()" [attr.aria-label]="state.t().skills.close">
-      <svg class="icon icon-sm"><use href="#i-close"></use></svg>
-    </button>
-
-    <div class="modal-header skill-modal-header">
-      <div class="skill-icon skill-icon-lg">{{ skill.icon }}</div>
-      <div>
-        <h3>{{ skill.name }}</h3>
-        <span class="chip category-chip" [ngClass]="categoryClass(skill.category)">{{ skill.category }}</span>
-      </div>
-    </div>
-
-    <p class="modal-copy">{{ skill.description[state.locale()] }}</p>
-
-    <div class="modal-stats">
-      <article class="stat-card">
-        <span>{{ state.t().skills.experience }}</span>
-        <strong>{{ skill.experience[state.locale()] }}</strong>
-      </article>
-      <article class="stat-card">
-        <span>{{ state.t().skills.level }}</span>
-        <strong>{{ skill.level }}%</strong>
-      </article>
-    </div>
-
-    <div class="progress-bar progress-bar-modal">
-      <span class="progress-fill" [style.width.%]="skill.level"></span>
-    </div>
-
-    <div>
-      <p class="modal-label">{{ state.t().skills.projects }}</p>
-      <div class="chip-row">
-        <span class="chip skill-chip" *ngFor="let item of skill.projects[state.locale()]">{{ item }}</span>
-      </div>
-    </div>
-  </section>
-</div>

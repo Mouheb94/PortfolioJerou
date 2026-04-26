@@ -88,7 +88,7 @@ export const translations: TranslationSet = {
       contact: 'Contact',   
     },
     hero: {
-      greeting: 'Bonjour, je suis',
+      greeting: '',
       role: 'Expert en ingénierie logicielle / testeur QA en automatisation',
       description: 'Testeur automaticien  avec une forte appétence pour le développement logiciel et l’automatisation des tests.',
       cta: 'Présentation',
@@ -102,24 +102,25 @@ export const translations: TranslationSet = {
           title: 'Présentation générale',
           description: '',
 paragraphs: [
-  "Actuellement en alternance chez Harmonie Mutuelle, je travaille en tant que testeur automaticien dans un environnement axé sur la qualité logicielle et la fiabilité des applications. En parallèle, je poursuis un diplôme d’Expert en Ingénierie Logicielle afin de renforcer mes compétences en automatisation et en qualité.",
+  "Actuellement en alternance chez Harmonie Mutuelle en tant que testeur automaticien, avec une activité centrée sur la qualité logicielle et la fiabilité des applications. Cette expérience permet d’évoluer dans un environnement exigeant où la qualité des livrables et la stabilité des solutions sont essentielles. En parallèle, la préparation du diplôme d’Expert en Ingénierie Logicielle permet de renforcer les compétences en automatisation, qualité logicielle et ingénierie des systèmes.",
   
-  "Au quotidien, je participe à la création et à la maintenance de tests automatisés, aussi bien sur des applications web que sur des API. J’interviens également sur le lancement des campagnes de tests de non-régression (TNR) et le suivi des mises en production.",
+  "Les missions portent sur la création et la maintenance de tests automatisés, aussi bien sur des applications web que sur des API. Le lancement des campagnes de tests de non-régression (TNR) ainsi que le suivi des mises en production font également partie des responsabilités quotidiennes.",
   
-  "Lors de mon expérience chez MSPE en tant que testeur QA, j’ai participé à des campagnes de tests fonctionnels et de non-régression, y compris en production. J’ai contribué à la conception des cas de tests, à la préparation des données et à la validation des résultats, tout en travaillant avec les utilisateurs lors des phases de recette.",
+  "Une expérience précédente chez MSPE en tant que testeur QA a permis de participer à des campagnes de tests fonctionnels et de non-régression, y compris en production. La conception des cas de tests, la préparation des données, la validation des résultats ainsi que la collaboration avec les utilisateurs lors des phases de recette ont renforcé la maîtrise des processus qualité.",
   
   "J’y ai également occupé un rôle de responsable qualité, avec des missions de suivi de la qualité des produits, de gestion des anomalies et d’amélioration continue des pratiques.",
   
-  "En complément, j’ai obtenu la certification “ISTQB (11/2023, GASQ) ainsi que la certification “Appliquer la méthode DevOps pour optimiser le cycle de vie des applications” (09/2024, Simplon.co), ce qui m’a permis de consolider mes bases en qualité logicielle et en automatisation.."
+  "En complément, l’obtention de la certification ISTQB (11/2023, GASQ) ainsi que de la certification “Appliquer la méthode DevOps pour optimiser le cycle de vie des applications” (09/2024, Simplon.co) a permis de consolider les compétences en qualité logicielle, automatisation et amélioration continue."
 ]
         },
         {
           title: 'Mes valeurs',
           description: '',
             paragraphs: [
-              "Au fil de mon parcours en qualité logicielle et en automatisation des tests, j’ai développé une approche basée sur la rigueur, la fiabilité et le sens des responsabilités. La qualité du code, la stabilité des applications et la pertinence des tests sont au cœur de ma manière de travailler.",
-              "J’accorde une attention particulière à la qualité du code de test, à sa maintenabilité ainsi qu’à la clarté de la documentation des cas de test et des résultats. La fiabilité des scénarios automatisés et leur capacité à évoluer dans le temps sont pour moi essentielles.",
-              "Le travail en équipe occupe également une place importante, notamment avec les développeurs et les équipes métier, afin de garantir une bonne compréhension des besoins et une couverture de test pertinente. Enfin, je suis dans une démarche constante d’amélioration continue, que ce soit dans l’optimisation des processus de test ou l’automatisation des tâches répétitives.",
+              "La rigueur, la fiabilité et le sens des responsabilités se sont imposés comme des piliers essentiels tout au long du parcours en qualité logicielle et en automatisation des tests.",
+              "La qualité du code, la stabilité des applications et la pertinence des tests occupent une place centrale dans la manière de travailler. Une attention particulière est portée à la maintenabilité du code de test, à la clarté de la documentation ainsi qu’à la fiabilité des scénarios automatisés sur le long terme.",
+              "Le travail en équipe occupe également une place importante, notamment avec les développeurs et les équipes métier, afin de garantir une bonne compréhension des besoins et une couverture de test pertinente.",
+              "L’amélioration continue reste une priorité constante, que ce soit dans l’optimisation des processus de test, la gestion de la qualité ou l’automatisation des tâches répétitives."
             ]
 
         },
@@ -127,8 +128,10 @@ paragraphs: [
           title: 'Projet professionnel et personnel',
           description: "",
           paragraphs: [
-            "Mon projet professionnel s’oriente vers l’automatisation des tests et l’amélioration de la qualité logicielle, avec un intérêt pour l’ingénierie logicielle et la conception de solutions fiables. À court et moyen terme, je souhaite renforcer mes compétences dans la conception et la maintenance de tests automatisés, ainsi que dans leur intégration au sein de pipelines CI/CD, avec pour objectif de passer la certification ISTQB spécialisée en test automation. Mon objectif est d’évoluer vers des rôles spécialisés en automatisation et en qualité logicielle, en contribuant à la mise en place de solutions robustes et efficaces.",
-            "Sur le plan personnel, j’accorde une grande importance à l’équilibre entre vie professionnelle et personnelle, en consacrant du temps à ma famille. J’apprécie également voyager et découvrir de nouvelles cultures, ce qui nourrit ma curiosité et mon ouverture d’esprit. Je porte aussi un intérêt particulier au domaine automobile, avec l’envie d’en apprendre davantage sur ses évolutions et ses technologies.",
+            "L’objectif professionnel s’oriente vers l’automatisation des tests et l’amélioration de la qualité logicielle, avec un intérêt marqué pour l’ingénierie logicielle et la conception de solutions fiables et durables.",
+            "À court et moyen terme, le renforcement des compétences dans la conception, la maintenance et l’intégration des tests automatisés au sein de pipelines CI/CD constitue une priorité, avec pour ambition l’obtention de la certification ISTQB spécialisée en test automation.",
+            "À plus long terme, l’évolution visée concerne des rôles spécialisés en automatisation et en qualité logicielle, avec une contribution active à la mise en place de solutions robustes, performantes et efficaces.",
+            "Sur le plan personnel, une grande importance est accordée à l’équilibre entre vie professionnelle et vie personnelle, notamment en consacrant du temps à la famille. Les voyages et la découverte de nouvelles cultures nourrissent également la curiosité et l’ouverture d’esprit. Un intérêt particulier est aussi porté au domaine automobile, avec l’envie d’en apprendre davantage sur ses évolutions et ses technologies.",
           ]
         },
         {
@@ -198,7 +201,7 @@ paragraphs: [
     },
     skills: {
       title: 'Compétences',
-      subtitle: 'Technologies & Outils',
+      subtitle: 'Compétences techniques et humaines:',
       seeDetail: 'Voir le detail',
       close: 'Fermer',
       experience: 'Expérience',
@@ -206,8 +209,8 @@ paragraphs: [
       projects: 'Projets',
     },
     projects: {
-      title: 'Réalisations',
-      subtitle: 'Projets récents',
+      title: '',
+      subtitle: 'Mes réalisations',
       seeProject: 'Voir le projet',
       techUsed: 'Technologies utilisées',
       description: 'Description',

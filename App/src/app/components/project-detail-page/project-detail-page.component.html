@@ -1,0 +1,68 @@
+<section class="section section-muted project-detail-section">
+  <div class="container" *ngIf="project() as project; else notFound">
+    <a class="back-link" [routerLink]="['/realisations']">Retour aux realisations</a>
+
+    <article class="glass-card project-detail-card" *ngIf="detail() as detailData; else missingDetail">
+      <header>
+        <p class="project-context">{{ project.context[state.locale()] }}</p>
+        <h1>{{ project.title[state.locale()] }}</h1>
+        <p class="project-intro">{{ project.shortDesc[state.locale()] }}</p>
+      </header>
+
+      <h2>Presentation</h2>
+      <p>{{ detailData.presentation }}</p>
+
+      <h2>Objectifs et contexte</h2>
+      <ul>
+        <li *ngFor="let item of detailData.objectives">{{ item }}</li>
+      </ul>
+
+      <h2>Ce que j ai fait</h2>
+      <ol>
+        <li *ngFor="let action of detailData.actions">{{ action }}</li>
+      </ol>
+
+      <h2>Les acteurs</h2>
+      <p>{{ detailData.actors }}</p>
+
+      <h2>Resultats</h2>
+      <ul>
+        <li *ngFor="let result of detailData.results">{{ result }}</li>
+      </ul>
+
+      <h2>Lendemains du projet</h2>
+      <p>{{ detailData.aftermath }}</p>
+
+      <h2>Mon regard critique</h2>
+      <p>{{ detailData.criticalView }}</p>
+
+      <h2>Competences liees</h2>
+      <div class="linked-skills">
+        <button
+          type="button"
+          class="linked-skill"
+          *ngFor="let skillId of project.skills"
+          (click)="openSkill(skillId)"
+        >
+          {{ getSkillName(skillId) }}
+        </button>
+      </div>
+    </article>
+
+    <ng-template #missingDetail>
+      <section class="glass-card project-detail-card">
+        <h1>{{ project.title[state.locale()] }}</h1>
+        <p>Le detail de ce projet n est pas encore disponible.</p>
+      </section>
+    </ng-template>
+  </div>
+
+  <ng-template #notFound>
+    <div class="container">
+      <section class="glass-card project-detail-card">
+        <h1>Projet introuvable</h1>
+        <a class="back-link" [routerLink]="['/realisations']">Retour aux realisations</a>
+      </section>
+    </div>
+  </ng-template>
+</section>

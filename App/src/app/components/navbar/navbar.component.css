@@ -68,6 +68,130 @@
   transition: background-color 180ms ease, color 180ms ease;
 }
 
+.nav-link-group {
+  position: relative;
+}
+
+.skills-dropdown {
+  position: absolute;
+  top: calc(100% + 0.15rem);
+  left: 0;
+  min-width: 14.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 170ms ease, transform 170ms ease, visibility 170ms ease;
+}
+
+.nav-link-group:hover .skills-dropdown,
+.nav-link-group:focus-within .skills-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-link-group.suppress-hover:hover .skills-dropdown,
+.nav-link-group.suppress-hover:focus-within .skills-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  pointer-events: none;
+}
+
+.skill-sub-link {
+  width: 100%;
+  text-align: left;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.62rem;
+  color: var(--muted-foreground);
+}
+
+.skills-group-item {
+  position: relative;
+}
+
+.group-link {
+  font-weight: 700;
+  position: relative;
+  padding-right: 1.4rem;
+}
+
+.group-link::after {
+  content: '›';
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.skills-group-item:hover .group-link::after,
+.skills-group-item:focus-within .group-link::after {
+  transform: translate(2px, -50%);
+  opacity: 1;
+}
+
+.skills-flyout {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 13.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(4px);
+  pointer-events: none;
+  transition: opacity 170ms ease, transform 170ms ease, visibility 170ms ease;
+}
+
+/* Bridge zone so the flyout stays open while moving the mouse right. */
+.skills-group-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+}
+
+.skills-group-item:hover .skills-flyout,
+.skills-group-item:focus-within .skills-flyout {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.nav-link-group.suppress-hover .skills-flyout {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(4px);
+  pointer-events: none;
+}
+
+.skill-sub-link:hover {
+  background: var(--secondary);
+  color: var(--foreground);
+}
+
 .nav-link:hover {
   background: var(--secondary);
   color: var(--foreground);
@@ -122,6 +246,38 @@
 .mobile-nav-link {
   width: 100%;
   text-align: left;
+}
+
+.mobile-skill-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 0 0.35rem 0.9rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.mobile-skill-group-title {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.65rem 0.15rem;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mobile-skill-link {
+  width: 100%;
+  text-align: left;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.65rem;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.mobile-skill-link:hover {
+  background: var(--secondary);
+  color: var(--foreground);
 }
 
 .desktop-only {

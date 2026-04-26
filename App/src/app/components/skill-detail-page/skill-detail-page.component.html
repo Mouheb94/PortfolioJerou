@@ -1,0 +1,67 @@
+<section class="section section-muted skill-detail-section">
+  <div class="container" *ngIf="selectedSkill() as skill; else skillNotFound">
+    <a class="back-to-skills" [routerLink]="['/competences']">Retour aux competences</a>
+
+    <header class="skill-header glass-card">
+      <p class="skill-line">
+        <span class="skill-title">{{ skill.name }}</span>
+      </p>
+      <p class="skill-line">
+        <span class="skill-meta">{{ competencyTypeLabel(skill.domain) }} &bull; Niveau {{ masteryScore(skill.level) }}</span>
+      </p>
+    </header>
+
+    <article class="glass-card article-card">
+      <h2>Ma definition</h2>
+      <p>{{ skill.article.definition }}</p>
+      <h3>Contexte professionnel</h3>
+      <p>{{ skill.article.professionalContext }}</p>
+      <h3>Lien avec l actualite</h3>
+      <p>{{ skill.article.currentTopic }}</p>
+
+      <h2>Mes elements de preuve</h2>
+      <p class="section-note">
+        Anecdotes issues de projets realises dans la rubrique Realisations, avec preuves de mise en oeuvre, resultat et valeur ajoutee.
+      </p>
+      <section class="proof-block" *ngFor="let proof of skill.article.proofs; let i = index">
+        <h3>Anecdote {{ i + 1 }}: {{ proof.title }}</h3>
+        <p><strong>Situation:</strong> {{ proof.anecdote }}</p>
+        <p><strong>Mise en oeuvre:</strong> {{ proof.implementationProof }}</p>
+        <p><strong>Resultat et valeur ajoutee:</strong> {{ proof.resultAndValue }}</p>
+        <a class="realization-link" [routerLink]="['/realisations']" [fragment]="proof.realizationFragment">
+          Voir la realisation: {{ proof.realizationLabel }}
+        </a>
+      </section>
+
+      <h2>Mon autocritique</h2>
+      <p><strong>Niveau de maitrise:</strong> {{ skill.article.selfReview }}</p>
+      <p><strong>Importance dans le profil:</strong> {{ skill.article.priorityInProfile }}</p>
+      <p><strong>Vitesse d acquisition:</strong> {{ skill.article.acquisitionSpeed }}</p>
+      <p><strong>Recul critique:</strong> {{ skill.article.advice }}</p>
+
+      <h2>Mon evolution</h2>
+      <p><strong>Objectif a moyen terme:</strong> {{ skill.article.mediumTermGoal }}</p>
+      <p><strong>Formations et autoformations:</strong></p>
+      <ul>
+        <li *ngFor="let training of skill.article.trainings">{{ training }}</li>
+      </ul>
+
+      <h3>Realisations liees</h3>
+      <ul class="achievement-list">
+        <li *ngFor="let item of skill.article.achievements">
+          <a [routerLink]="['/realisations']" [fragment]="item.fragment">{{ item.label }}</a>
+        </li>
+      </ul>
+    </article>
+  </div>
+
+  <ng-template #skillNotFound>
+    <div class="container">
+      <section class="glass-card article-card">
+        <h1>Competence introuvable</h1>
+        <p>La competence demandee n existe pas encore dans le portfolio.</p>
+        <a class="realization-link" routerLink="/competences">Retour a la page des competences</a>
+      </section>
+    </div>
+  </ng-template>
+</section>

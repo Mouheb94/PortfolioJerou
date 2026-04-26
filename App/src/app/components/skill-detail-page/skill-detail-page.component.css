@@ -1,0 +1,141 @@
+.skill-detail-section {
+  padding-top: 7rem;
+}
+
+.back-to-skills {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.82rem;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  font-weight: 600;
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  transition: border-color 170ms ease, color 170ms ease, transform 170ms ease;
+}
+
+.back-to-skills:hover {
+  border-color: var(--primary-border);
+  color: var(--foreground);
+  transform: translateY(-1px);
+}
+
+.skill-header {
+  padding: 1.35rem;
+  margin-bottom: 1.2rem;
+  max-width: 38rem;
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--border));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--primary) 8%, transparent), transparent 45%),
+    color-mix(in srgb, var(--card) 92%, transparent);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+}
+
+.skill-line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+  line-height: 1.5;
+  padding: 0.25rem 0;
+}
+
+.skill-line + .skill-line {
+  border-top: 1px dashed color-mix(in srgb, var(--primary) 20%, var(--border));
+  margin-top: 0.25rem;
+  padding-top: 0.6rem;
+}
+
+.skill-title {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.skill-meta {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.article-card {
+  padding: 1.4rem;
+}
+
+.article-card h2 {
+  margin: 1.3rem 0 0.55rem;
+  color: var(--primary);
+}
+
+.article-card h3 {
+  margin: 1rem 0 0.45rem;
+}
+
+.article-card p,
+.article-card li {
+  line-height: 1.75;
+}
+
+.section-note {
+  margin: 0.35rem 0 0.2rem;
+  color: var(--muted-foreground);
+}
+
+.proof-block {
+  margin-top: 0.95rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--card) 82%, transparent);
+}
+
+.realization-link {
+  display: inline-flex;
+  margin-top: 0.4rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.realization-link:hover {
+  text-decoration: underline;
+}
+
+.achievement-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.achievement-list a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.achievement-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+  .skill-detail-section {
+    padding-top: 6.2rem;
+  }
+
+  .skill-header,
+  .article-card {
+    padding: 1.05rem;
+  }
+
+  .skill-header {
+    max-width: 100%;
+  }
+}

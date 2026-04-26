@@ -1,5 +1,6 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Project, projects, skills } from '../../data/portfolio-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
@@ -13,37 +14,12 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
 })
 export class ProjectsSectionComponent {
   readonly state = inject(PortfolioStateService);
-  private readonly doc = inject(DOCUMENT);
+  private readonly router = inject(Router);
 
   readonly projects = projects;
-  readonly selectedProject = signal<Project | null>(null);
-
-  @HostListener('document:keydown.escape')
-  onEscape(): void {
-    if (this.selectedProject()) {
-      this.closeProject();
-    }
-  }
 
   openProject(project: Project): void {
-    this.selectedProject.set(project);
-    this.doc.body.classList.add('modal-open');
-  }
-
-  closeProject(): void {
-    this.selectedProject.set(null);
-    this.doc.body.classList.remove('modal-open');
-  }
-
-  jumpToSkill(skillId: string): void {
-    this.closeProject();
-    window.setTimeout(() => {
-      const el = this.doc.getElementById(`skill-${skillId}`);
-      if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.classList.add('skill-highlight');
-      window.setTimeout(() => el.classList.remove('skill-highlight'), 2000);
-    }, 220);
+    void this.router.navigate(['/realisations', project.id]);
   }
 
   getSkillName(skillId: string): string {
