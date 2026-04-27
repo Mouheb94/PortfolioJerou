@@ -28,7 +28,7 @@
         <p><strong>Situation:</strong> {{ proof.anecdote }}</p>
         <p><strong>Mise en oeuvre:</strong> {{ proof.implementationProof }}</p>
         <p><strong>Resultat et valeur ajoutee:</strong> {{ proof.resultAndValue }}</p>
-        <a class="realization-link" [routerLink]="['/realisations']" [fragment]="proof.realizationFragment">
+        <a class="realization-link" [routerLink]="projectRoute(proof.realizationFragment)">
           Voir la realisation: {{ proof.realizationLabel }}
         </a>
       </section>
@@ -49,7 +49,7 @@
       <h3>Realisations liees</h3>
       <ul class="achievement-list">
         <li *ngFor="let item of skill.article.achievements">
-          <a [routerLink]="['/realisations']" [fragment]="item.fragment">{{ item.label }}</a>
+          <a [routerLink]="projectRoute(item.fragment)">{{ item.label }}</a>
         </li>
       </ul>
     </article>

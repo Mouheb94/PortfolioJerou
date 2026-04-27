@@ -90,8 +90,8 @@ export const competencies: Competency[] = [
         'Atteindre un niveau expert sur les patterns d automatisation resilients et la parallelisation des executions.',
       trainings: ['Preparation ISTQB Test Automation', 'Perfectionnement sur les frameworks de tests UI modernes'],
       achievements: [
-        { label: 'Plateforme E-Commerce', fragment: 'project-ecommerce' },
-        { label: 'Application de Gestion', fragment: 'project-gestion' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
       ],
     },
   },
@@ -113,14 +113,14 @@ export const competencies: Competency[] = [
       professionalContext:
         'Dans mes missions QA, Jenkins est utilise pour lancer les TNR a chaque etape cle des mises en production.',
       currentTopic:
-        'Cette competence est liee a l actualite DevOps: fiabilite des releases, traçabilite et feedback rapide.',
+        'Cette competence est liee a l actualite DevOps: fiabilite des releases, tra+�abilite et feedback rapide.',
       proofs: [
         {
           title: 'Pipeline de non-regression quotidienne',
           anecdote:
             'J ai mis en place un pipeline Jenkins planifie executant les tests critiques chaque nuit avec publication automatique des rapports.',
           implementationProof:
-            'J ai configure les stages, les artefacts de test et les notifications afin que les equipes reçoivent une vision claire des echecs.',
+            'J ai configure les stages, les artefacts de test et les notifications afin que les equipes re+�oivent une vision claire des echecs.',
           resultAndValue:
             'Les anomalies ont ete detectees avant l ouverture de la journee de travail, ce qui a reduit les blocages. Ma valeur ajoutee a ete d installer un rythme de qualite proactif.',
           realizationLabel: 'Infrastructure CI/CD',
@@ -138,8 +138,7 @@ export const competencies: Competency[] = [
         'Renforcer mes competences sur les pipelines as code et l optimisation des temps d execution.',
       trainings: ['Autoformation Jenkins declaratif', 'Approfondissement CI/CD orientee qualite'],
       achievements: [
-        { label: 'Infrastructure CI/CD' },
-        { label: 'Deploiement cloud' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
       ],
     },
   },
@@ -185,7 +184,10 @@ export const competencies: Competency[] = [
       mediumTermGoal:
         'Monter en competence sur les tests de performance API et la gouvernance des contrats.',
       trainings: ['Autoformation sur les tests contractuels', 'Perfectionnement sur Newman et execution CI'],
-      achievements: [{ label: 'API E-Commerce' }, { label: 'Service de notification' }],
+      achievements: [
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
+      ],
     },
   },
   {
@@ -200,7 +202,7 @@ export const competencies: Competency[] = [
     },
     article: {
       intro:
-        'Git structure ma contribution quotidienne et garantit la traçabilite des evolutions qualite.',
+        'Git structure ma contribution quotidienne et garantit la tra+�abilite des evolutions qualite.',
       definition:
         'Git est un systeme de gestion de versions distribue qui permet de suivre, partager et securiser les modifications de code.',
       professionalContext:
@@ -231,8 +233,9 @@ export const competencies: Competency[] = [
         'Approfondir les strategies de release management et les politiques de branching avancees.',
       trainings: ['Veille continue sur Git Flow et trunk-based development'],
       achievements: [
-        { label: 'Plateforme E-Commerce', fragment: 'project-ecommerce' },
-        { label: 'Application SaaS', fragment: 'project-saas' },
+        { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
       ],
     },
   },
@@ -280,8 +283,7 @@ export const competencies: Competency[] = [
         'Atteindre un niveau avance de conception front pour accelerer la creation de tests pertinents.',
       trainings: ['Autoformation avancee sur Angular moderne', 'Pratique de tests E2E sur applications Angular'],
       achievements: [
-        { label: 'Plateforme E-Commerce', fragment: 'project-ecommerce' },
-        { label: 'Application de Gestion', fragment: 'project-gestion' },
+        { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
       ],
     },
   },
@@ -329,8 +331,7 @@ export const competencies: Competency[] = [
         'Renforcer la maitrise de Docker Compose avance et des pratiques d optimisation des images.',
       trainings: ['Autoformation Docker Compose avance', 'Veille sur les bonnes pratiques conteneurisation'],
       achievements: [
-        { label: 'Application SaaS', fragment: 'project-saas' },
-        { label: 'Infrastructure CI/CD' },
+        { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
       ],
     },
   },
@@ -362,7 +363,7 @@ export const competencies: Competency[] = [
             'J ai formalise des criteres de priorisation et des regles de communication communes.',
           resultAndValue:
             'Les decisions ont ete prises plus vite et les incomprehensions ont diminue. Ma valeur ajoutee a ete de fluidifier la collaboration.',
-          realizationLabel: 'Application de Gestion',
+          realizationLabel: 'MNSI',
           realizationFragment: 'project-gestion',
         },
       ],
@@ -378,8 +379,9 @@ export const competencies: Competency[] = [
         'Developper davantage mes competences de facilitation et de pilotage transverse.',
       trainings: ['Lecture et pratique sur la communication inter-equipes', 'Ateliers internes d amelioration continue'],
       achievements: [
-        { label: 'Application de Gestion', fragment: 'project-gestion' },
-        { label: 'Plateforme E-Commerce', fragment: 'project-ecommerce' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
+        { label: 'Octopus', fragment: 'project-octopus' },
       ],
     },
   },
@@ -411,8 +413,8 @@ export const competencies: Competency[] = [
             'J ai structure les scenarios critiques, assure un suivi quotidien et fourni une synthese claire au chef de projet.',
           resultAndValue:
             'La release a ete securisee dans les delais. Ma valeur ajoutee a ete de maintenir un pilotage fiable en toute autonomie.',
-          realizationLabel: 'Plateforme E-Commerce',
-          realizationFragment: 'project-ecommerce',
+          realizationLabel: 'PMT - Project Management Tool',
+          realizationFragment: 'project-pmt',
         },
       ],
       selfReview:
@@ -427,14 +429,17 @@ export const competencies: Competency[] = [
         'Renforcer l autonomie sur des perimetres plus larges de pilotage qualite.',
       trainings: ['Autoformation sur les methodes de priorisation', 'Amelioration continue de ma gestion du temps'],
       achievements: [
-        { label: 'Plateforme E-Commerce', fragment: 'project-ecommerce' },
-        { label: 'Application SaaS', fragment: 'project-saas' },
+        { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
+        { label: 'Octopus', fragment: 'project-octopus' },
+        { label: 'GameUp', fragment: 'project-gameup' },
       ],
     },
   },
   {
     id: 'organisation',
-    name: 'Organisation',
+    name: 'Organisation et pilotage de projet',
     logo: 'https://api.iconify.design/mdi/calendar-check.svg?color=%2314b8a6',
     level: 74,
     domain: 'human',
@@ -460,8 +465,8 @@ export const competencies: Competency[] = [
             'J ai utilise une matrice de priorisation et un suivi quotidien des avancements pour reallouer rapidement les efforts.',
           resultAndValue:
             'Les delais ont ete respectes avec une couverture des risques critiques. Ma valeur ajoutee a ete de rendre la validation previsible.',
-          realizationLabel: 'Application de Gestion',
-          realizationFragment: 'project-gestion',
+          realizationLabel: 'PMT - Project Management Tool',
+          realizationFragment: 'project-pmt',
         },
       ],
       selfReview:
@@ -476,8 +481,11 @@ export const competencies: Competency[] = [
         'Monter en maturite sur les indicateurs de pilotage QA et la prevision de charge.',
       trainings: ['Formation interne gestion des priorites', 'Pratique de tableaux de pilotage qualite'],
       achievements: [
-        { label: 'Application de Gestion', fragment: 'project-gestion' },
-        { label: 'Dashboard Analytics', fragment: 'project-dashboard' },
+        { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
+        { label: 'Octopus', fragment: 'project-octopus' },
+        { label: 'GameUp', fragment: 'project-gameup' },
       ],
     },
   },
@@ -509,8 +517,8 @@ export const competencies: Competency[] = [
             'Chaque anomalie etait accompagnee de preuves et d un message adapte au destinataire (metier ou technique).',
           resultAndValue:
             'Le temps de traitement des anomalies a ete reduit et les allers-retours ont baisse. Ma valeur ajoutee a ete de rendre la communication orientee action.',
-          realizationLabel: 'Plateforme E-Commerce',
-          realizationFragment: 'project-ecommerce',
+          realizationLabel: 'MNSI',
+          realizationFragment: 'project-mnsi',
         },
       ],
       selfReview:
@@ -525,8 +533,9 @@ export const competencies: Competency[] = [
         'Perfectionner la communication de synthese pour les comites de pilotage.',
       trainings: ['Ateliers de communication professionnelle', 'Pratique de restitution orale orientee decision'],
       achievements: [
-        { label: 'Plateforme E-Commerce', fragment: 'project-ecommerce' },
-        { label: 'Application SaaS', fragment: 'project-saas' },
+        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
+        { label: 'Octopus', fragment: 'project-octopus' },
       ],
     },
   },
@@ -574,7 +583,7 @@ export const competencies: Competency[] = [
         },
       ],
       selfReview:
-        'Niveau intermediaire a avance. Je suis a l aise pour construire une API claire, mais je veux encore renforcer les patterns avancés et la securisation.',
+        'Niveau intermediaire a avance. Je suis a l aise pour construire une API claire, mais je veux encore renforcer les patterns avanc+�s et la securisation.',
       priorityInProfile:
         'Competence technique importante pour evoluer vers des architectures full-stack plus solides et plus industrialisees.',
       acquisitionSpeed:
@@ -586,7 +595,7 @@ export const competencies: Competency[] = [
       trainings: ['Perfectionnement Spring Security', 'Approfondissement des tests Spring Boot'],
       achievements: [
         { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
-        { label: 'MNSI', fragment: 'project-mnsi' },
+        { label: 'GameUp', fragment: 'project-gameup' },
       ],
     },
   },
@@ -645,8 +654,7 @@ export const competencies: Competency[] = [
         'Faire de cette competence un vrai support d organisation technique et de pilotage efficace.',
       trainings: ['Automatisation de routines techniques', 'Amelioration continue du suivi des actions'],
       achievements: [
-        { label: 'GameUp', fragment: 'project-gameup' },
-        { label: 'IHM-GED', fragment: 'project-ihm-ged' },
+        { label: 'Octopus', fragment: 'project-octopus' },
       ],
     },
   },

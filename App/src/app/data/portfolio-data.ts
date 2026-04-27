@@ -264,7 +264,7 @@ export const skills: Skill[] = [
   },
   {
     id: 'organisation',
-    name: 'Organisation',
+    name: 'Organisation et pilotage de projet',
     icon: 'OR',
     category: 'Soft Skills',
     level: 87,
@@ -317,7 +317,7 @@ export const projects: Project[] = [
       en: 'School project built to practice a full front-end/back-end architecture. The app covers project creation, task management, status tracking, priorities, and assignment. It integrates Dockerized execution, Git versioning, and CI/CD/testing practices to ensure software quality.',
     },
     image: '/images/project-gestion.jpg',
-    skills: ['angular', 'spring-boot', 'mysql', 'docker', 'git', 'autonomie'],
+    skills: ['spring-boot', 'git', 'angular', 'docker', 'autonomie', 'organisation'],
   },
   {
     id: 'mnsi',
@@ -339,7 +339,7 @@ export const projects: Project[] = [
       en: 'Company project delivered in a continuous delivery context, with strong non-regression requirements. Contributed to test strategy, prioritization of critical scenarios, and defect tracking until resolution.',
     },
     image: '/images/project-dashboard.jpg',
-    skills: ['selenium-java', 'jenkins', 'postman', 'git', 'autonomie'],
+    skills: ['selenium-java', 'jenkins', 'git', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
   },
   {
     id: 'ihm-ged',
@@ -361,7 +361,7 @@ export const projects: Project[] = [
       en: 'Project delivered in a company context with high front-end quality requirements. Functional validation of UI journeys, business rules checks, related API tests, and detailed bug reporting to speed up fixes.',
     },
     image: '/images/project-ecommerce.jpg',
-    skills: ['angular', 'postman', 'mysql', 'git', 'travail-equipe'],
+    skills: ['selenium-java', 'git', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
   },
   {
     id: 'octopus',
@@ -383,7 +383,7 @@ export const projects: Project[] = [
       en: 'Company project with frequent release cycles. Contributed to automating critical tests, CI pipeline execution, and result analysis to secure production releases.',
     },
     image: '/images/project-saas.jpg',
-    skills: ['selenium-java', 'jenkins', 'docker', 'git', 'organisation'],
+    skills: ['mr-souricate', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
   },
   {
     id: 'gameup',
@@ -405,6 +405,6 @@ export const projects: Project[] = [
       en: 'School project developed to practice interface design, application logic, and user journey quality. Contributed to implementation, validation tests, and iterative improvements after user feedback.',
     },
     image: '/images/project-dashboard.jpg',
-    skills: ['angular', 'git', 'autonomie', 'communication'],
+    skills: ['spring-boot', 'autonomie', 'organisation'],
   },
 ];

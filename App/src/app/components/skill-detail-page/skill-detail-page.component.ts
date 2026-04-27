@@ -5,6 +5,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 import { competencies } from '../../data/competencies-data';
+import { projects } from '../../data/portfolio-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
 @Component({
@@ -17,6 +18,7 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
 export class SkillDetailPageComponent {
   readonly state = inject(PortfolioStateService);
   private readonly route = inject(ActivatedRoute);
+  private readonly projectIds = new Set(projects.map((project) => project.id));
 
   private readonly skillId = toSignal(
     this.route.paramMap.pipe(map((params) => params.get('id') ?? '')),
@@ -33,5 +35,19 @@ export class SkillDetailPageComponent {
 
   competencyTypeLabel(domain: 'technical' | 'human'): string {
     return domain === 'technical' ? 'Competence technique' : 'Competence humaine';
+  }
+
+  projectRoute(fragment?: string): string[] {
+    if (!fragment) {
+      return ['/realisations'];
+    }
+
+    const projectId = fragment.startsWith('project-') ? fragment.slice('project-'.length) : fragment;
+
+    if (this.projectIds.has(projectId)) {
+      return ['/realisations', projectId];
+    }
+
+    return ['/realisations'];
   }
 }
