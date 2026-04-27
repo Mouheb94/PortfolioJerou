@@ -1,4 +1,4 @@
-export type Locale = 'fr' | 'en';
+﻿export type Locale = 'fr' | 'en';
 
 export interface TimelineEntry {
   year: string;
@@ -202,7 +202,7 @@ paragraphs: [
     skills: {
       title: 'Compétences',
       subtitle: 'Compétences techniques et humaines:',
-      seeDetail: 'Voir le detail',
+      seeDetail: 'Voir le détail',
       close: 'Fermer',
       experience: 'Expérience',
       level: 'Niveau',

@@ -1,4 +1,4 @@
-export interface Skill {
+﻿export interface Skill {
   id: string;
   name: string;
   icon: string;
@@ -47,7 +47,7 @@ export const skills: Skill[] = [
       fr: 'Surcouche typée de JavaScript. Utilisée dans tous mes projets pour assurer la qualité du code, la maintenabilité et la productivité.',
     },
     projects: {
-      fr: ['Tous les projets', 'Bibliotheques open-source'],
+      fr: ['Tous les projets', 'Bibliothèques open-source'],
     },
   },
   {
@@ -117,7 +117,7 @@ export const skills: Skill[] = [
       fr: 'Conteneurisation d’applications. Création d’environnements de développement reproductibles et déploiement via Docker Compose.',
     },
     projects: {
-      fr: ['Infrastructure CI/CD', 'Deploiement cloud'],
+      fr: ['Infrastructure CI/CD', 'Déploiement cloud'],
     },
   },
   {
@@ -156,7 +156,7 @@ export const skills: Skill[] = [
     level: 76,
     experience: { fr: '2 ans' },
     description: {
-      fr: 'Base relationnelle pour modeliser, stocker et requeter les donnees metier.',
+      fr: 'Base relationnelle pour modéliser, stocker et requêter les données métier.',
     },
     projects: {
       fr: ['PMT - Project Management Tool', 'IHM-GED'],
@@ -170,7 +170,7 @@ export const skills: Skill[] = [
     level: 88,
     experience: { fr: '3 ans' },
     description: {
-      fr: 'Capacite a piloter les taches de bout en bout avec responsabilite.',
+      fr: 'Capacité à piloter les tâches de bout en bout avec responsabilité.',
     },
     projects: {
       fr: ['Tous les projets'],
@@ -184,7 +184,7 @@ export const skills: Skill[] = [
     level: 92,
     experience: { fr: '3 ans' },
     description: {
-      fr: 'Automatisation des tests web fonctionnels et de non-regression.',
+      fr: 'Automatisation des tests web fonctionnels et de non-régression.',
     },
     projects: {
       fr: ['MNSI', 'Octopus'],
@@ -198,7 +198,7 @@ export const skills: Skill[] = [
     level: 88,
     experience: { fr: '2 ans' },
     description: {
-      fr: 'Orchestration des pipelines CI et des executions de tests.',
+      fr: 'Orchestration des pipelines CI et des exécutions de tests.',
     },
     projects: {
       fr: ['MNSI', 'Octopus'],
@@ -212,7 +212,7 @@ export const skills: Skill[] = [
     level: 86,
     experience: { fr: '2 ans' },
     description: {
-      fr: 'Validation manuelle et automatisee des API.',
+      fr: 'Validation manuelle et automatisée des API.',
     },
     projects: {
       fr: ['MNSI', 'IHM-GED'],
@@ -220,13 +220,13 @@ export const skills: Skill[] = [
   },
   {
     id: 'travail-equipe',
-    name: 'Travail d equipe',
+    name: 'Travail d\'équipe',
     icon: 'TE',
     category: 'Soft Skills',
     level: 90,
     experience: { fr: '3 ans' },
     description: {
-      fr: 'Collaboration transverse avec equipes metier et techniques.',
+      fr: 'Collaboration transverse avec équipes métier et techniques.',
     },
     projects: {
       fr: ['IHM-GED', 'MNSI'],
@@ -240,7 +240,7 @@ export const skills: Skill[] = [
     level: 87,
     experience: { fr: '3 ans' },
     description: {
-      fr: 'Planification, priorisation et pilotage des activites.',
+      fr: 'Planification, priorisation et pilotage des activités.',
     },
     projects: {
       fr: ['Octopus', 'PMT - Project Management Tool'],
@@ -254,7 +254,7 @@ export const skills: Skill[] = [
     level: 85,
     experience: { fr: '3 ans' },
     description: {
-      fr: 'Communication claire des risques et des resultats de test.',
+      fr: 'Communication claire des risques et des résultats de test.',
     },
     projects: {
       fr: ['GameUp', 'MNSI'],
@@ -267,16 +267,16 @@ export const projects: Project[] = [
     id: 'pmt',
     contextType: 'school',
     context: {
-      fr: 'Projet ecole',
+      fr: 'Projet école',
     },
     title: {
       fr: 'PMT - Project Management Tool',
     },
     shortDesc: {
-      fr: 'Application web full-stack de gestion de projet (projets, taches, statuts, priorites, attribution), concue pour etre maintenable, testable et industrialisable.',
+      fr: 'Application web full-stack de gestion de projet (projets, tâches, statuts, priorités, attribution), conçue pour être maintenable, testable et industrialisable.',
     },
     fullDesc: {
-      fr: 'Projet ecole realise pour mettre en pratique une architecture complete front-end/back-end. L application couvre la creation de projets, la gestion des taches, les statuts, les priorites et l attribution. Le projet integre une execution conteneurisee avec Docker, un versionnement Git, et des pratiques CI/CD/tests pour garantir la qualite logicielle.',
+      fr: 'Projet école réalisé pour mettre en pratique une architecture complète front-end/back-end. L\'application couvre la création de projets, la gestion des tâches, les statuts, les priorités et l\'attribution. Le projet intègre une exécution conteneurisée avec Docker, un versionnement Git, et des pratiques CI/CD/tests pour garantir la qualité logicielle.',
     },
     image: '/images/project-gestion.jpg',
     skills: ['spring-boot', 'git', 'angular', 'docker', 'autonomie', 'organisation'],
@@ -291,10 +291,10 @@ export const projects: Project[] = [
       fr: 'MNSI',
     },
     shortDesc: {
-      fr: 'Projet entreprise oriente qualite et fiabilite des parcours metier, avec automatisation des validations critiques.',
+      fr: 'Projet entreprise orienté qualité et fiabilité des parcours métier, avec automatisation des validations critiques.',
     },
     fullDesc: {
-      fr: 'Projet entreprise mene dans un contexte de livraison continue, avec un fort enjeu de non-regression. Contribution a la strategie de test, a la priorisation des scenarios critiques et au suivi des anomalies jusqu a resolution.',
+      fr: 'Projet entreprise mené dans un contexte de livraison continue, avec un fort enjeu de non-régression. Contribution à la stratégie de test, à la priorisation des scénarios critiques et au suivi des anomalies jusqu\'à résolution.',
     },
     image: '/images/project-dashboard.jpg',
     skills: ['selenium-java', 'jenkins', 'git', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
@@ -312,7 +312,7 @@ export const projects: Project[] = [
       fr: 'Mise en place de tests automatisés front-end avec Selenium et validation des API backend avec Postman pour fiabiliser une nouvelle plateforme GED unifiant les systèmes Mutex et Harmonie Mutuelle.',
     },
     fullDesc: {
-      fr: 'Projet realise en environnement entreprise avec des exigences elevees de qualite front-end. Validation fonctionnelle des parcours IHM, controle des regles metier, tests API associes, et remontes d anomalies detaillees pour accelerer les corrections.',
+      fr: 'Projet réalisé en environnement entreprise avec des exigences élevées de qualité front-end. Validation fonctionnelle des parcours IHM, contrôle des règles métier, tests API associés, et remontées d\'anomalies détaillées pour accélérer les corrections.',
     },
     image: '/images/project-ecommerce.jpg',
     skills: ['selenium-java', 'postman', 'git', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
@@ -327,10 +327,10 @@ export const projects: Project[] = [
       fr: 'Octopus',
     },
     shortDesc: {
-      fr: 'Projet entreprise pilote en qualite logicielle, avec automatisation et suivi des campagnes de tests de non-regression.',
+      fr: 'Projet entreprise piloté en qualité logicielle, avec automatisation et suivi des campagnes de tests de non-régression.',
     },
     fullDesc: {
-      fr: 'Projet entreprise avec cycles de livraison frequents. Participation a l automatisation des tests critiques, a l execution via pipelines CI, et a l analyse des resultats pour securiser les mises en production.',
+      fr: 'Projet entreprise avec cycles de livraison fréquents. Participation à l\'automatisation des tests critiques, à l\'exécution via pipelines CI, et à l\'analyse des résultats pour sécuriser les mises en production.',
     },
     image: '/images/project-saas.jpg',
     skills: ['mr-souricate', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
@@ -339,7 +339,7 @@ export const projects: Project[] = [
     id: 'gameup',
     contextType: 'school',
     context: {
-      fr: 'Projet ecole',
+      fr: 'Projet école',
     },
     title: {
       fr: 'GameUp',
@@ -348,7 +348,7 @@ export const projects: Project[] = [
       fr: 'Refonte d’une API Spring obsolète, sécurisation avec Spring Security, amélioration de l’architecture backend et intégration d’un système de recommandation intelligent avec FastAPI et Machine Learning.',
     },
     fullDesc: {
-      fr: 'Projet ecole developpe pour travailler la conception d interfaces, la logique applicative et la qualite des parcours. Participation a la realisation technique, aux tests de validation et a l amelioration continue apres retours utilisateur.',
+      fr: 'Projet école développé pour travailler la conception d\'interfaces, la logique applicative et la qualité des parcours. Participation à la réalisation technique, aux tests de validation et à l\'amélioration continue après retours utilisateur.',
     },
     image: '/images/project-dashboard.jpg',
     skills: ['spring-boot', 'autonomie', 'organisation'],

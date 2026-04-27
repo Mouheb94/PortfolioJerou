@@ -39,7 +39,7 @@ export const competencies: Competency[] = [
     level: 80,
     domain: 'technical',
     summary: {
-      fr: 'Automatisation des tests fonctionnels et de non-regression sur applications web avec une approche fiable et maintenable.',
+      fr: 'Automatisation des tests fonctionnels et de non-régression sur applications web avec une approche fiable et maintenable.',
     },
     article: {
       definitionParagraphs: [
@@ -50,11 +50,11 @@ export const competencies: Competency[] = [
       ],
       proofs: [
         {
-          title: 'TNR automatisee sur parcours de souscription',
+          title: 'TNR automatisée sur parcours de souscription',
           anecdote:
-            'J ai automatise les parcours de souscription les plus sensibles avec des jeux de donnees parametrables et des verifications metier.',
+            'J ai automatise les parcours de souscription les plus sensibles avec des jeux de données parametrables et des verifications métier.',
           implementationProof:
-            'La competence a ete mise en oeuvre par la creation d une architecture Page Object, une gestion des waits explicites et des rapports exploitables pour les equipes.',
+            'La compétence a ete mise en oeuvre par la creation d une architecture Page Object, une gestion des waits explicites et des rapports exploitables pour les equipes.',
           resultAndValue:
             'Le temps de validation avant release a baisse et les regressions critiques ont ete detectees plus tot. Ma valeur ajoutee a ete de fiabiliser les campagnes et de rendre les resultats actionnables.',
           realizationLabel: 'MNSI',
@@ -73,9 +73,9 @@ export const competencies: Competency[] = [
         },
       ],
       selfReview:
-        'Niveau de maitrise avance. Je suis autonome sur la conception, la maintenance et l evolution des suites automatisees.',
+        'Niveau de maîtrise avance. Je suis autonome sur la conception, la maintenance et l evolution des suites automatisées.',
       priorityInProfile:
-        'Competence prioritaire dans mon profil d expert QA automatisation, car elle impacte directement la qualite des livraisons.',
+        'Compétence prioritaire dans mon profil d expert QA automatisation, car elle impacte directement la qualité des livraisons.',
       acquisitionSpeed:
         'Acquisition rapide grace a une pratique continue en alternance et a des besoins projet immediats.',
       advice:
@@ -101,33 +101,33 @@ export const competencies: Competency[] = [
     article: {
       definitionParagraphs: [
         'Jenkins me permet de transformer des tests isoles en processus de controle continu integre au delivery.',
-        'Jenkins est un orchestrateur de pipelines qui automatise l execution des tests, la publication des rapports et les controles qualite.',
-        'Dans mes missions QA, Jenkins est utilise pour lancer les TNR a chaque etape cle des mises en production.',
-        'Cette competence est liee a l actualite DevOps: fiabilite des releases, tra+�abilite et feedback rapide.',
+        'Jenkins est un orchestrateur de pipelines qui automatise l execution des tests, la publication des rapports et les controles qualité.',
+        'Dans mes missions QA, Jenkins est utilise pour lancer les TNR a chaque étape cle des mises en production.',
+        'Cette compétence est liee a l actualite DevOps: fiabilite des releases, traçabilité et feedback rapide.',
       ],
       proofs: [
         {
-          title: 'Pipeline de non-regression quotidienne',
+          title: 'Pipeline de non-régression quotidienne',
           anecdote:
             'J ai mis en place un pipeline Jenkins planifie executant les tests critiques chaque nuit avec publication automatique des rapports.',
           implementationProof:
-            'J ai configure les stages, les artefacts de test et les notifications afin que les equipes re+�oivent une vision claire des echecs.',
+            'J ai configure les stages, les artefacts de test et les notifications afin que les equipes reçoivent une vision claire des echecs.',
           resultAndValue:
-            'Les anomalies ont ete detectees avant l ouverture de la journee de travail, ce qui a reduit les blocages. Ma valeur ajoutee a ete d installer un rythme de qualite proactif.',
+            'Les anomalies ont ete detectees avant l ouverture de la journee de travail, ce qui a reduit les blocages. Ma valeur ajoutee a ete d installer un rythme de qualité proactif.',
           realizationLabel: 'Infrastructure CI/CD',
         },
       ],
       selfReview:
         'Niveau solide avec autonomie sur la configuration des jobs QA et l interpretation des resultats.',
       priorityInProfile:
-        'Competence centrale pour connecter mes activites de test au cycle de vie logiciel.',
+        'Compétence centrale pour connecter mes activites de test au cycle de vie logiciel.',
       acquisitionSpeed:
         'Acquisition progressive mais rapide des bonnes pratiques via la pratique quotidienne.',
       advice:
-        'Commencer simple, versionner les pipelines et ajouter les controles qualite par increment.',
+        'Commencer simple, versionner les pipelines et ajouter les controles qualité par increment.',
       mediumTermGoal:
-        'Renforcer mes competences sur les pipelines as code et l optimisation des temps d execution.',
-      trainings: ['Autoformation Jenkins declaratif', 'Approfondissement CI/CD orientee qualite'],
+        'Renforcer mes compétences sur les pipelines as code et l optimisation des temps d execution.',
+      trainings: ['Autoformation Jenkins declaratif', 'Approfondissement CI/CD orientee qualité'],
       achievements: [
         { label: 'MNSI', fragment: 'project-mnsi' },
       ],
@@ -140,14 +140,14 @@ export const competencies: Competency[] = [
     level: 76,
     domain: 'technical',
     summary: {
-      fr: 'Tests manuels et automatises des API, validation des echanges back-end et controle de la qualite des services.',
+      fr: 'Tests manuels et automatisés des API, validation des echanges back-end et controle de la qualité des services.',
     },
     article: {
       definitionParagraphs: [
-        'Postman est ma boite a outils principale pour valider rapidement la fiabilite et la coherence des API.',
+        'Postman est ma boite a outils principale pour valider rapidement la fiabilite et la cohérence des API.',
         'Postman est une plateforme de test API permettant de construire des collections, de verifier les reponses et d automatiser des scenarios de validation.',
-        'Je l utilise lors des phases de recette et de non-regression pour securiser les flux entre front-end et back-end.',
-        'Cette competence suit l evolution des architectures API-first et la necessite de contractualiser les services.',
+        'Je l utilise lors des phases de recette et de non-régression pour securiser les flux entre front-end et back-end.',
+        'Cette compétence suit l evolution des architectures API-first et la necessite de contractualiser les services.',
       ],
       proofs: [
         {
@@ -164,13 +164,13 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau avance sur la conception de collections et le diagnostic des anomalies API.',
       priorityInProfile:
-        'Competence strategique car de nombreuses anomalies critiques se situent dans les interfaces de services.',
+        'Compétence strategique car de nombreuses anomalies critiques se situent dans les interfaces de services.',
       acquisitionSpeed:
-        'Progression rapide grace a son usage quotidien sur des flux metier prioritaires.',
+        'Progression rapide grace a son usage quotidien sur des flux métier prioritaires.',
       advice:
         'Documenter les preconditions, reutiliser les variables d environnement et maintenir des jeux de tests representatifs.',
       mediumTermGoal:
-        'Monter en competence sur les tests de performance API et la gouvernance des contrats.',
+        'Monter en compétence sur les tests de performance API et la gouvernance des contrats.',
       trainings: ['Autoformation sur les tests contractuels', 'Perfectionnement sur Newman et execution CI'],
       achievements: [
         { label: 'MNSI', fragment: 'project-mnsi' },
@@ -185,31 +185,31 @@ export const competencies: Competency[] = [
     level: 75,
     domain: 'technical',
     summary: {
-      fr: 'Gestion des versions, suivi des evolutions et collaboration efficace avec les equipes de developpement.',
+      fr: 'Gestion des versions, suivi des évolutions et collaboration efficace avec les equipes de développement.',
     },
     article: {
       definitionParagraphs: [
-        'Git structure ma contribution quotidienne et garantit la tra+�abilite des evolutions qualite.',
+        'Git structure ma contribution quotidienne et garantit la traçabilité des évolutions qualité.',
         'Git est un systeme de gestion de versions distribue qui permet de suivre, partager et securiser les modifications de code.',
         'Je l utilise pour versionner les scripts de tests, collaborer avec les developpeurs et fiabiliser les livraisons.',
-        'Cette competence est essentielle dans les pratiques modernes de revue de code et de collaboration asynchrone.',
+        'Cette compétence est essentielle dans les pratiques modernes de revue de code et de collaboration asynchrone.',
       ],
       proofs: [
         {
-          title: 'Structuration des branches de tests automatises',
+          title: 'Structuration des branches de tests automatisés',
           anecdote:
-            'J ai propose une convention de branches et de messages de commit pour clarifier les evolutions de scripts QA.',
+            'J ai propose une convention de branches et de messages de commit pour clarifier les évolutions de scripts QA.',
           implementationProof:
             'Mise en oeuvre via merge requests documentees et revues croisees avec les equipes projet.',
           resultAndValue:
-            'La lisibilite de l historique s est amelioree et les reprises de contexte sont plus rapides. Ma valeur ajoutee a ete d elever la qualite de collaboration.',
+            'La lisibilite de l historique s est amelioree et les reprises de contexte sont plus rapides. Ma valeur ajoutee a ete d elever la qualité de collaboration.',
           realizationLabel: 'Tous les projets',
         },
       ],
       selfReview:
-        'Niveau confirme avec maitrise des workflows courants et des bonnes pratiques collaboratives.',
+        'Niveau confirme avec maîtrise des workflows courants et des bonnes pratiques collaboratives.',
       priorityInProfile:
-        'Competence transversale qui supporte toutes mes activites techniques.',
+        'Compétence transversale qui supporte toutes mes activites techniques.',
       acquisitionSpeed:
         'Acquisition reguliere et constante depuis mes premiers projets.',
       advice:
@@ -235,9 +235,9 @@ export const competencies: Competency[] = [
     },
     article: {
       definitionParagraphs: [
-        'Angular me permet de comprendre en profondeur le front-end pour mieux anticiper les risques de qualite.',
+        'Angular me permet de comprendre en profondeur le front-end pour mieux anticiper les risques de qualité.',
         'Angular est un framework front-end structure qui facilite la construction d interfaces modulaires et maintenables.',
-        'Je mobilise cette competence pour analyser les parcours utilisateurs et concevoir des tests alignes avec le comportement de l application.',
+        'Je mobilise cette compétence pour analyser les parcours utilisateurs et concevoir des tests alignes avec le comportement de l application.',
         'Elle est en phase avec l actualite des applications web riches et des enjeux d experience utilisateur.',
       ],
       proofs: [
@@ -248,7 +248,7 @@ export const competencies: Competency[] = [
           implementationProof:
             'J ai exploite la logique de routing et les etats de formulaires pour ecrire des cas de test alignes sur l usage reel.',
           resultAndValue:
-            'Les anomalies d interface ont ete detectees plus tot et les recettes ont gagne en pertinence. Ma valeur ajoutee a ete d associer vision QA et comprehension front.',
+            'Les anomalies d interface ont ete detectees plus tot et les recettes ont gagne en pertinence. Ma valeur ajoutee a ete d associer vision QA et compréhension front.',
           realizationLabel: 'Application de Gestion',
           realizationFragment: 'project-gestion',
         },
@@ -256,7 +256,7 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau intermediaire a avance, avec bonne autonomie pour l analyse fonctionnelle et la validation UI.',
       priorityInProfile:
-        'Competence importante pour renforcer ma polyvalence entre qualite et developpement.',
+        'Compétence importante pour renforcer ma polyvalence entre qualité et développement.',
       acquisitionSpeed:
         'Acquisition continue au fil des projets et de la pratique en contexte reeel.',
       advice:
@@ -280,9 +280,9 @@ export const competencies: Competency[] = [
     },
     article: {
       definitionParagraphs: [
-        'Docker m aide a maitriser la reproductibilite, point cle pour des validations fiables.',
+        'Docker m aide a maîtriser la reproductibilite, point cle pour des validations fiables.',
         'Docker est une technologie de conteneurisation qui encapsule application et dependances dans un environnement portable.',
-        'Dans mes activites QA, cette competence est utile pour standardiser les environnements de test.',
+        'Dans mes activites QA, cette compétence est utile pour standardiser les environnements de test.',
         'Elle est au coeur des pratiques cloud-native et de la fiabilite des chaines de livraison.',
       ],
       proofs: [
@@ -301,13 +301,13 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau intermediaire avec capacite a utiliser et adapter des environnements de test conteneurises.',
       priorityInProfile:
-        'Competence importante pour soutenir l automatisation et la stabilite du delivery.',
+        'Compétence importante pour soutenir l automatisation et la stabilite du delivery.',
       acquisitionSpeed:
         'Acquisition progressive au rythme des besoins projet et des pratiques DevOps.',
       advice:
         'Documenter les images utilisees et versionner les configurations pour garantir la reproductibilite.',
       mediumTermGoal:
-        'Renforcer la maitrise de Docker Compose avance et des pratiques d optimisation des images.',
+        'Renforcer la maîtrise de Docker Compose avance et des pratiques d optimisation des images.',
       trainings: ['Autoformation Docker Compose avance', 'Veille sur les bonnes pratiques conteneurisation'],
       achievements: [
         { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
@@ -316,29 +316,29 @@ export const competencies: Competency[] = [
   },
   {
     id: 'travail-equipe',
-    name: 'Travail d equipe',
+    name: 'Travail d équipe',
     logo: 'https://api.iconify.design/mdi/account-group.svg?color=%2314b8a6',
     level: 79,
     domain: 'human',
     summary: {
-      fr: 'Collaboration quotidienne avec les developpeurs, les equipes metier et les testeurs pour garantir la qualite des livrables.',
+      fr: 'Collaboration quotidienne avec les developpeurs, les equipes métier et les testeurs pour garantir la qualité des livrables.',
     },
     article: {
       definitionParagraphs: [
-        'Le travail d equipe est la competence humaine qui maximise l impact des competences techniques.',
-        'Le travail d equipe consiste a coordonner des profils differents autour d un objectif commun de qualite et de valeur metier.',
-        'Dans les projets QA, cette competence est decisive pour partager les risques et aligner les priorites.',
-        'Elle est en resonance avec les organisations agiles et la co-construction entre metier, dev et qualite.',
+        'Le travail d équipe est la compétence humaine qui maximise l impact des compétences techniques.',
+        'Le travail d équipe consiste a coordonner des profils differents autour d un objectif commun de qualité et de valeur métier.',
+        'Dans les projets QA, cette compétence est decisive pour partager les risques et aligner les priorites.',
+        'Elle est en resonance avec les organisations agiles et la co-construction entre métier, dev et qualité.',
       ],
       proofs: [
         {
           title: 'Animation de points de synchronisation QA',
           anecdote:
-            'J ai organise des points de suivi courts entre QA, dev et metier pour qualifier rapidement les anomalies detectees.',
+            'J ai organise des points de suivi courts entre QA, dev et métier pour qualifier rapidement les anomalies detectees.',
           implementationProof:
             'J ai formalise des criteres de priorisation et des regles de communication communes.',
           resultAndValue:
-            'Les decisions ont ete prises plus vite et les incomprehensions ont diminue. Ma valeur ajoutee a ete de fluidifier la collaboration.',
+            'Les decisions ont ete prises plus vite et les incompréhensions ont diminue. Ma valeur ajoutee a ete de fluidifier la collaboration.',
           realizationLabel: 'MNSI',
           realizationFragment: 'project-gestion',
         },
@@ -346,13 +346,13 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau eleve, avec une posture orientee cooperation et resultat collectif.',
       priorityInProfile:
-        'Competence majeure dans mon metier actuel, car la qualite est toujours une responsabilite partagee.',
+        'Compétence majeure dans mon métier actuel, car la qualité est toujours une responsabilité partagee.',
       acquisitionSpeed:
         'Acquisition continue, acceleree par des contextes projet transverses et exigeants.',
       advice:
-        'Rendre visibles les risques, parler le langage metier et maintenir un climat constructif.',
+        'Rendre visibles les risques, parler le langage métier et maintenir un climat constructif.',
       mediumTermGoal:
-        'Developper davantage mes competences de facilitation et de pilotage transverse.',
+        'Développer davantage mes compétences de facilitation et de pilotage transverse.',
       trainings: ['Lecture et pratique sur la communication inter-equipes', 'Ateliers internes d amelioration continue'],
       achievements: [
         { label: 'MNSI', fragment: 'project-mnsi' },
@@ -375,7 +375,7 @@ export const competencies: Competency[] = [
         'L autonomie me permet de tenir un haut niveau de fiabilite dans les phases critiques de validation.',
         'L autonomie est la capacite a organiser son activite, arbitrer les priorites et prendre des decisions pertinentes sans supervision constante.',
         'En QA, elle se traduit par la capacite a gerer une campagne de test de bout en bout.',
-        'Cette competence est centrale dans les equipes agiles qui attendent de la responsabilisation et de la proactivite.',
+        'Cette compétence est centrale dans les equipes agiles qui attendent de la responsabilisation et de la proactivite.',
       ],
       proofs: [
         {
@@ -391,15 +391,15 @@ export const competencies: Competency[] = [
         },
       ],
       selfReview:
-        'Niveau eleve avec une bonne capacite a assumer la responsabilite des livrables qualite.',
+        'Niveau eleve avec une bonne capacite a assumer la responsabilité des livrables qualité.',
       priorityInProfile:
-        'Competence prioritaire dans mon metier actuel, surtout sur les periodes de forte charge.',
+        'Compétence prioritaire dans mon métier actuel, surtout sur les periodes de forte charge.',
       acquisitionSpeed:
-        'Acquisition rapide, rendue possible par des missions confiees tres tot avec responsabilites fortes.',
+        'Acquisition rapide, rendue possible par des missions confiees tres tot avec responsabilités fortes.',
       advice:
         'Documenter ses decisions, communiquer tot en cas de risque et rester ouvert au feedback.',
       mediumTermGoal:
-        'Renforcer l autonomie sur des perimetres plus larges de pilotage qualite.',
+        'Renforcer l autonomie sur des perimetres plus larges de pilotage qualité.',
       trainings: ['Autoformation sur les methodes de priorisation', 'Amelioration continue de ma gestion du temps'],
       achievements: [
         { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
@@ -421,16 +421,16 @@ export const competencies: Competency[] = [
     },
     article: {
       definitionParagraphs: [
-        'L organisation est la condition pour tenir la qualite dans des contraintes de delai fortes.',
+        'L organisation est la condition pour tenir la qualité dans des contraintes de delai fortes.',
         'L organisation consiste a structurer les activites, planifier les actions et prioriser selon les risques et les objectifs.',
         'Je l applique pour preparer les campagnes de tests et optimiser la couverture dans le temps disponible.',
-        'Cette competence repond aux enjeux actuels de delivery rapide sans compromis sur la qualite.',
+        'Cette compétence repond aux enjeux actuels de delivery rapide sans compromis sur la qualité.',
       ],
       proofs: [
         {
           title: 'Planification ciblee d une recette',
           anecdote:
-            'J ai decoupe la campagne de test en lots priorises selon criticite metier et probabilite de regression.',
+            'J ai decoupe la campagne de test en lots priorises selon criticite métier et probabilite de regression.',
           implementationProof:
             'J ai utilise une matrice de priorisation et un suivi quotidien des avancements pour reallouer rapidement les efforts.',
           resultAndValue:
@@ -442,14 +442,14 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau eleve avec une approche methodique et orientee priorites.',
       priorityInProfile:
-        'Competence essentielle pour garantir la fiabilite des livraisons dans mon metier.',
+        'Compétence essentielle pour garantir la fiabilite des livraisons dans mon métier.',
       acquisitionSpeed:
         'Acquisition reguliere, renforcee par la gestion simultanee de plusieurs chantiers.',
       advice:
-        'Toujours distinguer urgent et important, puis aligner le plan de test sur les risques metier.',
+        'Toujours distinguer urgent et important, puis aligner le plan de test sur les risques métier.',
       mediumTermGoal:
         'Monter en maturite sur les indicateurs de pilotage QA et la prevision de charge.',
-      trainings: ['Formation interne gestion des priorites', 'Pratique de tableaux de pilotage qualite'],
+      trainings: ['Formation interne gestion des priorites', 'Pratique de tableaux de pilotage qualité'],
       achievements: [
         { label: 'PMT - Project Management Tool', fragment: 'project-pmt' },
         { label: 'MNSI', fragment: 'project-mnsi' },
@@ -466,7 +466,7 @@ export const competencies: Competency[] = [
     level: 72,
     domain: 'human',
     summary: {
-      fr: 'Echanges clairs avec les equipes techniques et fonctionnelles pour assurer une bonne comprehension des besoins.',
+      fr: 'Echanges clairs avec les equipes techniques et fonctionnelles pour assurer une bonne compréhension des besoins.',
     },
     article: {
       definitionParagraphs: [
@@ -479,9 +479,9 @@ export const competencies: Competency[] = [
         {
           title: 'Formalisation des anomalies a fort impact',
           anecdote:
-            'J ai standardise mes tickets d anomalies avec contexte, etapes de reproduction, criticite et proposition de verification.',
+            'J ai standardise mes tickets d anomalies avec contexte, étapes de reproduction, criticite et proposition de verification.',
           implementationProof:
-            'Chaque anomalie etait accompagnee de preuves et d un message adapte au destinataire (metier ou technique).',
+            'Chaque anomalie etait accompagnee de preuves et d un message adapte au destinataire (métier ou technique).',
           resultAndValue:
             'Le temps de traitement des anomalies a ete reduit et les allers-retours ont baisse. Ma valeur ajoutee a ete de rendre la communication orientee action.',
           realizationLabel: 'MNSI',
@@ -491,11 +491,11 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau confirme avec capacite a adapter le message au public cible.',
       priorityInProfile:
-        'Competence forte dans mon profil, car elle relie l analyse QA a la decision projet.',
+        'Compétence forte dans mon profil, car elle relie l analyse QA a la decision projet.',
       acquisitionSpeed:
         'Acquisition continue, marquee par des situations de coordination multi-acteurs.',
       advice:
-        'Etre factuel, structurer les messages et toujours expliciter l impact metier d un probleme.',
+        'Etre factuel, structurer les messages et toujours expliciter l impact métier d un probleme.',
       mediumTermGoal:
         'Perfectionner la communication de synthese pour les comites de pilotage.',
       trainings: ['Ateliers de communication professionnelle', 'Pratique de restitution orale orientee decision'],
@@ -517,18 +517,18 @@ export const competencies: Competency[] = [
     },
     article: {
       definitionParagraphs: [
-        'Spring Boot me permet de structurer des backends solides et lisibles, avec un vrai souci de separation des responsabilites et de maintenabilite.',
+        'Spring Boot me permet de structurer des backends solides et lisibles, avec un vrai souci de separation des responsabilités et de maintenabilite.',
         'Spring Boot est un framework Java qui simplifie la creation d applications serveur en apportant auto-configuration, injection de dependances et demarrage rapide.',
-        'Dans un contexte professionnel, il est ideal pour concevoir des API stables, testables et faciles a faire evoluer au rythme des besoins metier.',
+        'Dans un contexte professionnel, il est ideal pour concevoir des API stables, testables et faciles a faire evoluer au rythme des besoins métier.',
         'Il s inscrit dans les pratiques actuelles de microservices, d API-first et d industrialisation des applications back-end.',
       ],
       proofs: [
         {
           title: 'Conception d une API de gestion de projet',
           anecdote:
-            'J ai exploite Spring Boot pour structurer une API de gestion de projets avec des ressources metier claires et des controles d entree explicites.',
+            'J ai exploite Spring Boot pour structurer une API de gestion de projets avec des ressources métier claires et des controles d entree explicites.',
           implementationProof:
-            'La mise en oeuvre a repose sur des controllers, services et repositories bien separes, avec gestion centralisee des erreurs et validation des donnees.',
+            'La mise en oeuvre a repose sur des controllers, services et repositories bien separes, avec gestion centralisee des erreurs et validation des données.',
           resultAndValue:
             'Le backend est devenu plus lisible et plus simple a faire evoluer. Ma valeur ajoutee a ete de mettre en place une architecture propre et testable.',
           realizationLabel: 'PMT - Project Management Tool',
@@ -539,7 +539,7 @@ export const competencies: Competency[] = [
           anecdote:
             'Sur un projet entreprise, j ai consolide les endpoints existants pour fiabiliser les echanges avec le front et limiter les regressions.',
           implementationProof:
-            'J ai travaille sur la stabilite des contrats API, la gestion des exceptions et la coherence des reponses serveur.',
+            'J ai travaille sur la stabilite des contrats API, la gestion des exceptions et la cohérence des reponses serveur.',
           resultAndValue:
             'Les integrations sont devenues plus fluides et les corrections plus rapides. J ai apporte une meilleure robustesse du socle technique.',
           realizationLabel: 'MNSI',
@@ -549,11 +549,11 @@ export const competencies: Competency[] = [
       selfReview:
         'Niveau intermediaire a avance. Je suis a l aise pour construire une API claire, mais je veux encore renforcer les patterns avanc+�s et la securisation.',
       priorityInProfile:
-        'Competence technique importante pour evoluer vers des architectures full-stack plus solides et plus industrialisees.',
+        'Compétence technique importante pour evoluer vers des architectures full-stack plus solides et plus industrialisees.',
       acquisitionSpeed:
         'Bonne vitesse d acquisition grace a la pratique sur des projets concrets et a la repetition des besoins back-end.',
       advice:
-        'Travailler tres tot la structure du backend et ne pas sous-estimer la qualite des contrats API.',
+        'Travailler tres tot la structure du backend et ne pas sous-estimer la qualité des contrats API.',
       mediumTermGoal:
         'Atteindre un niveau plus avance sur les microservices, la securisation et les tests d integration Spring.',
       trainings: ['Perfectionnement Spring Security', 'Approfondissement des tests Spring Boot'],
@@ -570,14 +570,14 @@ export const competencies: Competency[] = [
     level: 72,
     domain: 'technical',
     summary: {
-      fr: 'Competence technique orientee analyse, automatisation et suivi des actions avec une logique de productivite.',
+      fr: 'Compétence technique orientee analyse, automatisation et suivi des actions avec une logique de productivite.',
     },
     article: {
       definitionParagraphs: [
-        'Mr Souricate represente pour moi une competence technique de productivite et de pilotage, utile pour organiser l information, automatiser les actions repetitives et garder une vision claire des priorites.',
+        'Mr Souricate represente pour moi une compétence technique de productivite et de pilotage, utile pour organiser l information, automatiser les actions repetitives et garder une vision claire des priorites.',
         'Mr Souricate peut etre compris comme un outil ou une approche technique d assistance a l analyse et au suivi, permettant de structurer, prioriser et fiabiliser des activites de travail.',
-        'Dans un environnement professionnel, ce type de competence est pertinent pour gagner du temps, standardiser les actions et reduire les oublis dans le suivi des taches ou des anomalies.',
-        'Cette competence s inscrit dans les pratiques actuelles d automatisation, d aide a la decision et de simplification des flux de travail.',
+        'Dans un environnement professionnel, ce type de compétence est pertinent pour gagner du temps, standardiser les actions et reduire les oublis dans le suivi des taches ou des anomalies.',
+        'Cette compétence s inscrit dans les pratiques actuelles d automatisation, d aide a la decision et de simplification des flux de travail.',
       ],
       proofs: [
         {
@@ -592,7 +592,7 @@ export const competencies: Competency[] = [
           realizationFragment: 'project-gameup',
         },
         {
-          title: 'Appui a la qualite et au suivi',
+          title: 'Appui a la qualité et au suivi',
           anecdote:
             'Sur des activites techniques, j ai adopte cette approche pour faciliter le suivi des points ouverts et des corrections a realiser.',
           implementationProof:
@@ -604,15 +604,15 @@ export const competencies: Competency[] = [
         },
       ],
       selfReview:
-        'Niveau intermediaire. Je maitrise bien l utilite de cette competence pour structurer mon travail, mais je veux encore la pousser en automatisation et en productivite.',
+        'Niveau intermediaire. Je maîtrise bien l utilite de cette compétence pour structurer mon travail, mais je veux encore la pousser en automatisation et en productivite.',
       priorityInProfile:
-        'Competence utile pour renforcer ma rigueur, ma vitesse d execution et ma capacite a traiter plusieurs sujets en parallel.',
+        'Compétence utile pour renforcer ma rigueur, ma vitesse d execution et ma capacite a traiter plusieurs sujets en parallel.',
       acquisitionSpeed:
         'Apprentissage rapide parce que la logique est directement applicable dans mes activites quotidiennes.',
       advice:
         'Toujours garder une methode simple et reproductible plutot que multiplier des outils compliques.',
       mediumTermGoal:
-        'Faire de cette competence un vrai support d organisation technique et de pilotage efficace.',
+        'Faire de cette compétence un vrai support d organisation technique et de pilotage efficace.',
       trainings: ['Automatisation de routines techniques', 'Amelioration continue du suivi des actions'],
       achievements: [
         { label: 'Octopus', fragment: 'project-octopus' },
