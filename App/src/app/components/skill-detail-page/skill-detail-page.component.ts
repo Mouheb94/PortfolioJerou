@@ -25,9 +25,15 @@ export class SkillDetailPageComponent {
     { initialValue: '' },
   );
 
-  readonly selectedSkill = computed(() =>
-    competencies.find((skill) => skill.id === this.skillId()) ?? null,
-  );
+  readonly selectedSkill = computed(() => {
+    const skill = competencies.find((item) => item.id === this.skillId());
+
+    if (!skill) {
+      return null;
+    }
+
+    return skill;
+  });
 
   masteryScore(level: number): string {
     return `${Math.round(level / 10)}/10`;

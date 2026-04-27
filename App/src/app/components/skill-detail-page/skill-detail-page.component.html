@@ -13,16 +13,10 @@
 
     <article class="glass-card article-card">
       <h2>Ma definition</h2>
-      <p>{{ skill.article.definition }}</p>
-      <h3>Contexte professionnel</h3>
-      <p>{{ skill.article.professionalContext }}</p>
-      <h3>Lien avec l actualite</h3>
-      <p>{{ skill.article.currentTopic }}</p>
+      <p *ngFor="let paragraph of skill.article.definitionParagraphs">{{ paragraph }}</p>
 
       <h2>Mes elements de preuve</h2>
-      <p class="section-note">
-        Anecdotes issues de projets realises dans la rubrique Realisations, avec preuves de mise en oeuvre, resultat et valeur ajoutee.
-      </p>
+  
       <section class="proof-block" *ngFor="let proof of skill.article.proofs; let i = index">
         <h3>Anecdote {{ i + 1 }}: {{ proof.title }}</h3>
         <p><strong>Situation:</strong> {{ proof.anecdote }}</p>

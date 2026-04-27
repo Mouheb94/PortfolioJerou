@@ -1,86 +1,252 @@
+/* ── Layout de base ── */
 .project-detail-section {
   padding-top: 7rem;
+  padding-bottom: 4rem;
 }
 
+/* ── Lien retour ── */
 .back-link {
   display: inline-flex;
-  margin-bottom: 0.8rem;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.4rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.45rem 0.82rem;
+  padding: 0.45rem 0.9rem;
   text-decoration: none;
   color: var(--muted-foreground);
+  font-size: 0.875rem;
   font-weight: 600;
+  transition: border-color 180ms, color 180ms, background 180ms;
 }
 
 .back-link:hover {
   border-color: var(--primary-border);
   color: var(--foreground);
+  background: var(--primary-soft);
 }
 
+.back-arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Carte principale ── */
 .project-detail-card {
-  padding: 1.35rem;
+  padding: 2.5rem 2.8rem;
+}
+
+/* ── En-tête du projet ── */
+.project-header {
+  margin-bottom: 0;
 }
 
 .project-context {
   display: inline-flex;
-  margin: 0;
+  margin: 0 0 0.9rem;
   border: 1px solid var(--primary-border);
   border-radius: 999px;
-  padding: 0.22rem 0.58rem;
+  padding: 0.25rem 0.68rem;
   font-size: 0.76rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--primary);
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  background: var(--primary-soft);
 }
 
-.project-detail-card h1 {
-  margin: 0.6rem 0 0;
-  font-size: clamp(2rem, 5vw, 2.7rem);
+.project-header h1 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+  line-height: 1.2;
+  color: var(--card-foreground);
 }
 
 .project-intro {
-  margin-top: 0.7rem;
+  margin: 0 0 1.6rem;
+  font-size: 1.05rem;
   color: var(--muted-foreground);
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 72ch;
 }
 
-.project-detail-card h2 {
-  margin: 1.25rem 0 0.55rem;
+.header-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--primary) 0%,
+    var(--primary-border) 40%,
+    transparent 100%
+  );
+  margin-bottom: 1rem;
+}
+
+/* ── Sections ── */
+.detail-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detail-section h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+}
+
+.section-content p,
+.section-content li {
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.section-content p + p {
+  margin-top: 0.75rem;
+}
+
+/* ── Liste bullets (objectifs) ── */
+.detail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.detail-list li {
+  position: relative;
+  padding-left: 1.3rem;
+}
+
+.detail-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.7;
+}
+
+/* ── Liste des étapes (timeline) ── */
+.steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  counter-reset: steps;
+  border-left: 2px solid var(--primary-border);
+  padding-left: 1.4rem;
+}
+
+.steps-list li {
+  counter-increment: steps;
+  position: relative;
+  padding: 0.5rem 0 0.5rem 0.2rem;
+}
+
+.steps-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: -2.1rem;
+  top: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  border: 1.5px solid var(--primary-border);
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Liste résultats (checkmarks) ── */
+.results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.results-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.results-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--primary);
 }
 
-.project-detail-card p,
-.project-detail-card li {
-  line-height: 1.75;
+/* ── Section compétences ── */
+.section-skills .section-content {
+  padding-top: 0.2rem;
 }
 
 .linked-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.55rem;
 }
 
 .linked-skill {
+  cursor: pointer;
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.42rem 0.72rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--muted-foreground);
   background: color-mix(in srgb, var(--card) 88%, transparent);
-  font-weight: 600;
+  transition: border-color 180ms, color 180ms, background 180ms;
 }
 
 .linked-skill:hover {
   border-color: var(--primary-border);
-  color: var(--foreground);
+  color: var(--primary);
+  background: var(--primary-soft);
 }
 
+/* ── Message manquant ── */
+.missing-msg {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  padding-top: 1rem;
+}
+
+/* ── Responsive ── */
 @media (max-width: 780px) {
   .project-detail-section {
     padding-top: 6.2rem;
   }
 
   .project-detail-card {
-    padding: 1.05rem;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .detail-section h2 {
+    font-size: 0.98rem;
   }
 }

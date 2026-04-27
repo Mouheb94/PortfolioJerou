@@ -1,58 +1,109 @@
 <section class="section section-muted project-detail-section">
   <div class="container" *ngIf="project() as project; else notFound">
-    <a class="back-link" [routerLink]="['/realisations']">Retour aux realisations</a>
+    <a class="back-link" [routerLink]="['/realisations']">
+      <span class="back-arrow">←</span> Retour aux réalisations
+    </a>
 
     <article class="glass-card project-detail-card" *ngIf="detail() as detailData; else missingDetail">
-      <header>
-        <p class="project-context">{{ project.context[state.locale()] }}</p>
-        <h1>{{ project.title[state.locale()] }}</h1>
-        <p class="project-intro">{{ project.shortDesc[state.locale()] }}</p>
+
+      <!-- ── En-tête ── -->
+      <header class="project-header">
+        <p class="project-context">{{ project.context.fr }}</p>
+        <h1>{{ project.title.fr }}</h1>
+        <p class="project-intro">{{ project.shortDesc.fr }}</p>
+        <div class="header-divider"></div>
       </header>
 
-      <h2>Presentation</h2>
-      <p>{{ detailData.presentation }}</p>
-
-      <h2>Objectifs et contexte</h2>
-      <ul>
-        <li *ngFor="let item of detailData.objectives">{{ item }}</li>
-      </ul>
-
-      <h2>Ce que j ai fait</h2>
-      <ol>
-        <li *ngFor="let action of detailData.actions">{{ action }}</li>
-      </ol>
-
-      <h2>Les acteurs</h2>
-      <p>{{ detailData.actors }}</p>
-
-      <h2>Resultats</h2>
-      <ul>
-        <li *ngFor="let result of detailData.results">{{ result }}</li>
-      </ul>
-
-      <h2>Lendemains du projet</h2>
-      <p>{{ detailData.aftermath }}</p>
-
-      <h2>Mon regard critique</h2>
-      <p>{{ detailData.criticalView }}</p>
-
-      <h2>Competences liees</h2>
-      <div class="linked-skills">
-        <button
-          type="button"
-          class="linked-skill"
-          *ngFor="let skillId of project.skills"
-          (click)="openSkill(skillId)"
-        >
-          {{ getSkillName(skillId) }}
-        </button>
+      <!-- ── Présentation ── -->
+      <div class="detail-section">
+        <h2>Présentation du projet</h2>
+        <div class="section-content">
+          <p *ngFor="let para of detailData.presentation">{{ para }}</p>
+        </div>
       </div>
+
+      <!-- ── Objectifs ── -->
+      <div class="detail-section">
+        <h2>Objectifs, contexte, enjeux et risques</h2>
+        <div class="section-content">
+          <ul class="detail-list">
+            <li *ngFor="let item of detailData.objectives">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Étapes ── -->
+      <div class="detail-section">
+        <h2>Les étapes — Ce que j'ai fait</h2>
+        <div class="section-content">
+          <ol class="steps-list">
+            <li *ngFor="let action of detailData.actions">{{ action }}</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ── Acteurs ── -->
+      <div class="detail-section">
+        <h2>Acteurs et interactions</h2>
+        <div class="section-content">
+          <p>{{ detailData.actors }}</p>
+        </div>
+      </div>
+
+      <!-- ── Résultats ── -->
+      <div class="detail-section">
+        <h2>Résultats</h2>
+        <div class="section-content">
+          <ul class="results-list">
+            <li *ngFor="let result of detailData.results">{{ result }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Lendemains ── -->
+      <div class="detail-section">
+        <h2>Les lendemains du projet</h2>
+        <div class="section-content">
+          <ul class="detail-list">
+            <li *ngFor="let item of detailData.aftermath">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Regard critique ── -->
+      <div class="detail-section">
+        <h2>Mon regard critique</h2>
+        <div class="section-content">
+          <p>{{ detailData.criticalView }}</p>
+        </div>
+      </div>
+
+      <!-- ── Compétences ── -->
+      <div class="detail-section section-skills">
+        <h2>Compétences liées</h2>
+        <div class="section-content">
+          <div class="linked-skills">
+            <button
+              type="button"
+              class="linked-skill"
+              *ngFor="let skillId of project.skills"
+              (click)="openSkill(skillId)"
+            >
+              {{ getSkillName(skillId) }}
+            </button>
+          </div>
+        </div>
+      </div>
+
     </article>
 
     <ng-template #missingDetail>
       <section class="glass-card project-detail-card">
-        <h1>{{ project.title[state.locale()] }}</h1>
-        <p>Le detail de ce projet n est pas encore disponible.</p>
+        <header class="project-header">
+          <p class="project-context">{{ project.context.fr }}</p>
+          <h1>{{ project.title.fr }}</h1>
+        </header>
+        <p class="missing-msg">Le détail de ce projet n'est pas encore disponible.</p>
       </section>
     </ng-template>
   </div>
@@ -61,7 +112,7 @@
     <div class="container">
       <section class="glass-card project-detail-card">
         <h1>Projet introuvable</h1>
-        <a class="back-link" [routerLink]="['/realisations']">Retour aux realisations</a>
+        <a class="back-link" [routerLink]="['/realisations']">← Retour aux réalisations</a>
       </section>
     </div>
   </ng-template>

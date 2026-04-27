@@ -10,10 +10,7 @@ export interface CompetencyProof {
 }
 
 export interface CompetencyArticle {
-  intro: string;
-  definition: string;
-  professionalContext: string;
-  currentTopic: string;
+  definitionParagraphs: string[];
   selfReview: string;
   priorityInProfile: string;
   acquisitionSpeed: string;
@@ -30,7 +27,7 @@ export interface Competency {
   logo: string;
   level: number;
   domain: CompetencyDomain;
-  summary: { fr: string; en: string };
+  summary: { fr: string };
   article: CompetencyArticle;
 }
 
@@ -43,17 +40,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Automatisation des tests fonctionnels et de non-regression sur applications web avec une approche fiable et maintenable.',
-      en: 'Functional and regression test automation on web applications with a reliable and maintainable approach.',
     },
     article: {
-      intro:
-        'Cette competence est au coeur de ma pratique QA. Elle me permet de transformer des parcours critiques en scripts robustes et reutilisables.',
-      definition:
-        'Selenium Java est un socle d automatisation des tests web qui permet de verifier de facon systematique les comportements attendus d une application.',
-      professionalContext:
-        'Dans un contexte agile avec des mises en production frequentes, cette competence est indispensable pour reduire le risque de regression.',
-      currentTopic:
-        'Elle s inscrit dans l actualite de l industrialisation des tests et de l acceleration des cycles CI/CD.',
+      definitionParagraphs: [
+        'Selenium Java est une compétence importante dans mon métier de QA automatisation. Elle me permet d’automatiser les tests des applications web pour vérifier que les fonctionnalités principales continuent de bien fonctionner après chaque évolution.',
+        'Le but est de reproduire les actions d’un utilisateur réel afin de détecter rapidement les anomalies et de limiter les risques de régression avant les mises en production.',
+        'Dans un contexte agile avec des livraisons fréquentes, cette compétence est essentielle pour gagner du temps sur les tests, sécuriser les parcours métier les plus sensibles et améliorer la qualité des livraisons.',
+        'Elle est aussi très liée aux pratiques actuelles de CI/CD et à l’automatisation des tests, car aujourd’hui les entreprises cherchent à livrer plus vite tout en gardant un bon niveau de qualité.',
+      ],
       proofs: [
         {
           title: 'TNR automatisee sur parcours de souscription',
@@ -63,8 +57,8 @@ export const competencies: Competency[] = [
             'La competence a ete mise en oeuvre par la creation d une architecture Page Object, une gestion des waits explicites et des rapports exploitables pour les equipes.',
           resultAndValue:
             'Le temps de validation avant release a baisse et les regressions critiques ont ete detectees plus tot. Ma valeur ajoutee a ete de fiabiliser les campagnes et de rendre les resultats actionnables.',
-          realizationLabel: 'Plateforme E-Commerce',
-          realizationFragment: 'project-ecommerce',
+          realizationLabel: 'MNSI',
+          realizationFragment: 'project-mnsi',
         },
         {
           title: 'Stabilisation des scripts flaky',
@@ -74,8 +68,8 @@ export const competencies: Competency[] = [
             'J ai introduit des helpers de synchronisation et des strategies de retry controlees dans les scenarios critiques.',
           resultAndValue:
             'Le taux de faux positifs a fortement diminue. J ai apporte une meilleure confiance dans les executions automatiques quotidiennes.',
-          realizationLabel: 'Application de Gestion',
-          realizationFragment: 'project-gestion',
+          realizationLabel: 'IHM-GED',
+          realizationFragment: 'project-ihm-ged',
         },
       ],
       selfReview:
@@ -103,17 +97,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Lancement des campagnes TNR, suivi des pipelines de validation et integration des tests dans les processus CI/CD.',
-      en: 'Execution of regression campaigns, validation pipeline tracking, and test integration in CI/CD processes.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Jenkins me permet de transformer des tests isoles en processus de controle continu integre au delivery.',
-      definition:
         'Jenkins est un orchestrateur de pipelines qui automatise l execution des tests, la publication des rapports et les controles qualite.',
-      professionalContext:
         'Dans mes missions QA, Jenkins est utilise pour lancer les TNR a chaque etape cle des mises en production.',
-      currentTopic:
         'Cette competence est liee a l actualite DevOps: fiabilite des releases, tra+�abilite et feedback rapide.',
+      ],
       proofs: [
         {
           title: 'Pipeline de non-regression quotidienne',
@@ -150,17 +141,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Tests manuels et automatises des API, validation des echanges back-end et controle de la qualite des services.',
-      en: 'Manual and automated API testing, backend exchange validation, and service quality control.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Postman est ma boite a outils principale pour valider rapidement la fiabilite et la coherence des API.',
-      definition:
         'Postman est une plateforme de test API permettant de construire des collections, de verifier les reponses et d automatiser des scenarios de validation.',
-      professionalContext:
         'Je l utilise lors des phases de recette et de non-regression pour securiser les flux entre front-end et back-end.',
-      currentTopic:
         'Cette competence suit l evolution des architectures API-first et la necessite de contractualiser les services.',
+      ],
       proofs: [
         {
           title: 'Validation de contrats API avant livraison',
@@ -198,17 +186,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Gestion des versions, suivi des evolutions et collaboration efficace avec les equipes de developpement.',
-      en: 'Version control, change tracking, and efficient collaboration with development teams.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Git structure ma contribution quotidienne et garantit la tra+�abilite des evolutions qualite.',
-      definition:
         'Git est un systeme de gestion de versions distribue qui permet de suivre, partager et securiser les modifications de code.',
-      professionalContext:
         'Je l utilise pour versionner les scripts de tests, collaborer avec les developpeurs et fiabiliser les livraisons.',
-      currentTopic:
         'Cette competence est essentielle dans les pratiques modernes de revue de code et de collaboration asynchrone.',
+      ],
       proofs: [
         {
           title: 'Structuration des branches de tests automatises',
@@ -247,17 +232,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Comprehension et manipulation des applications front-end pour la validation des interfaces et des parcours utilisateurs.',
-      en: 'Understanding and handling front-end apps to validate interfaces and user journeys.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Angular me permet de comprendre en profondeur le front-end pour mieux anticiper les risques de qualite.',
-      definition:
         'Angular est un framework front-end structure qui facilite la construction d interfaces modulaires et maintenables.',
-      professionalContext:
         'Je mobilise cette competence pour analyser les parcours utilisateurs et concevoir des tests alignes avec le comportement de l application.',
-      currentTopic:
         'Elle est en phase avec l actualite des applications web riches et des enjeux d experience utilisateur.',
+      ],
       proofs: [
         {
           title: 'Validation ciblee des composants critiques',
@@ -295,17 +277,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Utilisation d environnements isoles et reproductibles pour faciliter l execution des tests et la stabilite des applications.',
-      en: 'Use of isolated and reproducible environments to ease test execution and improve app stability.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Docker m aide a maitriser la reproductibilite, point cle pour des validations fiables.',
-      definition:
         'Docker est une technologie de conteneurisation qui encapsule application et dependances dans un environnement portable.',
-      professionalContext:
         'Dans mes activites QA, cette competence est utile pour standardiser les environnements de test.',
-      currentTopic:
         'Elle est au coeur des pratiques cloud-native et de la fiabilite des chaines de livraison.',
+      ],
       proofs: [
         {
           title: 'Environnement de test reproductible',
@@ -343,17 +322,14 @@ export const competencies: Competency[] = [
     domain: 'human',
     summary: {
       fr: 'Collaboration quotidienne avec les developpeurs, les equipes metier et les testeurs pour garantir la qualite des livrables.',
-      en: 'Daily collaboration with developers, business teams, and testers to ensure delivery quality.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Le travail d equipe est la competence humaine qui maximise l impact des competences techniques.',
-      definition:
         'Le travail d equipe consiste a coordonner des profils differents autour d un objectif commun de qualite et de valeur metier.',
-      professionalContext:
         'Dans les projets QA, cette competence est decisive pour partager les risques et aligner les priorites.',
-      currentTopic:
         'Elle est en resonance avec les organisations agiles et la co-construction entre metier, dev et qualite.',
+      ],
       proofs: [
         {
           title: 'Animation de points de synchronisation QA',
@@ -393,17 +369,14 @@ export const competencies: Competency[] = [
     domain: 'human',
     summary: {
       fr: 'Gestion des campagnes de tests, suivi des anomalies et prise d initiative sur les actions correctives.',
-      en: 'Management of test campaigns, defect follow-up, and initiative on corrective actions.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'L autonomie me permet de tenir un haut niveau de fiabilite dans les phases critiques de validation.',
-      definition:
         'L autonomie est la capacite a organiser son activite, arbitrer les priorites et prendre des decisions pertinentes sans supervision constante.',
-      professionalContext:
         'En QA, elle se traduit par la capacite a gerer une campagne de test de bout en bout.',
-      currentTopic:
         'Cette competence est centrale dans les equipes agiles qui attendent de la responsabilisation et de la proactivite.',
+      ],
       proofs: [
         {
           title: 'Pilotage autonome d une campagne TNR',
@@ -445,17 +418,14 @@ export const competencies: Competency[] = [
     domain: 'human',
     summary: {
       fr: 'Planification des activites de test, priorisation des taches et respect des delais dans un environnement projet.',
-      en: 'Test activity planning, task prioritization, and deadline management in project environments.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'L organisation est la condition pour tenir la qualite dans des contraintes de delai fortes.',
-      definition:
         'L organisation consiste a structurer les activites, planifier les actions et prioriser selon les risques et les objectifs.',
-      professionalContext:
         'Je l applique pour preparer les campagnes de tests et optimiser la couverture dans le temps disponible.',
-      currentTopic:
         'Cette competence repond aux enjeux actuels de delivery rapide sans compromis sur la qualite.',
+      ],
       proofs: [
         {
           title: 'Planification ciblee d une recette',
@@ -497,17 +467,14 @@ export const competencies: Competency[] = [
     domain: 'human',
     summary: {
       fr: 'Echanges clairs avec les equipes techniques et fonctionnelles pour assurer une bonne comprehension des besoins.',
-      en: 'Clear exchanges with technical and business teams to ensure shared understanding of requirements.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Une communication claire est indispensable pour transformer un constat technique en action utile.',
-      definition:
         'La communication professionnelle est la capacite a transmettre une information fiable, contextualisee et exploitable par les parties prenantes.',
-      professionalContext:
         'En QA, elle permet de qualifier les anomalies, argumenter les risques et faciliter la prise de decision.',
-      currentTopic:
         'Elle est cruciale dans les environnements hybrides et les equipes pluridisciplinaires distribuees.',
+      ],
       proofs: [
         {
           title: 'Formalisation des anomalies a fort impact',
@@ -547,17 +514,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Framework Java pour construire des API robustes, modulaires et maintenables.',
-      en: 'Java framework to build robust, modular, and maintainable APIs.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Spring Boot me permet de structurer des backends solides et lisibles, avec un vrai souci de separation des responsabilites et de maintenabilite.',
-      definition:
         'Spring Boot est un framework Java qui simplifie la creation d applications serveur en apportant auto-configuration, injection de dependances et demarrage rapide.',
-      professionalContext:
         'Dans un contexte professionnel, il est ideal pour concevoir des API stables, testables et faciles a faire evoluer au rythme des besoins metier.',
-      currentTopic:
         'Il s inscrit dans les pratiques actuelles de microservices, d API-first et d industrialisation des applications back-end.',
+      ],
       proofs: [
         {
           title: 'Conception d une API de gestion de projet',
@@ -607,17 +571,14 @@ export const competencies: Competency[] = [
     domain: 'technical',
     summary: {
       fr: 'Competence technique orientee analyse, automatisation et suivi des actions avec une logique de productivite.',
-      en: 'Technical skill focused on analysis, automation, and action tracking with a productivity mindset.',
     },
     article: {
-      intro:
+      definitionParagraphs: [
         'Mr Souricate represente pour moi une competence technique de productivite et de pilotage, utile pour organiser l information, automatiser les actions repetitives et garder une vision claire des priorites.',
-      definition:
         'Mr Souricate peut etre compris comme un outil ou une approche technique d assistance a l analyse et au suivi, permettant de structurer, prioriser et fiabiliser des activites de travail.',
-      professionalContext:
         'Dans un environnement professionnel, ce type de competence est pertinent pour gagner du temps, standardiser les actions et reduire les oublis dans le suivi des taches ou des anomalies.',
-      currentTopic:
         'Cette competence s inscrit dans les pratiques actuelles d automatisation, d aide a la decision et de simplification des flux de travail.',
+      ],
       proofs: [
         {
           title: 'Organisation et suivi des actions',

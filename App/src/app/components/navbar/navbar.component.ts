@@ -70,6 +70,13 @@ export class NavbarComponent {
     void this.router.navigate(['/competences', skillId]);
   }
 
+  navigateToCompetencesPage(): void {
+    this.suppressSkillsHover.set(true);
+    (document.activeElement as HTMLElement | null)?.blur();
+    window.setTimeout(() => this.suppressSkillsHover.set(false), 260);
+    this.navigate('/competences');
+  }
+
   toggleMenu(): void {
     this.mobileOpen.update((v: boolean) => !v);
   }

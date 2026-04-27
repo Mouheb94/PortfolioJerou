@@ -15,10 +15,10 @@
       >
         <div class="project-copy">
           <span class="project-context" [class.project-context-school]="project.contextType === 'school'">
-            {{ project.context[state.locale()] }}
+            {{ project.context.fr }}
           </span>
-          <h3>{{ project.title[state.locale()] }}</h3>
-          <p>{{ project.shortDesc[state.locale()] }}</p>
+          <h3>{{ project.title.fr }}</h3>
+          <p>{{ project.shortDesc.fr }}</p>
           <div class="chip-row">
             <span class="chip skill-chip" *ngFor="let skillId of project.skills">{{ getSkillName(skillId) }}</span>
           </div>
