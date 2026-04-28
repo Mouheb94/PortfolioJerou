@@ -4,6 +4,9 @@ export interface TimelineEntry {
   year: string;
   title: string;
   org: string;
+  orgLogo: string;
+  orgUrl?: string;
+  type: 'work' | 'education';
   description: string;
 }
 
@@ -174,28 +177,77 @@ paragraphs: [
       subtitle: 'Expérience & Formation',
       items: [
         {
-          year: '2024 - Présent',
-          title: 'Développeur Full Stack Senior',
-          org: 'Entreprise Tech',
-          description: 'Développement d’applications web complexes avec React, Node.js et bases de données SQL/NoSQL.',
+          year: '2024 — Présent',
+          title: 'Testeur QA en Automatisation',
+          org: 'Harmonie Mutuelle',
+          orgLogo: 'data:image/png;base64,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',
+          orgUrl: 'https://www.harmonie-mutuelle.fr',
+          type: 'work',
+          description: 'Participation à la stratégie QA transverse, automatisation des tests, non-régression, qualité logicielle et accompagnement des équipes de développement dans un environnement agile à grande échelle.',
         },
         {
-          year: '2022 - 2024',
-          title: 'Développeur Front-End',
-          org: 'Agence Digitale',
-          description: 'Création d’interfaces utilisateur réactives et accessibles avec Angular et TypeScript.',
+          year: '2024 — Présent',
+          title: 'Expert en Ingénierie Logicielle (Bac+5) — Niveau 7 RNCP',
+          org: 'ISCOD',
+          orgLogo: 'https://static.wixstatic.com/media/2565f3_06309f64759a4ffb8a31178d74d8366e~mv2.png',
+          orgUrl: 'https://www.iscod.fr/',
+          type: 'education',
+          description: 'Formation en alternance spécialisée en architecture logicielle, développement full-stack, management de projet IT et ingénierie logicielle.',
         },
         {
-          year: '2020 - 2022',
-          title: 'Développeur Junior',
-          org: 'Startup Innovation',
-          description: 'Participation au développement de plateformes SaaS avec des technologies modernes.',
+          year: 'Février 2024 — Juin 2024',
+          title: 'Certification DevOps & Automatisation des Tests (RS5044)',
+          org: 'Automation Test Academy',
+          orgLogo: 'https://media.licdn.com/dms/image/v2/D4E0BAQE81rTEPbghnA/company-logo_200_200/company-logo_200_200/0/1730725433693/ata_testing_logo?e=2147483647&v=beta&t=SdpfAConnjSLcq2exjN-8WKCcZ6VLWzMBmbJCJLdXyQ',
+          orgUrl: 'https://fr.linkedin.com/company/ata-testing',
+          type: 'education',
+          description: 'Formation professionnalisante orientée automatisation des tests UI/API, stratégie de tests, Cypress, Postman et intégration DevOps.',
         },
         {
-          year: '2017 - 2020',
-          title: 'Licence en informatique',
-          org: 'Université',
-          description: 'Formation complète en informatique : algorithmique, structures de données, génie logiciel.',
+          year: 'Novembre 2023',
+          title: 'Certification ISTQB — Niveau Fondation',
+          org: 'GASQ',
+          orgLogo: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/GASQ_Logo.png',
+          orgUrl: 'https://gasq.org',
+          type: 'education',
+          description: 'Certification internationale en assurance qualité logicielle, méthodologies de test et validation logicielle.',
+        },
+        {
+          year: 'Octobre 2021 — Juillet 2023',
+          title: 'Testeur Fonctionnel',
+          org: 'MSPE',
+          orgLogo: 'https://mspe.tn/wp-content/uploads/2024/04/cropped-logo-mspe.png',
+          orgUrl: 'https://mspe.tn/company/',
+          type: 'work',
+          description: 'Préparation des jeux de données, exécution des tests fonctionnels, tests de régression, documentation des anomalies et validation de conformité des applications.',
+        },
+        {
+          year: 'Janvier 2019 — Septembre 2021',
+          title: 'Responsable Contrôle Qualité',
+          org: 'MSPE',
+          orgLogo: 'https://mspe.tn/wp-content/uploads/2024/04/cropped-logo-mspe.png',
+          orgUrl: 'https://mspe.tn/company/',
+          type: 'work',
+          description: 'Pilotage qualité produit, suivi des indicateurs, audits, gestion des réclamations qualité, amélioration continue et encadrement des équipes qualité.',
+        },
+        {
+          year: 'Juin 2017',
+          title: 'Licence Fondamentale en Électronique, Électrotechnique et Automatique — Niveau Bac+3',
+          org: 'ISSAT Sousse',
+          orgLogo: 'https://upload.wikimedia.org/wikipedia/commons/5/54/Logo_Issat_Sousse.svg',
+          orgUrl: 'https://issatso.rnu.tn',
+          type: 'education',
+          description: 'Formation universitaire orientée électronique industrielle, automatisation et systèmes techniques.',
+
+        },
+        {
+          year: 'Juin 2013',
+          title: 'Baccalauréat Technique — Niveau Bac',
+          org: 'Lycée Saïd Bou Baker Moknine',
+          orgLogo: 'https://scontent-cdg6-1.xx.fbcdn.net/v/t39.30808-1/299142797_378841944411344_3858827830682105847_n.jpg?stp=dst-jpg_tt6&cstp=mx1511x2015&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=3ab345&_nc_ohc=8iO6kQ3ECUcQ7kNvwGphAJh&_nc_oc=AdrtU7q4NVxoziI2q9EiOFQYKfezQrFqpAlFZNlHIWNk18ZpUs0Sjos4oF0ICE31ASGjT16snyilfdWwPRmbLge4&_nc_zt=24&_nc_ht=scontent-cdg6-1.xx&_nc_gid=MpBPw7b_vB2YPhjNplowyA&_nc_ss=7d20f&oh=00_Af2nKHdSJKgmh0KmNZO5Wulwldh8Ikuy6HwRybBTABgLrQ&oe=69F6E330',
+          orgUrl: 'https://www.facebook.com/100068566233250/?locale=he_IL',
+          type: 'education',
+          description: 'Formation secondaire technique avec spécialisation industrielle et technologique.',
         },
       ],
     },
