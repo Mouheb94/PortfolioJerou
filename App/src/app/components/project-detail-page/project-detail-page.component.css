@@ -138,6 +138,42 @@
   opacity: 0.7;
 }
 
+/* ── Bloc objectifs structuré ── */
+.objectives-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.objective-paragraph {
+  margin: 0;
+}
+
+.objective-subtitle {
+  margin: 0.7rem 0 0.15rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.objective-bullet {
+  position: relative;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.objective-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.75;
+}
+
 /* ── Liste des étapes (timeline) ── */
 .steps-list {
   list-style: none;

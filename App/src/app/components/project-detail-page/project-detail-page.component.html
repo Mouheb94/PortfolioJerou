@@ -26,9 +26,19 @@
       <div class="detail-section">
         <h2>Objectifs, contexte, enjeux et risques</h2>
         <div class="section-content">
-          <ul class="detail-list">
-            <li *ngFor="let item of detailData.objectives">{{ item }}</li>
-          </ul>
+          <div class="objectives-flow">
+            <ng-container *ngFor="let item of detailData.objectives">
+              <h3 class="objective-subtitle" *ngIf="isObjectiveSectionTitle(item)">
+                {{ formatObjectiveText(item) }}
+              </h3>
+              <p class="objective-bullet" *ngIf="isObjectiveBullet(item)">
+                {{ formatObjectiveText(item) }}
+              </p>
+              <p class="objective-paragraph" *ngIf="!isObjectiveSectionTitle(item) && !isObjectiveBullet(item)">
+                {{ formatObjectiveText(item) }}
+              </p>
+            </ng-container>
+          </div>
         </div>
       </div>
 

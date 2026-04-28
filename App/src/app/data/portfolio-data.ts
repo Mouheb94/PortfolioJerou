@@ -327,13 +327,13 @@ export const projects: Project[] = [
       fr: 'Octopus',
     },
     shortDesc: {
-      fr: 'Projet entreprise piloté en qualité logicielle, avec automatisation et suivi des campagnes de tests de non-régression.',
+      fr: 'Mise en place d’un projet de tests automatisés avec Mr Suricate pour fiabiliser l’application Octopus, utilisée pour la gestion des absences, des présences et le suivi des mises en production, afin de sécuriser les parcours critiques métier.',
     },
     fullDesc: {
       fr: 'Projet entreprise avec cycles de livraison fréquents. Participation à l\'automatisation des tests critiques, à l\'exécution via pipelines CI, et à l\'analyse des résultats pour sécuriser les mises en production.',
     },
     image: '/images/project-saas.jpg',
-    skills: ['mr-souricate', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
+    skills: ['mr-suricate', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
   },
   {
     id: 'gameup',

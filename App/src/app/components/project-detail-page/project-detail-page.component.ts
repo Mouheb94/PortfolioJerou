@@ -36,6 +36,25 @@ export class ProjectDetailPageComponent {
     projectDetails.find((item) => item.projectId === this.projectId()) ?? null,
   );
 
+  isObjectiveSectionTitle(item: string): boolean {
+    return /^\d+-/.test(item.trim());
+  }
+
+  isObjectiveBullet(item: string): boolean {
+    return item.trim().startsWith('-');
+  }
+
+  formatObjectiveText(item: string): string {
+    const value = item.trim();
+    if (this.isObjectiveSectionTitle(value)) {
+      return value.replace(/^\d+-\s*/, '');
+    }
+    if (this.isObjectiveBullet(value)) {
+      return value.replace(/^-\s*/, '');
+    }
+    return value;
+  }
+
   getSkillName(skillId: string): string {
     return skills.find((item) => item.id === skillId)?.name ?? skillId;
   }
