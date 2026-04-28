@@ -90,7 +90,7 @@ export const translations: TranslationSet = {
     hero: {
       greeting: '',
       role: 'Expert en ingénierie logicielle / testeur QA en automatisation',
-      description: 'Testeur automaticien  avec une forte appétence pour le développement logiciel et l’automatisation des tests.',
+      description: 'Testeur automaticien avec une forte appétence pour le développement logiciel et l’automatisation des tests.',
       cta: 'Présentation',
       contact: 'Me contacter',
     },
@@ -159,7 +159,7 @@ paragraphs: [
             },
             {
               title: 'Football',
-              description: 'Passionné de football, je suis particulièrement les matchs de Manchester United ainsi que les compétitions comme la Premier League et la UEFA Champions League. J’apprécie ce sport pour l’esprit d’équipe, la stratégie et l’intensité des matchs',
+              description: 'Passionné de football, je suis particulièrement les matchs de Manchester United ainsi que les compétitions comme la Premier League et l’UEFA Champions League. J’apprécie ce sport pour l’esprit d’équipe, la stratégie et l’intensité des matchs.',
             },
             {
               title: 'Jeux vidéo',

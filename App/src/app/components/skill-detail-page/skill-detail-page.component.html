@@ -20,7 +20,7 @@
       <section class="proof-block" *ngFor="let proof of skill.article.proofs; let i = index">
         <h3>Anecdote {{ i + 1 }}: {{ proof.title }}</h3>
         <p><strong>Situation:</strong> {{ proof.anecdote }}</p>
-        <p><strong>Mise en oeuvre:</strong> {{ proof.implementationProof }}</p>
+        <p><strong>Mise en œuvre:</strong> {{ proof.implementationProof }}</p>
         <p><strong>Résultat et valeur ajoutée:</strong> {{ proof.resultAndValue }}</p>
         <a class="realization-link" [routerLink]="projectRoute(proof.realizationFragment)">
           Voir la réalisation: {{ proof.realizationLabel }}

@@ -40,7 +40,7 @@ export class SkillDetailPageComponent {
   }
 
   competencyTypeLabel(domain: 'technical' | 'human'): string {
-    return domain === 'technical' ? 'Competence technique' : 'Competence humaine';
+    return domain === 'technical' ? 'Compétence technique' : 'Compétence humaine';
   }
 
   projectRoute(fragment?: string): string[] {

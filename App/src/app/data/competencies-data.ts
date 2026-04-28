@@ -309,7 +309,7 @@ export const competencies: Competency[] = [
     level: 60,
     domain: 'technical',
     summary: {
-      fr: 'Utilisation d environnements isoles et reproductibles pour faciliter l execution des tests et la stabilite des applications.',
+      fr: 'Utilisation d’environnements isolés et reproductibles pour faciliter l’exécution des tests et la stabilité des applications.',
     },
     article: {
       definitionParagraphs: [

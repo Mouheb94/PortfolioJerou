@@ -295,7 +295,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     aftermath: [
       'Enrichir les données pour améliorer le modèle ML.',
-      'Ajouter Docker pour la containerisation.',
+      'Ajouter Docker pour la conteneurisation.',
       'Mettre en place un pipeline CI/CD.',
       'Améliorer le monitoring.',
       'Documenter l\'API avec OpenAPI.',

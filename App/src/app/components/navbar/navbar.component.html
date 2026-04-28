@@ -19,7 +19,7 @@
             <ul class="skills-dropdown">
               <li class="skills-group-item">
                 <button type="button" class="skill-sub-link group-link" (click)="navigate('/competences')">
-                  Competences techniques
+                  Compétences techniques
                 </button>
                 <ul class="skills-flyout">
                   <li *ngFor="let skill of technicalSkillLinks">
@@ -31,7 +31,7 @@
               </li>
               <li class="skills-group-item">
                 <button type="button" class="skill-sub-link group-link" (click)="navigate('/competences')">
-                  Competences humaines
+                  Compétences humaines
                 </button>
                 <ul class="skills-flyout">
                   <li *ngFor="let skill of humanSkillLinks">
@@ -86,13 +86,13 @@
               {{ state.t().nav[link.key] }}
             </button>
             <ul class="mobile-skill-submenu">
-              <li class="mobile-skill-group-title">Competences techniques</li>
+              <li class="mobile-skill-group-title">Compétences techniques</li>
               <li *ngFor="let skill of technicalSkillLinks">
                 <button type="button" class="mobile-skill-link" (click)="navigateToSkill(skill.id)">
                   {{ skill.name }}
                 </button>
               </li>
-              <li class="mobile-skill-group-title">Competences humaines</li>
+              <li class="mobile-skill-group-title">Compétences humaines</li>
               <li *ngFor="let skill of humanSkillLinks">
                 <button type="button" class="mobile-skill-link" (click)="navigateToSkill(skill.id)">
                   {{ skill.name }}
