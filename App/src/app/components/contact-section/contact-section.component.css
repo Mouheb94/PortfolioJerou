@@ -19,17 +19,40 @@
   padding: 1.5rem;
 }
 
-.photo-placeholder {
-  width: min(100%, 13rem);
-  aspect-ratio: 1 / 1;
-  border: 1px dashed var(--primary-border);
-  border-radius: 1rem;
-  background: color-mix(in srgb, var(--primary-soft) 40%, transparent);
-  display: grid;
-  place-items: center;
-  color: var(--muted-foreground);
-  font-size: 0.9rem;
+.contact-photo-wrap {
+  width: min(100%, 12.5rem);
+  display: block;
   margin: 0 auto;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--primary-border) 88%, var(--border));
+  box-shadow: var(--shadow-card);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.contact-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 0;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center 22%;
+  transform: scale(1.14);
+  transition: transform 220ms ease;
+}
+
+.contact-photo-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.contact-photo-wrap:hover .contact-photo {
+  transform: scale(1.2);
+}
+
+.contact-photo-wrap:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
 }
 
 .contact-items {
@@ -73,5 +96,12 @@
 @media (max-width: 1024px) {
   .contact-container {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-photo-wrap,
+  .contact-photo {
+    width: min(100%, 9.8rem);
   }
 }
