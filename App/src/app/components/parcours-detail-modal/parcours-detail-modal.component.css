@@ -69,6 +69,55 @@
   font-weight: 500;
 }
 
+.modal-org-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.modal-org-logo {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.35rem;
+  border-radius: 999px;
+  object-fit: contain;
+  object-position: center;
+  border: 1px solid oklch(0.9 0.01 250 / 0.5);
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.modal-org-logo.org-logo-wide {
+  width: 5.4rem;
+  height: 3.2rem;
+  padding: 0.18rem 0.3rem;
+  border-radius: 0.9rem;
+}
+
+.modal-org-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.modal-org-link:hover {
+  text-decoration: underline;
+}
+
+.modal-year {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  margin-left: 4px;
+}
+
+.modal-org-row .modal-year::before {
+  content: '·';
+  margin-right: 6px;
+  opacity: 0.5;
+}
+
 .close-btn {
   background: none;
   border: none;
@@ -111,7 +160,7 @@
   margin: 0 0 12px 0;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--card-foreground);
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   display: flex;
@@ -146,6 +195,14 @@
   border: 1px solid var(--primary-border);
 }
 
+.missions-list,
+.skills-list,
+.projects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .missions-list li,
 .skills-list li,
 .projects-list li {
@@ -157,7 +214,6 @@
   padding-left: 24px;
 }
 
-.missions-list li::before,
 .skills-list li::before,
 .projects-list li::before {
   content: '▸';
@@ -201,8 +257,8 @@
   display: inline-block;
   padding: 6px 12px;
   border-radius: 20px;
-  background-color: var(--primary-soft);
-  color: var(--primary);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
   font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid var(--primary-border);
@@ -213,23 +269,23 @@
 
 .skill-tag:hover,
 .ref-tag:hover {
-  background-color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 88%, black);
   color: var(--primary-foreground);
   transform: translateY(-2px);
   box-shadow: var(--shadow-primary);
 }
 
 .project-link {
-  color: var(--primary);
+  color: var(--card-foreground);
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid color-mix(in srgb, var(--card-foreground) 35%, transparent);
   transition: all 200ms ease;
   display: inline-block;
 }
 
 .project-link:hover {
-  border-bottom-color: var(--primary);
+  border-bottom-color: var(--card-foreground);
   color: var(--card-foreground);
 }
 

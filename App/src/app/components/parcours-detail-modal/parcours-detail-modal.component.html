@@ -4,7 +4,16 @@
     <div class="modal-header">
       <div class="title-section">
         <h2>{{ entry.title }}</h2>
-        <p class="org-name">{{ entry.org }}</p>
+        <div class="modal-org-row">
+          <img *ngIf="entry.orgLogo" class="modal-org-logo" [class.org-logo-wide]="entry.org === 'ISCOD'" [src]="entry.orgLogo" [alt]="'Logo ' + entry.org" />
+          <a *ngIf="entry.orgUrl; else orgNameText" class="modal-org-link" [href]="entry.orgUrl" target="_blank" rel="noopener noreferrer">
+            {{ entry.org }}
+          </a>
+          <ng-template #orgNameText>
+            <span class="org-name">{{ entry.org }}</span>
+          </ng-template>
+          <span class="modal-year">{{ entry.year }}</span>
+        </div>
       </div>
       <button class="close-btn" (click)="onClose()" aria-label="Close">
         <span>&times;</span>
@@ -14,17 +23,17 @@
     <!-- Body - Experience Details -->
     <div class="modal-body" *ngIf="entry.type === 'work' && entry.workDetails">
       <section class="detail-section">
-        <h3>🎯 {{ state.t().parcours.responsibility }}</h3>
+        <h3>{{ state.t().parcours.responsibility }}</h3>
         <p>{{ entry.workDetails.responsibility }}</p>
       </section>
 
       <section class="detail-section">
-        <h3>📌 {{ state.t().parcours.status }}</h3>
+        <h3>{{ state.t().parcours.status }}</h3>
         <p class="badge status-badge">{{ entry.workDetails.status }}</p>
       </section>
 
       <section class="detail-section">
-        <h3>📋 {{ state.t().parcours.mainMissions }}</h3>
+        <h3>{{ state.t().parcours.mainMissions }}</h3>
         <ul class="missions-list">
           <li *ngFor="let mission of entry.workDetails.mainMissions" class="mission-item">
             <span class="mission-icon">✓</span>
@@ -34,12 +43,12 @@
       </section>
 
       <section class="detail-section">
-        <h3>🏢 {{ state.t().parcours.vision }}</h3>
+        <h3>{{ state.t().parcours.vision }}</h3>
         <p>{{ entry.workDetails.vision }}</p>
       </section>
 
       <section class="detail-section" *ngIf="entry.workDetails.relatedSkills && entry.workDetails.relatedSkills.length">
-        <h3>💡 {{ state.t().parcours.relatedSkills }}</h3>
+        <h3>{{ state.t().parcours.relatedSkills }}</h3>
         <div class="skills-tags">
           <a
             href="/competences"
@@ -53,7 +62,7 @@
       </section>
 
       <section class="detail-section" *ngIf="entry.workDetails.relatedProjects && entry.workDetails.relatedProjects.length">
-        <h3>🚀 {{ state.t().parcours.relatedProjects }}</h3>
+        <h3>{{ state.t().parcours.relatedProjects }}</h3>
         <ul class="projects-list">
           <li *ngFor="let project of entry.workDetails.relatedProjects">
             <a href="#realisations" class="project-link" (click)="openRelatedProject($event, project)">{{ project }}</a>
@@ -65,17 +74,17 @@
     <!-- Body - Education Details -->
     <div class="modal-body" *ngIf="entry.type === 'education' && entry.educationDetails">
       <section class="detail-section">
-        <h3>🎓 {{ state.t().parcours.establishment }}</h3>
+        <h3>{{ state.t().parcours.establishment }}</h3>
         <p>{{ entry.educationDetails.establishment }}</p>
       </section>
 
       <section class="detail-section">
-        <h3>🎯 {{ state.t().parcours.pedagogyVision }}</h3>
+        <h3>{{ state.t().parcours.pedagogyVision }}</h3>
         <p>{{ entry.educationDetails.pedagogyVision }}</p>
       </section>
 
       <section class="detail-section" *ngIf="entry.educationDetails.referentials && entry.educationDetails.referentials.length">
-        <h3>📖 {{ state.t().parcours.referentials }}</h3>
+        <h3>{{ state.t().parcours.referentials }}</h3>
         <div class="referentials-tags">
           <span class="ref-tag" *ngFor="let ref of entry.educationDetails.referentials">
             {{ ref }}
@@ -85,11 +94,5 @@
 
     </div>
 
-    <!-- Footer -->
-    <div class="modal-footer">
-      <button class="btn-close" (click)="onClose()">
-        {{ state.t().parcours.close }}
-      </button>
-    </div>
   </div>
 </div>
