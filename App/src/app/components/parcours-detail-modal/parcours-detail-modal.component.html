@@ -1,0 +1,95 @@
+<div class="modal-backdrop" [class.open]="isOpen" (click)="onBackdropClick($event)">
+  <div class="modal-content" *ngIf="entry && isOpen">
+    <!-- Header -->
+    <div class="modal-header">
+      <div class="title-section">
+        <h2>{{ entry.title }}</h2>
+        <p class="org-name">{{ entry.org }}</p>
+      </div>
+      <button class="close-btn" (click)="onClose()" aria-label="Close">
+        <span>&times;</span>
+      </button>
+    </div>
+
+    <!-- Body - Experience Details -->
+    <div class="modal-body" *ngIf="entry.type === 'work' && entry.workDetails">
+      <section class="detail-section">
+        <h3>🎯 {{ state.t().parcours.responsibility }}</h3>
+        <p>{{ entry.workDetails.responsibility }}</p>
+      </section>
+
+      <section class="detail-section">
+        <h3>📌 {{ state.t().parcours.status }}</h3>
+        <p class="badge status-badge">{{ entry.workDetails.status }}</p>
+      </section>
+
+      <section class="detail-section">
+        <h3>📋 {{ state.t().parcours.mainMissions }}</h3>
+        <ul class="missions-list">
+          <li *ngFor="let mission of entry.workDetails.mainMissions" class="mission-item">
+            <span class="mission-icon">✓</span>
+            {{ mission }}
+          </li>
+        </ul>
+      </section>
+
+      <section class="detail-section">
+        <h3>🏢 {{ state.t().parcours.vision }}</h3>
+        <p>{{ entry.workDetails.vision }}</p>
+      </section>
+
+      <section class="detail-section" *ngIf="entry.workDetails.relatedSkills && entry.workDetails.relatedSkills.length">
+        <h3>💡 {{ state.t().parcours.relatedSkills }}</h3>
+        <div class="skills-tags">
+          <a
+            href="/competences"
+            class="skill-tag"
+            *ngFor="let skill of entry.workDetails.relatedSkills"
+            (click)="openRelatedSkillsPage($event)"
+          >
+            {{ skill }}
+          </a>
+        </div>
+      </section>
+
+      <section class="detail-section" *ngIf="entry.workDetails.relatedProjects && entry.workDetails.relatedProjects.length">
+        <h3>🚀 {{ state.t().parcours.relatedProjects }}</h3>
+        <ul class="projects-list">
+          <li *ngFor="let project of entry.workDetails.relatedProjects">
+            <a href="#realisations" class="project-link" (click)="openRelatedProject($event, project)">{{ project }}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Body - Education Details -->
+    <div class="modal-body" *ngIf="entry.type === 'education' && entry.educationDetails">
+      <section class="detail-section">
+        <h3>🎓 {{ state.t().parcours.establishment }}</h3>
+        <p>{{ entry.educationDetails.establishment }}</p>
+      </section>
+
+      <section class="detail-section">
+        <h3>🎯 {{ state.t().parcours.pedagogyVision }}</h3>
+        <p>{{ entry.educationDetails.pedagogyVision }}</p>
+      </section>
+
+      <section class="detail-section" *ngIf="entry.educationDetails.referentials && entry.educationDetails.referentials.length">
+        <h3>📖 {{ state.t().parcours.referentials }}</h3>
+        <div class="referentials-tags">
+          <span class="ref-tag" *ngFor="let ref of entry.educationDetails.referentials">
+            {{ ref }}
+          </span>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="modal-footer">
+      <button class="btn-close" (click)="onClose()">
+        {{ state.t().parcours.close }}
+      </button>
+    </div>
+  </div>
+</div>

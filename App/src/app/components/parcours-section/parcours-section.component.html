@@ -61,9 +61,19 @@
               </ng-template>
             </div>
             <p class="timeline-desc">{{ item.description }}</p>
+            <button *ngIf="item.workDetails || item.educationDetails" class="btn-see-detail" (click)="openModal(item)">
+              {{ state.t().parcours.seeDetail }}
+            </button>
           </div>
         </div>
       </article>
     </div>
   </div>
+
+  <!-- Modal -->
+  <app-parcours-detail-modal
+    [entry]="selectedEntry"
+    [isOpen]="isModalOpen"
+    (close)="closeModal()"
+  ></app-parcours-detail-modal>
 </section>

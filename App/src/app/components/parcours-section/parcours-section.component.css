@@ -3,6 +3,10 @@
   max-width: 72rem;
 }
 
+.section-heading {
+  animation: headingReveal 0.55s ease-out both;
+}
+
 .timeline {
   position: relative;
   display: flex;
@@ -25,6 +29,8 @@
     transparent
   );
   opacity: 0.5;
+  transform-origin: top;
+  animation: axisGrow 0.8s ease-out 0.1s both;
 }
 
 .timeline-item {
@@ -32,6 +38,41 @@
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: timelineItemReveal 0.45s ease-out both;
+}
+
+.timeline-item:nth-of-type(1) {
+  animation-delay: 0.12s;
+}
+
+.timeline-item:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-of-type(3) {
+  animation-delay: 0.28s;
+}
+
+.timeline-item:nth-of-type(4) {
+  animation-delay: 0.36s;
+}
+
+.timeline-item:nth-of-type(5) {
+  animation-delay: 0.44s;
+}
+
+.timeline-item:nth-of-type(6) {
+  animation-delay: 0.52s;
+}
+
+.timeline-item:nth-of-type(7) {
+  animation-delay: 0.6s;
+}
+
+.timeline-item:nth-of-type(8) {
+  animation-delay: 0.68s;
 }
 
 .timeline-connector {
@@ -206,10 +247,83 @@
 }
 
 .timeline-desc {
-  margin: 0;
+  margin: 0 0 0.8rem;
   color: var(--muted-foreground);
   font-size: 0.91rem;
   line-height: 1.72;
+}
+
+.btn-see-detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--primary);
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+.btn-see-detail:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-see-detail:active {
+  transform: translateY(0);
+}
+
+@keyframes headingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes axisGrow {
+  from {
+    opacity: 0;
+    transform: scaleY(0.15);
+  }
+  to {
+    opacity: 0.5;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes timelineItemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading,
+  .timeline-axis,
+  .timeline-item,
+  .node-pulse {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -227,5 +341,10 @@
 
   .timeline-desc {
     font-size: 0.88rem;
+  }
+
+  .btn-see-detail {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }

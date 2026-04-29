@@ -1,5 +1,22 @@
 ﻿export type Locale = 'fr' | 'en';
 
+export interface WorkDetails {
+  responsibility: string;
+  status: string;
+  mainMissions: string[];
+  vision: string;
+  relatedSkills?: string[];
+  relatedProjects?: string[];
+}
+
+export interface EducationDetails {
+  establishment: string;
+  pedagogyVision: string;
+  acquiredSkills?: string[];
+  relatedProjects?: string[];
+  referentials?: string[];
+}
+
 export interface TimelineEntry {
   year: string;
   title: string;
@@ -8,6 +25,8 @@ export interface TimelineEntry {
   orgUrl?: string;
   type: 'work' | 'education';
   description: string;
+  workDetails?: WorkDetails;
+  educationDetails?: EducationDetails;
 }
 
 export interface TranslationSet {
@@ -43,6 +62,18 @@ export interface TranslationSet {
     title: string;
     subtitle: string;
     items: TimelineEntry[];
+    seeDetail: string;
+    close: string;
+    responsibility: string;
+    status: string;
+    mainMissions: string;
+    vision: string;
+    relatedSkills: string;
+    relatedProjects: string;
+    establishment: string;
+    pedagogyVision: string;
+    acquiredSkills: string;
+    referentials: string;
   };
   skills: {
     title: string;
@@ -175,6 +206,18 @@ paragraphs: [
     parcours: {
       title: 'Mon parcours',
       subtitle: 'Expérience & Formation',
+      seeDetail: 'Voir le détail',
+      close: 'Fermer',
+      responsibility: 'Responsabilité',
+      status: 'Statut',
+      mainMissions: 'Missions principales',
+      vision: 'Vision de l\'entreprise',
+      relatedSkills: 'Compétences mobilisées',
+      relatedProjects: 'Réalisations liées',
+      establishment: 'À propos de l\'établissement',
+      pedagogyVision: 'Vision pédagogique',
+      acquiredSkills: 'Compétences acquises',
+      referentials: 'Référentiels',
       items: [
         {
           year: 'Octobre 2024 — Présent',
@@ -183,7 +226,35 @@ paragraphs: [
           orgLogo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKMAAACUCAMAAADIzWmnAAABVlBMVEX////b29v/5gD/NgD/swD/zQD/aAD/TwD/gADqHQD//wDCAAC+AAD//Pr5+fn/49T/wo//XQD/ewD/cS3/dgD/wqL/RwBERET/7QD/rgD/m0z/4KH/eE7MDQDx8fE0NDT02NelpaXDw8N0dHSKiorxy8vtwcGYmJjQ0NA9PT3oAADVdXVUVFThmZhqamrl5eX/uwD98vLFHBzQTUzVZmVgYGD/1gD/xgDcjIv55+fPWVjlpqXnsK/EEBDEJCTMOjn/97z/8Yf/60j/+Sn//2P+/5H//9X/7WL//uv/9HL//6v/9J7/+03//3D/+K7+467/viz/2WH/6cP/wUT/44r/0YH/1j//6Z//5Hz/9Nf/zW//6y//hyr/oQD/jgD/q2r/3zL+qk39w7D/oDz/pJDxTET/Qx3rLSb/d1/5j4ftYWD/tar/WkH/sIj6fnH/XDD+iGr9lXsRFa8UAAAHvUlEQVR4nO3a/X+a1hoA8KMmvgSwt7mZJFtVVEAU0KK1EQFNuy033Vvbreva29vuruvLunTp3f//y33OQRA1aQIeZZ99eH4g8RwCX895zgNRUAr91SOFEiONSIx0IjHSicRIJxIjnUiMdCIx0onESCcSI51IjHQiMdKJxEgnEiOdSIx0grqRg6B7RMpG7ujO3f3Pv/jymOIxKRuP/5VOp/d3IL48oXdUmsaTe+m0Z9zZ+Yqekprx5Ot0Omjc+eaIzoHpGY/upheMOzvfUhpKOsZjXxg00ppwGkZ/mpeMO99899cw3n+wffsC4/5++uHT+I3f/3BwcxviHOM+frl9+GjVCV/RePLj1sEWMW57gzk1fr7vvoSOxz/FaOSwcGvrcNuL255x3x/W27j98fdxGe8/wMKgEZS393EWpueN24dPVkjL6MaTf7vCeePjz46O7qSXjBCPNm98uuURtwLC+27nnXOM2w+j3g9FNZ488Ikz42wFH9/zkbN38CgiMqrxxxnxpjdOwZTjjp4tGQ8j5mRE47X/5J9vzaXjw8V7Ru7rZ/PGw4MfNmr8ZDeff+EO5QEx/nTOPD69F0jIQ7xrtGoezcj9DMapEhufXHByfK9BjIc3yduJViYjGj8lxjyZ8MOlaQ7Ed8+w8aabFQefxWHMv3i+9eSjy/X4v9NBjM+Y3/3lkorydFYB4jLuvbxs518PYjbu/fPaZTv/Y/d5nMbdbPYKxr3dF/EZgXglIyytuIx72Ssb8/mDWIyEeGUjLqUbN2az4YyA3LBxLxvaCJfOzRqzEYz5/EaNN65HMWY/iXCu6MZSBOPe9Q0bc9fDGrPZjRtzuVBGXO9jMOZCGEkdiMOI5/tqRrdUxWIE5JWM0/UVjxHm+1Ljz369j8uYu+y8nE+MzVjKCB/f91UubmMpk3ktfGzX0zc5r5TGYwRhJlN4++rCf7uE3zJ+ldqwEf1Z8oRgLLTf2ucqzXfQ7VcpMF66vmgaX5Z8IkYW2r8Lyzudvs/4RqK8HokY1WjcyMyigJHtM3NuD0764PbmZvHHRo3odMGIJ9wyZv3CmdfrC0sfjIuPtw4j+m3RCEP52s+3V2+9zlkhLV36aQFtI3e2aHTTkuM4Qy7N3oA3jqVcVOIKn9lzL98sGQvtwpn67n1AmPGK1P+irenVjNPSsoAsM+V2YclY+vByhQcYVvue69rZnLFcZhmmTH4NTnXpw+lKj1is+F0cJ7/3jWWGRNkTT42lzJ/CKqeg8J2mcfomMwMGja4ydyN6ItIyQlqelcsMe54R1tD7VRKRnhFxQn9GDBrb7Xfm5X++ESOEPVP6xnbhdcQLy0LQeubDGDoLxvZrmcqRaT7fI9xiA8Z2YUhnEBHd56TkETs1wl0QNSHlZ7kMa8yy5Xa7/btE76DUn9szJGs4tE26T+79HZ9/5OZ+bCZCGU2VkcgPR4hwKoFholX0UEaJ7QnkZJGMZr8fbbGHM/aCRsG28bhwpokkGW8NG0bZkKel27Rlbtpt2LiNEySO/JkcMlNCGse+0WRxqByS2ZHKjjj4HV6PZNhMgC5McLfOIYlxcEfPRALLAneE2611Gp2hrutDYuxbkt2D/JSdHtMfIsZhLR1KuG71gGD22ZGt9xgLCWOmp0Pd1HE+Ggjejmz3wuVKSOP0mozPgSdMBY7swHBxiGGHCE2YPkJ9VkUW04fBtNixAUYYtSG0YaNBZkIH8fqMztCyLDKOhq1Oeg4xkgRgWAnz4OS3wINNkJswu8K4J2GVymGjxI5VVR2xt9ZoJBwTG1XWGdojMMnOJGC0XKPqGQVh7I6cO44S60xwqGs0+uuaY3GxuwUTfK5RZ0dQZ2ABGfNG05mQGhlqZUc3OrZpMxcZhR4zFOQJ/m3OiEasKpiSLqzNKLgL0uyxeK7ZCQNnRDITNEI+kmyzWXbM4CokOI5E1gzkI2vgvx1PHDbUfVG467Wkk5kSdJhIW4URGcrItMhnUTrusnUJb3DFNnVVtfFPC3dI0GZYUC7xWlOH4W7dqN33VJTixSdRyDbqmWgZFb5zobHWasK22apFPHY4Y7GIihWwkA156W3r1UbFf+G2w16kCTWrWCdWa3OtazJ2xZrS6DS6XbHTgOmrNEXYpsRmpSg2eK1RK6J6AyBF0o4UsdMRu4tG3NoMpwxlTPG81tFamtYZtAYVVGm06mSWK8WGxmsDsYhqVRHsHdLe4hsgr8wblSpu7YRChjNqkFOKBumVGvB1MPJToz/XrhG3F0lnDSdh0DjA/Fq1vkajlkLdAa/AUC0bi3PG7kBTUqkaL84Zu7xWT6Xq1eYajYMuObnLmDd2Zkb8BiAvWtUqzwM9YFRIawvL12xMBY31JWMXJwKMeV2BSM2NY4rveK2bMRYbkG1FsYUzUakOSD7iF3XefwOoQtZMkxhhW9T81nUZ+ZnRzX1eHGhkHCvVVgNKSopvdWAxuzlQFWtiVcFjDHUJtryIt9DaqCrrM0JtBF4HjOJAwYWQ50WlIeJRqWstMudaa1AnnUhp8MDC/iYPYwg740SoQ6sWrkCGvs74Vxe/wbuqeFedotfpNc0uSMW51vUY44nESCcSI51IjHQiMdKJxEgnEiOdSIx0IjHSicRIJxIjnUiMdCIx0onESCcSI51I/R/dhyTr9zjIggAAAABJRU5ErkJggg==',
           orgUrl: 'https://www.harmonie-mutuelle.fr',
           type: 'work',
-          description: 'Participation à la stratégie QA transverse, automatisation des tests, non-régression, qualité logicielle et accompagnement des équipes de développement dans un environnement agile à grande échelle.',
+          description: 'Participation à la stratégie QA transverse, automatisation des tests, non-régression et accompagnement des équipes de développement dans un environnement agile.',
+          workDetails: {
+            responsibility: 'En tant que Testeur QA en automatisation, j\'interviens au sein de la DSI Métier dans une équipe QA transverse, en collaboration étroite avec les Product Owners, les développeurs et les équipes produit. Mon rôle consiste à garantir la qualité des applications avant leur mise en production et leur validation par les référents métiers. J\'assure également l\'accompagnement des squads dans la co-construction des cas de tests ainsi que l\'amélioration continue des processus qualité.',
+            status: 'Alternant',
+            mainMissions: [
+              'Élaboration des stratégies et plans de tests',
+              'Exécution des campagnes de tests',
+              'Tests de non-régression sur applications critiques',
+              'Construction des jeux de données via SQL',
+              'Détection et remontée des anomalies',
+              'Reporting qualité et PV de recette',
+              'Participation aux cérémonies Agile',
+              'Co-construction des cas de tests avec les squads produits',
+              'Veille technologique et amélioration continue',
+            ],
+            vision: 'Une organisation orientée qualité produit, amélioration continue et agilité à l\'échelle, où la QA intervient comme un levier stratégique de sécurisation des livraisons.',
+            relatedSkills: [
+              'Selenium Java',
+              'Jenkins',
+              'Postman',
+              'Git',
+              'Mr Suricate',
+              'Autonomie',
+              'Travail d\'équipe',
+              'Organisation et pilotage de projet',
+              'Communication',
+            ],
+            relatedProjects: ['MNSI', 'IHM-GED', 'Octopus'],
+          },
         },
         {
           year: 'Octobre 2024 — Nouvembre 2026',
@@ -192,7 +263,12 @@ paragraphs: [
           orgLogo: 'https://static.wixstatic.com/media/2565f3_06309f64759a4ffb8a31178d74d8366e~mv2.png',
           orgUrl: 'https://www.iscod.fr/',
           type: 'education',
-          description: 'Formation en alternance spécialisée en architecture logicielle, développement full-stack, management de projet IT et ingénierie logicielle.',
+          description: 'Formation en alternance spécialisée en architecture logicielle, développement full-stack et management de projet IT.',
+          educationDetails: {
+            establishment: 'L\'ISCOD est un établissement spécialisé dans les formations en alternance dans le digital, avec une pédagogie orientée pratique professionnelle.',
+            pedagogyVision: 'L\'alternance permet de relier directement les cours théoriques aux problématiques réelles rencontrées en entreprise, favorisant l\'acquisition de compétences techniques et transversales. La pédagogie par l\'alternance permet une montée en compétences progressive, concrète et professionnalisante.',
+            relatedProjects: ['PMT - Project Management Tool', 'GameUP'],
+          },
         },
         {
           year: 'Février 2024 — Juin 2024',
@@ -201,7 +277,18 @@ paragraphs: [
           orgLogo: 'https://media.licdn.com/dms/image/v2/D4E0BAQE81rTEPbghnA/company-logo_200_200/company-logo_200_200/0/1730725433693/ata_testing_logo?e=2147483647&v=beta&t=SdpfAConnjSLcq2exjN-8WKCcZ6VLWzMBmbJCJLdXyQ',
           orgUrl: 'https://fr.linkedin.com/company/ata-testing',
           type: 'education',
-          description: 'Formation professionnalisante orientée automatisation des tests UI/API, stratégie de tests, Cypress, Postman et intégration DevOps.',
+          description: 'Formation intensive orientée pratique permettant de maîtriser l\'automatisation des tests UI/API et l\'industrialisation des processus qualité.',
+          educationDetails: {
+            establishment: 'Automation Test Academy est un organisme de formation spécialisé dans les métiers de la qualité logicielle, de l\'automatisation des tests et des pratiques DevOps. L\'établissement propose des formations orientées pratique, basées sur des cas concrets et des mises en situation proches du monde professionnel.',
+            pedagogyVision: 'La pédagogie est centrée sur la pratique et l\'acquisition de compétences directement applicables en entreprise. L\'objectif est de former des profils capables de concevoir, automatiser et industrialiser les tests dans un environnement DevOps, en maîtrisant les outils modernes et les bonnes pratiques du développement logiciel.',
+            acquiredSkills: [
+              'Élaboration d\'une stratégie complète d\'automatisation',
+              'Tests UI avec Cypress',
+              'Tests API avec Postman',
+              'HTML / CSS / technologies Web',
+              'Industrialisation des tests en environnement DevOps',
+            ],
+          },
         },
         {
           year: 'Novembre 2023',
@@ -211,15 +298,42 @@ paragraphs: [
           orgUrl: 'https://gasq.org',
           type: 'education',
           description: 'Certification internationale en assurance qualité logicielle, méthodologies de test et validation logicielle.',
+          educationDetails: {
+            establishment: 'GASQ est l\'organisme de certification officiel pour l\'ISTQB en France, délivrant les certifications en assurance qualité logicielle.',
+            pedagogyVision: 'La certification ISTQB fournit une base solide en méthodologies de test, bonnes pratiques et frameworks reconnus internationalement pour la gestion de la qualité logicielle.',
+            acquiredSkills: [
+              'Fondamentaux des tests logiciels',
+              'Méthodologies de test et stratégies',
+              'Gestion des cas de test et plans de test',
+              'Norms et normes en QA',
+            ],
+          },
         },
         {
           year: 'Octobre 2021 — Juillet 2023',
-          title: 'Testeur Fonctionnel',
+          title: 'Testeur QA Fonctionnel',
           org: 'MSPE',
           orgLogo: 'https://mspe.tn/wp-content/uploads/2024/04/cropped-logo-mspe.png',
           orgUrl: 'https://mspe.tn/company/',
           type: 'work',
-          description: 'Préparation des jeux de données, exécution des tests fonctionnels, tests de régression, documentation des anomalies et validation de conformité des applications.',
+          description: 'Validation fonctionnelle des applications et contrôle de conformité logicielle.',
+          workDetails: {
+            responsibility: 'En tant que Testeur QA fonctionnel, j\'étais en charge de la validation des applications en phase de recette afin de garantir leur conformité aux besoins fonctionnels et aux exigences qualité avant mise en production.',
+            status: 'CDI',
+            mainMissions: [
+              'Préparer les jeux de données nécessaires à l\'exécution des tests (JDD)',
+              'Concevoir et exécuter les tests fonctionnels et les tests de régression',
+              'Vérifier la conformité des applications par rapport aux spécifications fonctionnelles',
+              'Identifier, analyser et documenter les anomalies détectées',
+              'Rédiger et suivre les tickets d\'anomalies jusqu\'à leur résolution',
+              'Documenter les résultats des campagnes de tests',
+              'Participer à la validation des livrables avant mise en production',
+              'Contribuer à l\'amélioration continue des processus de test',
+              'Collaborer avec les équipes projet pour comprendre les besoins et les évolutions fonctionnelles',
+            ],
+            vision: 'Une forte culture orientée qualité, rigueur et fiabilité des livraisons.',
+            relatedSkills: ['Travail d\'équipe', 'Autonomie', 'Communication'],
+          },
         },
         {
           year: 'Janvier 2019 — Septembre 2021',
@@ -228,7 +342,26 @@ paragraphs: [
           orgLogo: 'https://mspe.tn/wp-content/uploads/2024/04/cropped-logo-mspe.png',
           orgUrl: 'https://mspe.tn/company/',
           type: 'work',
-          description: 'Pilotage qualité produit, suivi des indicateurs, audits, gestion des réclamations qualité, amélioration continue et encadrement des équipes qualité.',
+          description: 'Encadrement de l\'équipe qualité et supervision des processus de contrôle.',
+          workDetails: {
+            responsibility: 'Responsable du suivi et de l\'amélioration de la qualité produit tout au long des différentes étapes de production, avec pour objectif de garantir la conformité des produits aux exigences clients et aux normes qualité en vigueur.',
+            status: 'CDI',
+            mainMissions: [
+              'Assurer le suivi de la qualité produit à chaque étape du processus de production',
+              'Suivre et analyser les indicateurs qualité afin d\'identifier les écarts et mettre en place des actions correctives',
+              'Réaliser l\'homologation de la production en série (planche de montage / station CFE)',
+              'Traiter les réclamations qualité internes et clients à travers la méthode 8D Report',
+              'Préparer et participer aux audits qualité : audit système, audit processus et audit produit',
+              'Mettre en place et suivre les plans d\'action d\'amélioration continue selon la méthode PDCA',
+              'Participer à la veille technologique et à l\'amélioration des méthodes de contrôle qualité',
+              'Assurer la formation, l\'encadrement et la montée en compétences de l\'équipe qualité',
+              'Superviser les agents qualité et garantir le respect des procédures internes',
+              'Suivre les réclamations clients et assurer la coordination avec les différents services concernés',
+              'Participer aux réunions techniques pour l\'analyse des problématiques qualité et la recherche de solutions',
+            ],
+            vision: 'Une forte culture orientée qualité, rigueur et fiabilité des livrables industriels.',
+            relatedSkills: ['Travail d\'équipe', 'Autonomie', 'Communication'],
+          },
         },
         {
           year: 'Juin 2017',
@@ -238,7 +371,16 @@ paragraphs: [
           orgUrl: 'https://issatso.rnu.tn',
           type: 'education',
           description: 'Formation universitaire orientée électronique industrielle, automatisation et systèmes techniques.',
-
+          educationDetails: {
+            establishment: 'L\'ISSAT Sousse est un institut universitaire spécialisé dans les formations techniques et industrielles, notamment en électronique, électrotechnique et automatique. L\'établissement prépare les étudiants à comprendre, analyser et améliorer les systèmes techniques utilisés dans l\'industrie.',
+            pedagogyVision: 'La formation combine théorie et pratique à travers des cours, des travaux dirigés et des manipulations en laboratoire. Cette approche permet de développer la rigueur, l\'analyse et la résolution de problèmes, tout en acquérant une bonne compréhension des systèmes électroniques et automatisés.',
+            acquiredSkills: [
+              'Électronique industrielle',
+              'Automatisation et systèmes de contrôle',
+              'Microcontrôleurs et programmation',
+              'Électrotechnique',
+            ],
+          },
         },
         {
           year: 'Juin 2013',
@@ -248,6 +390,16 @@ paragraphs: [
           orgUrl: 'https://www.facebook.com/100068566233250/?locale=he_IL',
           type: 'education',
           description: 'Formation secondaire technique avec spécialisation industrielle et technologique.',
+          educationDetails: {
+            establishment: 'Lycée Saïd Bou Baker Moknine est un établissement secondaire d\'enseignement technique offrant une formation spécialisée en domaines industriels.',
+            pedagogyVision: 'L\'approche pédagogique combine enseignement théorique et apprentissage pratique via des travaux de laboratoire pour préparer les étudiants aux domaines industriels et techniques.',
+            acquiredSkills: [
+              'Électrotechnique',
+              'Électronique appliquée',
+              'Automatisation industrielle',
+              'Conception technique',
+            ],
+          },
         },
       ],
     },
