@@ -87,3 +87,7 @@ svg {
 body.modal-open {
   overflow: hidden;
 }
+
+body.mobile-nav-open {
+  overflow: hidden;
+}

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
+import { Component, HostListener, OnDestroy, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { competencies } from '../../data/competencies-data';
@@ -20,7 +20,7 @@ interface NavLink {
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnDestroy {
   readonly state = inject(PortfolioStateService);
   private readonly router = inject(Router);
   readonly suppressSkillsHover = signal(false);
@@ -50,20 +50,24 @@ export class NavbarComponent {
 
   @HostListener('document:keydown.escape')
   onEscape(): void {
-    this.mobileOpen.set(false);
+    this.setMobileMenu(false);
+  }
+
+  ngOnDestroy(): void {
+    this.setMobileMenu(false);
   }
 
   closeMenu(): void {
-    this.mobileOpen.set(false);
+    this.setMobileMenu(false);
   }
 
   navigate(route: string): void {
-    this.mobileOpen.set(false);
+    this.setMobileMenu(false);
     void this.router.navigateByUrl(route);
   }
 
   navigateToSkill(skillId: string): void {
-    this.mobileOpen.set(false);
+    this.setMobileMenu(false);
     this.suppressSkillsHover.set(true);
     (document.activeElement as HTMLElement | null)?.blur();
     window.setTimeout(() => this.suppressSkillsHover.set(false), 260);
@@ -78,6 +82,11 @@ export class NavbarComponent {
   }
 
   toggleMenu(): void {
-    this.mobileOpen.update((v: boolean) => !v);
+    this.setMobileMenu(!this.mobileOpen());
+  }
+
+  private setMobileMenu(open: boolean): void {
+    this.mobileOpen.set(open);
+    document.body.classList.toggle('mobile-nav-open', open);
   }
 }
