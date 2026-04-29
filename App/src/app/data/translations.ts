@@ -129,7 +129,7 @@ export const translations: TranslationSet = {
       contact: 'Me contacter',
     },
     about: {
-      title: 'Présentation',
+      title: '',
       subtitle: 'Présentation de mon parcours, mes valeurs et mon projet professionnel.',
       cards: [
         {
@@ -204,7 +204,7 @@ paragraphs: [
       ],
     },
     parcours: {
-      title: 'Mon parcours',
+      title: '',
       subtitle: 'Expérience & Formation',
       seeDetail: 'Voir le détail',
       close: 'Fermer',
@@ -404,7 +404,7 @@ paragraphs: [
       ],
     },
     skills: {
-      title: 'Compétences',
+      title: '',
       subtitle: 'Compétences techniques et humaines:',
       seeDetail: 'Voir le détail',
       close: 'Fermer',
@@ -422,7 +422,7 @@ paragraphs: [
       goToSkill: 'Voir cette compétence',
     },
     contact: {
-      title: 'Contact',
+      title: '',
       subtitle: 'Contactez-moi',
       description:'Contactez-moi pour toute demande de collaboration ou de renseignements.',
       name: 'Nom',

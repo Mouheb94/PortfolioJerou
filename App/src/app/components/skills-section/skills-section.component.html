@@ -9,7 +9,7 @@
       <article class="glass-card domain-card">
         <header class="domain-header">
           <h3>{{ domainTitle('technical') }}</h3>
-          <span class="domain-count">6</span>
+          <span class="domain-count">{{ technicalCompetencies().length }}</span>
         </header>
 
         <ol class="competency-list" aria-label="Liste des compétences techniques">
@@ -44,7 +44,7 @@
       <article class="glass-card domain-card">
         <header class="domain-header">
           <h3>{{ domainTitle('human') }}</h3>
-          <span class="domain-count">4</span>
+          <span class="domain-count">{{ humanCompetencies().length }}</span>
         </header>
 
         <ol class="competency-list" aria-label="Liste des compétences humaines">

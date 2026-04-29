@@ -15,13 +15,16 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
 export class SkillsSectionComponent {
   readonly state = inject(PortfolioStateService);
   private readonly router = inject(Router);
+  private readonly hiddenSkillIds = new Set(['angular', 'docker']);
 
   readonly competencies = competencies;
   readonly missingLegacyAnchors = ['typescript', 'nodejs', 'react', 'tailwind', 'postgresql'];
 
   readonly rankedCompetencies = [...this.competencies].sort((a, b) => b.level - a.level);
   readonly technicalCompetencies = computed(() =>
-    this.rankedCompetencies.filter((skill) => skill.domain === 'technical'),
+    this.rankedCompetencies.filter(
+      (skill) => skill.domain === 'technical' && !this.hiddenSkillIds.has(skill.id),
+    ),
   );
   readonly humanCompetencies = computed(() =>
     this.rankedCompetencies.filter((skill) => skill.domain === 'human'),

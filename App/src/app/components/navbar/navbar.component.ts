@@ -34,7 +34,7 @@ export class NavbarComponent implements OnDestroy {
     { key: 'contact', route: '/contact' },
   ];
   readonly technicalSkillLinks = competencies
-    .filter((item) => item.domain === 'technical')
+    .filter((item) => item.domain === 'technical' && item.id !== 'angular' && item.id !== 'docker')
     .map((item) => ({ id: item.id, name: item.name }));
   readonly humanSkillLinks = competencies
     .filter((item) => item.domain === 'human')
