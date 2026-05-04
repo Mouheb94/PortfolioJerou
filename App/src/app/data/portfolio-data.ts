@@ -291,10 +291,10 @@ export const projects: Project[] = [
       fr: 'MNSI',
     },
     shortDesc: {
-      fr: 'Projet entreprise orienté qualité et fiabilité des parcours métier, avec automatisation des validations critiques.',
+      fr: 'Automatisation des tests front-end avec Selenium, mise en place et maintenance d\'une TNR complète (1113 cas de test) et participation aux campagnes de validation mensuelles (TNR + tests de référence) pour sécuriser les mises en production.',
     },
     fullDesc: {
-      fr: 'Projet entreprise mené dans un contexte de livraison continue, avec un fort enjeu de non-régression. Contribution à la stratégie de test, à la priorisation des scénarios critiques et au suivi des anomalies jusqu\'à résolution.',
+      fr: 'Projet réalisé sur une application métier critique de Mutex. Rôle centré sur l\'automatisation des tests Selenium, la maintenance d\'une suite de 1113 cas, la conduite des campagnes de validation mensuelles et la sécurisation continue des mises en production.',
     },
     image: '/images/project-dashboard.jpg',
     skills: ['selenium-java', 'jenkins', 'git', 'travail-equipe', 'autonomie', 'communication', 'organisation'],
