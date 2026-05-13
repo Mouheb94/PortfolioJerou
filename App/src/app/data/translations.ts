@@ -138,7 +138,7 @@ export const translations: TranslationSet = {
 paragraphs: [
   "Actuellement en alternance chez Harmonie Mutuelle en tant que testeur automaticien, avec une activité centrée sur la qualité logicielle et la fiabilité des applications. Cette expérience permet d’évoluer dans un environnement exigeant où la qualité des livrables et la stabilité des solutions sont essentielles. En parallèle, la préparation du diplôme d’Expert en Ingénierie Logicielle permet de renforcer les compétences en automatisation, qualité logicielle et ingénierie des systèmes.",
   
-  "Les missions portent sur la création et la maintenance de tests automatisés, aussi bien sur des applications web que sur des API. Le lancement des campagnes de tests de non-régression (TNR) ainsi que le suivi des mises en production font également partie des responsabilités quotidiennes.",
+  "Les missions portent sur la création et la maintenance de tests automatisés, aussi bien sur des applications web que sur des API. Le lancement des campagnes de tests de non-régression (TNR) ainsi que le suivi des mises en production font également partie mes responsabilités quotidiennes.",
   
   "Une expérience précédente chez MSPE en tant que testeur QA a permis de participer à des campagnes de tests fonctionnels et de non-régression, y compris en production. La conception des cas de tests, la préparation des données, la validation des résultats ainsi que la collaboration avec les utilisateurs lors des phases de recette ont renforcé la maîtrise des processus qualité.",
   
@@ -163,7 +163,7 @@ paragraphs: [
           description: "",
           paragraphs: [
             "L’objectif professionnel s’oriente vers l’automatisation des tests et l’amélioration de la qualité logicielle, avec un intérêt marqué pour l’ingénierie logicielle et la conception de solutions fiables et durables.",
-            "À court et moyen terme, le renforcement des compétences dans la conception, la maintenance et l’intégration des tests automatisés au sein de pipelines CI/CD constitue une priorité, avec pour ambition l’obtention de la certification ISTQB spécialisée en test automation.",
+            "À court et moyen terme, le renforcement des compétences dans la conception, la maintenance et l’intégration des tests automatisés au sein de pipelines CI/CD constitue une priorité, avec pour ambition l’obtention de la certification ISTQB spécialisée en test automatisation.",
             "À plus long terme, l’évolution visée concerne des rôles spécialisés en automatisation et en qualité logicielle, avec une contribution active à la mise en place de solutions robustes, performantes et efficaces.",
             "Sur le plan personnel, une grande importance est accordée à l’équilibre entre vie professionnelle et vie personnelle, notamment en consacrant du temps à la famille. Les voyages et la découverte de nouvelles cultures nourrissent également la curiosité et l’ouverture d’esprit. Un intérêt particulier est aussi porté au domaine automobile, avec l’envie d’en apprendre davantage sur ses évolutions et ses technologies.",
           ]
@@ -405,7 +405,7 @@ paragraphs: [
     },
     skills: {
       title: '',
-      subtitle: 'Compétences techniques et humaines:',
+      subtitle: 'Compétences techniques et non techniques:',
       seeDetail: 'Voir le détail',
       close: 'Fermer',
       experience: 'Expérience',

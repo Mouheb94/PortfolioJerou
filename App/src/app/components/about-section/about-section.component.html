@@ -10,17 +10,17 @@
         <h3>{{ card.title }}</h3>
         <ng-container *ngIf="card.paragraphs?.length; else singleDescription">
           <div class="about-paragraphs">
-            <p *ngFor="let paragraph of card.paragraphs">{{ paragraph }}</p>
+            <p *ngFor="let paragraph of card.paragraphs" [innerHTML]="emphasizeImportantWords(paragraph)"></p>
           </div>
         </ng-container>
         <ng-template #singleDescription>
-          <p>{{ card.description }}</p>
+          <p [innerHTML]="emphasizeImportantWords(card.description)"></p>
         </ng-template>
 
         <div class="interest-list" *ngIf="card.interests?.length">
           <article class="interest-item" *ngFor="let interest of card.interests">
             <h4>{{ interest.title }}</h4>
-            <p>{{ interest.description }}</p>
+            <p [innerHTML]="emphasizeImportantWords(interest.description)"></p>
           </article>
         </div>
       </article>

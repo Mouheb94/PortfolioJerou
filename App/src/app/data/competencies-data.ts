@@ -156,7 +156,7 @@ export const competencies: Competency[] = [
     article: {
       definitionParagraphs: [
         'Postman est une compétence essentielle dans mon travail de QA automatisation, surtout pour tester et sécuriser les API backend.',
-        'C’est l’outil que j’utilise pour vérifier que les échanges entre le frontend et le backend fonctionnent correctement : contrôler les endpoints, valider les réponses, tester les erreurs possibles et automatiser les vérifications les plus importantes.',
+        'C’est l’outil que j’utilise pour vérifier que les échanges entre le frontend et le backend fonctionnent correctement : contrôler les endpoints, valider les réponses, vérifier les erreurs possibles et automatiser les vérifications les plus importantes.',
         'Avec Postman, je peux construire des collections de tests qui permettent de valider rapidement si une API répond correctement aux besoins métier et respecte bien le contrat attendu.',
         'Je l’utilise particulièrement pendant les phases de recette, de non-régression et avant les mises en production pour éviter que des anomalies backend ne bloquent le front ou impactent les utilisateurs.',
         'J’utilise également Newman, qui permet d’exécuter les collections Postman en ligne de commande. Cela facilite l’automatisation des campagnes de tests et leur intégration dans les processus CI/CD.',
@@ -182,7 +182,7 @@ export const competencies: Competency[] = [
       acquisitionSpeed:
         'Je l’ai développée rapidement grâce à son utilisation quotidienne sur des projets où les flux métier dépendaient fortement des API.',
       advice:
-        'Avec le recul, j’ai compris qu’un bon test API ne consiste pas seulement à vérifier un code 200. Il faut aussi penser aux cas limites, aux erreurs métier, aux performances et surtout à la stabilité des contrats pour éviter les problèmes plus tard dans le projet. Documenter les prérequis, bien utiliser les variables d’environnement et garder des jeux de données réalistes sont des points essentiels.',
+        'Avec le recul, j’ai compris qu’un bon test API ne consiste pas seulement à vérifier un code retour 200. Il faut aussi penser aux cas limites, aux erreurs métier, aux performances et surtout à la stabilité des contrats pour éviter les problèmes plus tard dans le projet. Documenter les prérequis, bien utiliser les variables d’environnement et garder des jeux de données réalistes sont des points essentiels.',
       mediumTermGoal:
         'À moyen terme, je veux aller plus loin sur les tests avancés d’API, notamment sur les tests de performance, les tests contractuels, l’exécution automatisée avec Newman, l’intégration dans les pipelines CI/CD et la gouvernance des contrats API.',
       trainings: [

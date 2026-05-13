@@ -11,7 +11,7 @@
 
     <ul class="nav-links desktop-only">
       <li *ngFor="let link of navLinks">
-        <ng-container *ngIf="link.key === 'competences'; else simpleLink">
+        <ng-container *ngIf="link.key === 'competences'; else checkRealisationsLink">
           <div class="nav-link-group" [class.suppress-hover]="suppressSkillsHover()">
             <button
               type="button"
@@ -35,7 +35,7 @@
               </li>
               <li class="skills-group-item">
                 <button type="button" class="skill-sub-link group-link" (click)="navigate('/competences')">
-                  Compétences humaines
+                  Compétences non techniques
                 </button>
                 <ul class="skills-flyout">
                   <li *ngFor="let skill of humanSkillLinks">
@@ -48,6 +48,26 @@
             </ul>
           </div>
         </ng-container>
+        <ng-template #checkRealisationsLink>
+          <ng-container *ngIf="link.key === 'realisations'; else simpleLink">
+            <div class="nav-link-group" [class.suppress-hover]="suppressProjectsHover()">
+              <button
+                type="button"
+                class="nav-link nav-link-parent"
+                (click)="navigateToRealisationsPage()"
+              >
+                {{ state.t().nav[link.key] }}
+              </button>
+              <ul class="skills-dropdown">
+                <li *ngFor="let project of projectLinks">
+                  <button type="button" class="skill-sub-link" (click)="navigateToProject(project.id)">
+                    {{ project.name }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </ng-container>
+        </ng-template>
         <ng-template #simpleLink>
           <button
             type="button"
@@ -81,7 +101,7 @@
     <div class="container">
       <ul class="nav-links mobile-links">
         <li *ngFor="let link of navLinks">
-          <ng-container *ngIf="link.key === 'competences'; else simpleMobileLink">
+          <ng-container *ngIf="link.key === 'competences'; else checkRealisationsMobileLink">
             <button
               type="button"
               class="nav-link mobile-nav-link"
@@ -96,7 +116,7 @@
                   {{ skill.name }}
                 </button>
               </li>
-              <li class="mobile-skill-group-title">Compétences humaines</li>
+              <li class="mobile-skill-group-title">Compétences non techniques</li>
               <li *ngFor="let skill of humanSkillLinks">
                 <button type="button" class="mobile-skill-link" (click)="navigateToSkill(skill.id)">
                   {{ skill.name }}
@@ -104,6 +124,25 @@
               </li>
             </ul>
           </ng-container>
+          <ng-template #checkRealisationsMobileLink>
+            <ng-container *ngIf="link.key === 'realisations'; else simpleMobileLink">
+              <button
+                type="button"
+                class="nav-link mobile-nav-link"
+                (click)="navigateToRealisationsPage()"
+              >
+                {{ state.t().nav[link.key] }}
+              </button>
+              <ul class="mobile-skill-submenu">
+                <li class="mobile-skill-group-title">Projets</li>
+                <li *ngFor="let project of projectLinks">
+                  <button type="button" class="mobile-skill-link" (click)="navigateToProject(project.id)">
+                    {{ project.name }}
+                  </button>
+                </li>
+              </ul>
+            </ng-container>
+          </ng-template>
           <ng-template #simpleMobileLink>
             <button
               type="button"

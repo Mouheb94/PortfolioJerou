@@ -22,6 +22,29 @@ interface AboutCard {
 })
 export class AboutSectionComponent {
   readonly state = inject(PortfolioStateService);
+  private readonly importantTerms = [
+    'Harmonie Mutuelle',
+    'MSPE',
+    'alternance',
+    'testeur automaticien',
+    'qualite logicielle',
+    'fiabilite',
+    'automatisation',
+    'tests automatises',
+    'tests fonctionnels',
+    'non-regression',
+    'TNR',
+    'responsable qualite',
+    'certification ISTQB',
+    'DevOps',
+    'rigueur',
+    'esprit critique',
+    'autonomie',
+    'travail en equipe',
+    'amelioration continue',
+    'pipelines CI/CD',
+    'qualite du code',
+  ];
 
   get cards(): AboutCard[] {
     const cards = this.state.t().about.cards;
@@ -53,5 +76,36 @@ export class AboutSectionComponent {
         interests: cards[4].interests,
       },
     ];
+  }
+
+  emphasizeImportantWords(text: string): string {
+    if (!text) {
+      return '';
+    }
+
+    return this.importantTerms.reduce((result, term) => {
+      const pattern = this.buildAccentInsensitivePattern(term);
+      return result.replace(pattern, '<strong>$&</strong>');
+    }, text);
+  }
+
+  private buildAccentInsensitivePattern(term: string): RegExp {
+    const normalized = term
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+
+    const escaped = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const withSpaces = escaped.replace(/\s+/g, '[\\s-]+');
+    const accentAware = withSpaces
+      .replace(/a/g, '[aàáâãäå]')
+      .replace(/e/g, '[eèéêë]')
+      .replace(/i/g, '[iìíîï]')
+      .replace(/o/g, '[oòóôõö]')
+      .replace(/u/g, '[uùúûü]')
+      .replace(/c/g, '[cç]')
+      .replace(/'/g, "['’]");
+
+    return new RegExp(accentAware, 'gi');
   }
 }

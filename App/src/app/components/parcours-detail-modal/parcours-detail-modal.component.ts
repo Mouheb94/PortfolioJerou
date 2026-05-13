@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { TimelineEntry } from '../../data/translations';
 import { projects } from '../../data/portfolio-data';
+import { competencies } from '../../data/competencies-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
 @Component({
@@ -27,12 +28,22 @@ export class ParcoursDetailModalComponent {
     this.close.emit();
   }
 
-  openRelatedSkillsPage(event: Event): void {
+  openRelatedSkillsPage(event: Event, skillName: string): void {
     event.preventDefault();
     this.onClose();
+    const skillId = this.getSkillId(skillName);
     setTimeout(() => {
-      void this.router.navigate(['/competences']);
+      if (skillId) {
+        void this.router.navigate(['/competences', skillId]);
+      } else {
+        void this.router.navigate(['/competences']);
+      }
     }, 0);
+  }
+
+  getSkillId(skillName: string): string | undefined {
+    const found = competencies.find((c) => c.name === skillName);
+    return found?.id;
   }
 
   openRelatedProject(event: Event, projectName: string): void {

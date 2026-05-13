@@ -51,10 +51,10 @@
         <h3>{{ state.t().parcours.relatedSkills }}</h3>
         <div class="skills-tags">
           <a
-            href="/competences"
+            href="/competences/{{ getSkillId(skill) }}"
             class="skill-tag"
             *ngFor="let skill of entry.workDetails.relatedSkills"
-            (click)="openRelatedSkillsPage($event)"
+            (click)="openRelatedSkillsPage($event, skill)"
           >
             {{ skill }}
           </a>

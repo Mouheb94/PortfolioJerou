@@ -77,9 +77,9 @@ export const projectDetails: ProjectDetail[] = [
   {
     projectId: 'mnsi',
     presentation: [
-      'MNSI est l\'application coeur de métier du système d\'information de Mutex. Elle permet de gérer les personnes, les contrats (collectifs et individuels), les cotisations ainsi que les prestations.',
+      'MNSI est l’application cœur de métier du système d’information d’Harmonie Mutuelle. Elle permet de gérer les personnes, les contrats individuels et collectifs, les cotisations, les prestations ainsi que les activités de prévoyance liées aux assurés et aux produits d’assurance.',
       'Dans ce contexte, la qualité est critique, car toute anomalie peut impacter directement des données sensibles ou des parcours métier importants.',
-      'Mon rôle sur ce projet était centré sur l\'automatisation des tests et la sécurisation des mises en production à travers des campagnes de validation régulières.',
+      'Mon rôle sur ce projet, j\'ai assuré la mise en place et le maintien de la stratégie d\'automatisation des tests : rédaction et gestion des cas de test dans Xray, développement des scripts automatisés, et pilotage des builds Jenkins pour garantir la stabilité des livraisons via des campagnes de validation continues.',
     ],
     objectives: [
       'L\'objectif principal était de fiabiliser les mises en production mensuelles en garantissant que les fonctionnalités existantes continuaient de fonctionner après chaque évolution.',
@@ -95,22 +95,25 @@ export const projectDetails: ProjectDetail[] = [
     ],
     actions: [
       'Mise en place et évolution d\'un projet de tests automatisés front-end avec Selenium.',
-      'Création et maintenance d\'une suite de 1113 cas de test automatisés.',
+      'Création et maintenance d\'une suite de 1246 cas de test automatisés.',
       'Automatisation des parcours métier critiques (souscription, gestion des contrats, prestations).',
       'Amélioration de la stabilité des scripts (gestion des temps de chargement, synchronisation).',
       'Lancement des campagnes de TNR (Tests de Non-Régression) avant chaque MEP mensuelle.',
       'Exécution des tests de référence (TR) pour valider les fonctionnalités principales.',
+      'Rédaction du PV de recette pour formaliser la validation avant chaque mise en production.',
       'Analyse des résultats et identification des anomalies.',
       'Suivi des anomalies avec les équipes projet.',
       'Mise à jour continue des scripts en fonction des évolutions applicatives.',
       'Participation à la sécurisation des mises en production.',
+      'Réalisation du bilan de MEP après chaque mise en production (résultats, anomalies, points de vigilance et actions de suivi).',
     ],
     actors:
-      'Projet réalisé dans un contexte professionnel avec plusieurs intervenants : équipe QA , développeurs, équipes métier et responsables projet. Les interactions étaient fréquentes pour analyser les anomalies, prioriser les corrections, valider les comportements métier et sécuriser les mises en production.',
+      'Projet réalisé dans un contexte professionnel avec plusieurs intervenants : équipe QA, équipe d\'intégration, développeurs, équipes métier et responsables projet. Les interactions étaient fréquentes pour analyser les anomalies, prioriser les corrections, valider les comportements métier et sécuriser les mises en production.',
     results: [
-      'Mise en place d\'une suite de tests automatisés robuste (1113 cas).',
+      'Mise en place d\'une suite de tests automatisés robuste (1246 cas).',
       'Réduction significative des validations manuelles.',
       'Détection plus rapide des anomalies critiques.',
+      'Réduction du nombre d\'anomalies détectées en production.',
       'Amélioration de la stabilité des campagnes de tests.',
       'Sécurisation des mises en production mensuelles.',
       'Meilleure visibilité sur l\'état de l\'application avant release.',

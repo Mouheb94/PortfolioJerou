@@ -35,7 +35,7 @@ export class SkillsSectionComponent {
     if (domain === 'technical') {
       return locale === 'fr' ? 'Compétences techniques' : 'Technical competencies';
     }
-    return locale === 'fr' ? 'Compétences humaines' : 'Human competencies';
+    return locale === 'fr' ? 'Compétences non techniques' : 'Non-technical competencies';
   }
 
   masteryScore(level: number): string {
@@ -43,7 +43,7 @@ export class SkillsSectionComponent {
   }
 
   competencyTypeLabel(domain: CompetencyDomain): string {
-    return domain === 'technical' ? 'Compétence technique' : 'Compétence humaine';
+    return domain === 'technical' ? 'Compétence technique' : 'Compétence non technique';
   }
 
   openSkill(id: string): void {

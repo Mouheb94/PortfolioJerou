@@ -3,6 +3,7 @@ import { Component, HostListener, OnDestroy, inject, signal } from '@angular/cor
 import { Router } from '@angular/router';
 
 import { competencies } from '../../data/competencies-data';
+import { projects } from '../../data/portfolio-data';
 import { TranslationSet } from '../../data/translations';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
@@ -24,6 +25,7 @@ export class NavbarComponent implements OnDestroy {
   readonly state = inject(PortfolioStateService);
   private readonly router = inject(Router);
   readonly suppressSkillsHover = signal(false);
+  readonly suppressProjectsHover = signal(false);
 
   readonly navLinks: NavLink[] = [
     { key: 'accueil', route: '/accueil' },
@@ -39,6 +41,7 @@ export class NavbarComponent implements OnDestroy {
   readonly humanSkillLinks = competencies
     .filter((item) => item.domain === 'human')
     .map((item) => ({ id: item.id, name: item.name }));
+  readonly projectLinks = projects.map((project) => ({ id: project.id, name: project.title.fr }));
 
   readonly scrolled = signal(false);
   readonly mobileOpen = signal(false);
@@ -79,6 +82,21 @@ export class NavbarComponent implements OnDestroy {
     (document.activeElement as HTMLElement | null)?.blur();
     window.setTimeout(() => this.suppressSkillsHover.set(false), 260);
     this.navigate('/competences');
+  }
+
+  navigateToProject(projectId: string): void {
+    this.setMobileMenu(false);
+    this.suppressProjectsHover.set(true);
+    (document.activeElement as HTMLElement | null)?.blur();
+    window.setTimeout(() => this.suppressProjectsHover.set(false), 260);
+    void this.router.navigate(['/realisations', projectId]);
+  }
+
+  navigateToRealisationsPage(): void {
+    this.suppressProjectsHover.set(true);
+    (document.activeElement as HTMLElement | null)?.blur();
+    window.setTimeout(() => this.suppressProjectsHover.set(false), 260);
+    this.navigate('/realisations');
   }
 
   toggleMenu(): void {
