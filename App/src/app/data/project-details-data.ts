@@ -1,24 +1,24 @@
 ﻿export interface ProjectDetail {
-  projectId: string;
-  presentation: string[];
-  objectives: string[];
-  actions: string[];
-  actors: string;
-  results: string[];
-  aftermath: string[];
-  criticalView: string;
+  projectId : string;
+  presentation : string[];
+  objectives : string[];
+  actions : string[];
+  actors : string;
+  results : string[];
+  aftermath : string[];
+  criticalView : string;
 }
 
-export const projectDetails: ProjectDetail[] = [
+export const projectDetails : ProjectDetail[] = [
   {
-    projectId: 'pmt',
-    presentation: [
+    projectId : 'pmt',
+    presentation : [
       'PMT est une application web full-stack de gestion de projet développée dans le cadre de la formation Expert en Ingénierie Logicielle.',
       'L\'objectif était de concevoir une plateforme permettant de gérer des projets, des tâches, les priorités, les statuts et l\'attribution des responsabilités, tout en garantissant une architecture propre, maintenable et facilement déployable.',
       'Le projet a été pensé comme un véritable socle produit : une application utilisable en conditions réelles, avec une séparation claire entre frontend et backend, une base de données structurée, des tests automatisés, ainsi qu\'une industrialisation complète via Docker et CI/CD.',
       'L\'enjeu n\'était pas seulement de développer une application fonctionnelle, mais aussi de produire une solution robuste, testable et prête à évoluer.',
     ],
-    objectives: [
+    objectives : [
       'Le principal objectif était de concevoir une application de gestion de projet fiable, sécurisée et maintenable, capable de couvrir les besoins métier de planification et de suivi.',
       '1-L\'application devait permettre :',
       '-la création de projets',
@@ -40,7 +40,7 @@ export const projectDetails: ProjectDetail[] = [
       '-la sécurisation des accès utilisateurs',
       'Dans ce contexte, la structuration et l\'automatisation des tests étaient indispensables.',
     ],
-    actions: [
+    actions : [
       'Analyse fonctionnelle et technique : rédaction des besoins, user stories et critères d\'acceptation.',
       'Conception de l\'architecture full-stack : Angular (frontend), Spring Boot (backend), MySQL (base de données).',
       'Modélisation des entités principales (utilisateur, projet, tâche) et définition des règles métier : statuts, priorités, attribution, filtrage.',
@@ -51,9 +51,9 @@ export const projectDetails: ProjectDetail[] = [
       'Industrialisation : Docker pour le frontend, le backend et la base de données, orchestration avec Docker Compose.',
       'CI/CD avec GitHub Actions : exécution automatique des tests, build et déploiement.',
     ],
-    actors:
+    actors :
       'Projet réalisé individuellement, en autonomie complète, dans un cadre académique avec un formateur référent pour les points de suivi réguliers et les revues de projet. Validation finale via démonstration technique et échange sur les choix d\'architecture. Pas d\'équipe métier dédiée, mais les cas d\'usage étaient pensés pour répondre aux besoins réels de chefs de projet et d\'équipes de développement.',
-    results: [
+    results : [
       'Application full-stack fonctionnelle de gestion de projets et de tâches.',
       'Architecture claire et maintenable avec séparation propre frontend/backend.',
       'API REST sécurisée avec JWT.',
@@ -62,7 +62,7 @@ export const projectDetails: ProjectDetail[] = [
       'Chaîne CI/CD complète avec GitHub Actions.',
       'Base solide réutilisable pour d\'autres projets métier plus complexes.',
     ],
-    aftermath: [
+    aftermath : [
       'Ajout de notifications en temps réel.',
       'Reporting avancé et tableaux de bord.',
       'Gestion des sprints et backlog agile.',
@@ -71,17 +71,17 @@ export const projectDetails: ProjectDetail[] = [
       'Gestion avancée des rôles et permissions.',
       'Monitoring et observabilité plus poussés.',
     ],
-    criticalView:
+    criticalView :
       'Je me donnerais une note de 8/10. Le point fort principal a été la capacité à penser le projet comme un vrai produit et pas uniquement comme un exercice technique. La mise en place de Docker, de la CI/CD et des tests a apporté une vraie dimension professionnelle. Avec le recul, j\'aurais formalisé plus tôt les contrats API et la documentation technique, et intégré la stratégie de tests dès le début du projet. Ce projet reste une référence importante dans ma manière de concevoir une application maintenable et industrialisable.',
   },
   {
-    projectId: 'mnsi',
-    presentation: [
+    projectId : 'mnsi',
+    presentation : [
       'MNSI est l’application cœur de métier du système d’information d’Harmonie Mutuelle. Elle permet de gérer les personnes, les contrats individuels et collectifs, les cotisations, les prestations ainsi que les activités de prévoyance liées aux assurés et aux produits d’assurance.',
       'Dans ce contexte, la qualité est critique, car toute anomalie peut impacter directement des données sensibles ou des parcours métier importants.',
       'Mon rôle sur ce projet, j\'ai assuré la mise en place et le maintien de la stratégie d\'automatisation des tests : rédaction et gestion des cas de test dans Xray, développement des scripts automatisés, et pilotage des builds Jenkins pour garantir la stabilité des livraisons via des campagnes de validation continues.',
     ],
-    objectives: [
+    objectives : [
       'L\'objectif principal était de fiabiliser les mises en production mensuelles en garantissant que les fonctionnalités existantes continuaient de fonctionner après chaque évolution.',
       'Le contexte était exigeant : application métier critique, nombreuses fonctionnalités interconnectées, évolutions régulières et forte nécessité de non-régression.',
       '1-Les principaux enjeux étaient :',
@@ -93,7 +93,7 @@ export const projectDetails: ProjectDetail[] = [
       '-les régressions sur des fonctionnalités clés comme la gestion des contrats ou des prestations',
       '-les impacts métier directs en cas d\'anomalie non détectée avant release',
     ],
-    actions: [
+    actions : [
       'Mise en place et évolution d\'un projet de tests automatisés front-end avec Selenium.',
       'Création et maintenance d\'une suite de 1246 cas de test automatisés.',
       'Automatisation des parcours métier critiques (souscription, gestion des contrats, prestations).',
@@ -107,9 +107,9 @@ export const projectDetails: ProjectDetail[] = [
       'Participation à la sécurisation des mises en production.',
       'Réalisation du bilan de MEP après chaque mise en production (résultats, anomalies, points de vigilance et actions de suivi).',
     ],
-    actors:
+    actors :
       'Projet réalisé dans un contexte professionnel avec plusieurs intervenants : équipe QA, équipe d\'intégration, développeurs, équipes métier et responsables projet. Les interactions étaient fréquentes pour analyser les anomalies, prioriser les corrections, valider les comportements métier et sécuriser les mises en production.',
-    results: [
+    results : [
       'Mise en place d\'une suite de tests automatisés robuste (1246 cas).',
       'Réduction significative des validations manuelles.',
       'Détection plus rapide des anomalies critiques.',
@@ -118,24 +118,24 @@ export const projectDetails: ProjectDetail[] = [
       'Sécurisation des mises en production mensuelles.',
       'Meilleure visibilité sur l\'état de l\'application avant release.',
     ],
-    aftermath: [
+    aftermath : [
       'À court terme, le travail a permis de maintenir un haut niveau de qualité sur les mises en production.',
       'À moyen terme, la suite de tests peut continuer à évoluer pour couvrir de nouveaux parcours métier et améliorer encore la fiabilité.',
       'À plus long terme, une optimisation des temps d\'exécution (tests parallélisés, CI/CD) pourrait encore améliorer l\'efficacité des campagnes de validation.',
     ],
-    criticalView:
+    criticalView :
       'Le principal défi a été de maintenir une grande volumétrie de tests (plus de 1000 cas) tout en garantissant leur stabilité dans un contexte applicatif en constante évolution. Avec plus de temps, il serait intéressant d\'améliorer la structuration des tests, de réduire certains doublons, d\'optimiser les temps d\'exécution et de renforcer l\'intégration dans les pipelines CI/CD. Ce projet m\'a permis de développer une vraie rigueur sur la qualité des tests automatisés et leur maintenance.',
   },
   {
-    projectId: 'ihm-ged',
-    presentation: [
+    projectId : 'ihm-ged',
+    presentation : [
       'La GED (Gestion électronique des documents) est un système permettant le stockage, la consultation et la modification de documents à travers une base de données contenant les documents ainsi que leurs métadonnées : nom du document, client, numéro de contrat, type de document, etc.',
       'Le projet GED Access est né dans le cadre du rapprochement entre les sociétés Mutex et Harmonie Mutuelle, durant une phase de transition entre leurs deux systèmes d\'information.',
       'L\'objectif était de permettre aux utilisateurs d\'accéder aux documents des deux GED existantes (Mutex et HM) à travers une nouvelle interface unifiée et de nouvelles API capables d\'interroger les deux environnements.',
       'Le projet se divisait en deux parties : adaptation de l\'IHM GED côté Harmonie Mutuelle pour consommer les nouvelles API, et remplacement de l\'IHM GED Mutex par une nouvelle interface permettant l\'accès aux documents Mutex et HM.',
       'Ma mission portait principalement sur la qualité logicielle : automatiser les tests de la nouvelle IHM et des API afin de garantir la fiabilité des fonctionnalités avant mise en production.',
     ],
-    objectives: [
+    objectives : [
       'Le principal objectif était d\'assurer la qualité et la stabilité du nouveau système GED dans un contexte sensible de fusion entre deux SI critiques.',
       '1-L\'application devait permettre :',
       '-la recherche de documents',
@@ -156,7 +156,7 @@ export const projectDetails: ProjectDetail[] = [
       '-les impacts métier en cas d\'erreur sur les documents contractuels',
       'Dans ce contexte, l\'automatisation des tests était essentielle.',
     ],
-    actions: [
+    actions : [
       'Création complète du projet de tests automatisés Selenium depuis zéro.',
       'Mise en place de la structure globale du projet, de l\'organisation des packages, des méthodes de base, de la configuration des drivers et du pattern Page Object Model.',
       'Préparation des jeux de données de test pour disposer d\'une base propre, maintenable et réutilisable.',
@@ -164,9 +164,9 @@ export const projectDetails: ProjectDetail[] = [
       'Conception des tests back avec Postman pour vérifier les endpoints de recherche, les réponses API, la cohérence des données retournées, les cas d\'erreur, les validations métier et certaines performances de réponse.',
       'Standardisation des contrôles via des collections Postman pour faciliter les campagnes de validation.',
     ],
-    actors:
+    actors :
       'Projet en contexte réel d\'entreprise avec développeurs frontend, développeurs backend, équipes métier GED, équipes QA, responsables techniques et utilisateurs finaux côté Mutex et Harmonie Mutuelle. Les interactions portaient sur la compréhension des parcours métier, l\'identification des scénarios critiques, la validation des cas de tests, l\'analyse des anomalies détectées et le suivi des corrections avant livraison. Mon rôle nécessitait une collaboration régulière avec les équipes techniques et métier pour garantir la pertinence des tests.',
-    results: [
+    results : [
       'Base de projet Selenium propre et réutilisable.',
       'Automatisation fiable des tests front.',
       'Campagnes de validation API avec Postman.',
@@ -176,7 +176,7 @@ export const projectDetails: ProjectDetail[] = [
       'Renforcement des compétences en assurance qualité, automatisation de tests et compréhension des systèmes complexes en environnement métier sensible.',
       'Développement d\'une meilleure vision de la relation entre qualité logicielle et continuité métier.',
     ],
-    aftermath: [
+    aftermath : [
       'Enrichir la couverture des tests automatisés.',
       'Intégrer davantage de tests de performance.',
       'Améliorer le reporting des campagnes de tests.',
@@ -185,12 +185,12 @@ export const projectDetails: ProjectDetail[] = [
       'Renforcer les tests sur les échanges inter-systèmes.',
       'Aujourd\'hui, cette base de tests reste un socle solide pour accompagner l\'évolution du projet GED.',
     ],
-    criticalView:
+    criticalView :
       'Je me donnerais une note de 8/10. Le principal point fort a été la mise en place complète du framework de tests automatisés à partir de zéro, ce qui demandait à la fois de la rigueur technique et une bonne compréhension métier. Le plus difficile était de tester un projet fortement dépendant de plusieurs systèmes existants et de nombreux cas métiers sensibles. Avec plus de temps, j\'aurais poussé davantage l\'industrialisation des tests avec une intégration plus complète dans une chaîne CI/CD. Ce projet m\'a surtout appris que la qualité logicielle ne repose pas uniquement sur les tests eux-mêmes, mais sur la capacité à anticiper les risques métier réels.',
   },
   {
-    projectId: 'octopus',
-    presentation: [
+    projectId : 'octopus',
+    presentation : [
       'Octopus est une application interne utilisée chez Harmonie Mutuelle pour gérer plusieurs besoins liés à l\'organisation des équipes et au suivi des mises en production (MEP).',
       'L\'application permet notamment : la saisie et la modification des absences, la consultation de la présence des autres membres de l\'équipe, l\'enregistrement, la modification et la recherche des mises en production (MEP).',
       'L\'objectif est de centraliser toutes les informations importantes dans un seul outil afin d\'améliorer la visibilité, la coordination entre les équipes et le suivi des activités.',
@@ -199,7 +199,7 @@ export const projectDetails: ProjectDetail[] = [
       'Le projet Octopus permet donc d\'avoir une vision centralisée aussi bien sur la gestion quotidienne des équipes que sur le pilotage des mises en production.',
       'Ma mission portait sur la qualité logicielle, avec la mise en place de l\'automatisation des tests fonctionnels afin de sécuriser les parcours critiques de l\'application.',
     ],
-    objectives: [
+    objectives : [
       'Le principal objectif était de garantir la fiabilité de l\'application Octopus et de sécuriser les processus liés à la gestion des absences, des présences et des mises en production.',
       '1-L\'application devait permettre :',
       '-la saisie et la modification des absences',
@@ -221,15 +221,15 @@ export const projectDetails: ProjectDetail[] = [
       '-les impacts métier liés à une mauvaise gestion des mises en production',
       'Dans ce contexte, l\'automatisation des tests était indispensable.',
     ],
-    actions: [
+    actions : [
       'Création complète du projet de tests automatisés avec Mr Suricate depuis zéro : structure du projet, organisation des scénarios, mise en place des méthodes de base, configuration de l\'environnement de test, préparation des données de validation et standardisation des scripts pour faciliter la maintenance.',
       'Développement des cas de tests automatisés pour valider les parcours critiques : saisie et modification des absences, saisie et suivi des présences, consultation de la présence des collaborateurs, création d\'une nouvelle MEP, modification des informations d\'une MEP, recherche et suivi des MEP, tests de non-régression.',
       'Fiabilisation des livraisons : détection rapide des anomalies avant mise en production et réduction des risques de régression.',
       'Gain de temps important sur les campagnes de validation manuelles.',
     ],
-    actors:
+    actors :
       'Le projet s\'inscrivait dans un contexte réel d\'entreprise avec plusieurs équipes : équipe validation, équipe architecture, développeurs applicatifs, responsables techniques et équipes en charge des mises en production. Les échanges portaient sur l\'identification des scénarios critiques, la compréhension des besoins métier, la validation des cas de tests, l\'analyse des anomalies détectées et le suivi des corrections avant livraison. Mon rôle demandait une forte collaboration avec les équipes métier et techniques afin de garantir la pertinence des tests automatisés.',
-    results: [
+    results : [
       'Base de projet Mr Suricate propre et maintenable.',
       'Automatisation fiable des tests fonctionnels.',
       'Meilleure couverture des parcours critiques.',
@@ -239,7 +239,7 @@ export const projectDetails: ProjectDetail[] = [
       'Renforcement des compétences en automatisation de tests, en assurance qualité et en compréhension des processus métier dans un environnement sensible.',
       'Développement d\'une meilleure vision de l\'impact direct de la qualité logicielle sur la continuité de service.',
     ],
-    aftermath: [
+    aftermath : [
       'Enrichir la couverture des tests automatisés.',
       'Intégrer davantage de scénarios de non-régression.',
       'Connecter les résultats aux outils de suivi qualité.',
@@ -247,18 +247,18 @@ export const projectDetails: ProjectDetail[] = [
       'Renforcer la surveillance des MEP critiques.',
       'Aujourd\'hui, cette base de tests constitue un socle solide pour accompagner l\'évolution de l\'application Octopus.',
     ],
-    criticalView:
+    criticalView :
       'Le principal point fort a été la création complète du framework de tests automatisés avec Mr Suricate, ce qui demandait à la fois de la rigueur technique et une bonne compréhension métier des différents processus de l\'application. Le plus difficile était de bien comprendre les règles métier autour des absences, des présences et des différents états d\'une MEP afin de construire des scénarios de tests réellement pertinents. Avec plus de temps, j\'aurais poussé davantage l\'intégration des tests dans une logique CI/CD afin d\'automatiser encore plus le contrôle qualité. Ce projet m\'a appris que la qualité logicielle repose autant sur la fiabilité des tests que sur la bonne compréhension des besoins métier.',
   },
   {
-    projectId: 'gameup',
-    presentation: [
+    projectId : 'gameup',
+    presentation : [
       'Dans le cadre d\'une étude de cas en architecture logicielle avancée, j\'ai travaillé sur GamesUP, une plateforme de vente de jeux de société en ligne.',
       'Le site connaissait de plus en plus de bugs qui impactaient directement les ventes. Le frontend Angular avait déjà été modernisé, mais le backend Spring était devenu obsolète et difficile à maintenir.',
       'Une première version de l\'API avait été réalisée, mais elle présentait de nombreux problèmes de structure, de sécurité et de stabilité. L\'objectif était donc de reprendre ce code existant, de corriger ses faiblesses et de reconstruire une API propre, sécurisée et évolutive.',
       'En parallèle, le système de recommandation de jeux devait être amélioré grâce à une API Python utilisant le Machine Learning.',
     ],
-    objectives: [
+    objectives : [
       'Le principal objectif était de reprendre un backend existant peu fiable afin de construire une API robuste, sécurisée et évolutive pour la plateforme GamesUP.',
       '1-L\'application devait permettre :',
       '-la gestion des jeux, des clients, des commandes, des auteurs et des éditeurs',
@@ -279,7 +279,7 @@ export const projectDetails: ProjectDetail[] = [
       '-les incohérences de données entre les différents modules',
       'Dans ce contexte, l\'automatisation des tests et la rigueur d\'architecture étaient indispensables.',
     ],
-    actions: [
+    actions : [
       'Analyse du code existant pour identifier les problèmes d\'architecture, les dépendances mal gérées et les failles de sécurité.',
       'Restructuration de l\'API avec une architecture en couches : Controller, Service, Repository.',
       'Application des principes SOLID pour rendre le projet plus propre et maintenable.',
@@ -290,9 +290,9 @@ export const projectDetails: ProjectDetail[] = [
       'Mise en place de la communication entre l\'API Spring et l\'API Python.',
       'Rédaction des tests unitaires, tests d\'intégration et des diagrammes UML.',
     ],
-    actors:
+    actors :
       'Projet réalisé seul, dans un cadre académique. Stack imposée et code existant à reprendre, sans équipe projet ni Product Owner. Les principales interactions concernaient la compréhension du besoin, le respect des contraintes techniques et la justification des choix d\'architecture.',
-    results: [
+    results : [
       'API Spring restructurée et plus maintenable.',
       'Architecture REST claire avec meilleure séparation des responsabilités.',
       'Endpoints sécurisés avec Spring Security.',
@@ -302,7 +302,7 @@ export const projectDetails: ProjectDetail[] = [
       'Documentation technique complète et bonne couverture de tests.',
       'Renforcement de la capacité à reprendre un existant complexe et le transformer en solution propre et fiable.',
     ],
-    aftermath: [
+    aftermath : [
       'Enrichir les données pour améliorer le modèle ML.',
       'Ajouter Docker pour la conteneurisation.',
       'Mettre en place un pipeline CI/CD.',
@@ -310,7 +310,7 @@ export const projectDetails: ProjectDetail[] = [
       'Documenter l\'API avec OpenAPI.',
       'Aller vers une architecture microservices plus poussée.',
     ],
-    criticalView:
+    criticalView :
       'Je me donnerais une note de 8/10. Le point le plus difficile a été de travailler sur un code déjà existant et mal structuré — corriger sans tout reconstruire. Avec plus de temps, j\'aurais poussé davantage la séparation en microservices et amélioré la partie Machine Learning avec de meilleures données. Ce projet m\'a appris qu\'améliorer un existant demande souvent plus de réflexion que créer un projet depuis zéro.',
   },
 ];

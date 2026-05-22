@@ -1,71 +1,71 @@
 .about-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
+  display : grid;
+  gap : 1.5rem;
+  grid-template-columns : 1fr;
 }
 
 #presentation .eyebrow {
-  color: var(--primary);
-  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-  letter-spacing: 0.16em;
+  color : var(--primary);
+  font-size : clamp(1.3rem, 2.2vw, 1.8rem);
+  letter-spacing : 0.16em;
 }
 
 :host-context(.dark) #presentation .eyebrow {
-  color: var(--primary);
+  color : var(--primary);
 }
 
 #presentation .section-heading h2 {
-  font-size: clamp(1rem, 1.4vw, 1.3rem);
-  line-height: 1.35;
+  font-size : clamp(1rem, 1.4vw, 1.3rem);
+  line-height : 1.35;
 }
 
 .about-card {
-  padding: 1.8rem;
+  padding : 1.8rem;
 }
 
 .about-card h3 {
-  margin: 0 0 0.75rem;
-  font-size: 1.45rem;
-  line-height: 1.3;
+  margin : 0 0 0.75rem;
+  font-size : 1.45rem;
+  line-height : 1.3;
 }
 
 .about-card p {
-  margin: 0;
-  color: var(--muted-foreground);
-  line-height: 1.75;
+  margin : 0;
+  color : var(--muted-foreground);
+  line-height : 1.75;
 }
 
 .about-paragraphs {
-  display: grid;
-  gap: 0.9rem;
+  display : grid;
+  gap : 0.9rem;
 }
 
 .interest-list {
-  display: grid;
-  gap: 0.85rem;
-  margin-top: 1.2rem;
+  display : grid;
+  gap : 0.85rem;
+  margin-top : 1.2rem;
 }
 
 .interest-item {
-  padding: 0.9rem 1rem;
-  border-left: 3px solid var(--primary-border);
-  background: color-mix(in srgb, var(--primary-soft) 30%, transparent);
-  border-radius: 0.9rem;
+  padding : 0.9rem 1rem;
+  border-left : 3px solid var(--primary-border);
+  background : color-mix(in srgb, var(--primary-soft) 30%, transparent);
+  border-radius : 0.9rem;
 }
 
 .interest-item h4 {
-  margin: 0 0 0.35rem;
-  font-size: 1.22rem;
-  line-height: 1.3;
+  margin : 0 0 0.35rem;
+  font-size : 1.22rem;
+  line-height : 1.3;
 }
 
 .interest-item p {
-  margin: 0;
-  color: var(--muted-foreground);
-  line-height: 1.65;
+  margin : 0;
+  color : var(--muted-foreground);
+  line-height : 1.65;
 }
 
 :host-context(.dark) #presentation p {
-  color: var(--muted-foreground);
+  color : var(--muted-foreground);
 }
 

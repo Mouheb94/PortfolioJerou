@@ -6,11 +6,11 @@ import { CompetencyDomain, competencies } from '../../data/competencies-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
 @Component({
-  selector: 'app-skills-section',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './skills-section.component.html',
-  styleUrl: './skills-section.component.css',
+  selector : 'app-skills-section',
+  standalone : true,
+  imports : [CommonModule],
+  templateUrl : './skills-section.component.html',
+  styleUrl : './skills-section.component.css',
 })
 export class SkillsSectionComponent {
   readonly state = inject(PortfolioStateService);
@@ -30,7 +30,7 @@ export class SkillsSectionComponent {
     this.rankedCompetencies.filter((skill) => skill.domain === 'human'),
   );
 
-  domainTitle(domain: CompetencyDomain): string {
+  domainTitle(domain : CompetencyDomain) : string {
     const locale = this.state.locale();
     if (domain === 'technical') {
       return locale === 'fr' ? 'Compétences techniques' : 'Technical competencies';
@@ -38,15 +38,15 @@ export class SkillsSectionComponent {
     return locale === 'fr' ? 'Compétences non techniques' : 'Non-technical competencies';
   }
 
-  masteryScore(level: number): string {
+  masteryScore(level : number) : string {
     return `${Math.round(level / 10)}/10`;
   }
 
-  competencyTypeLabel(domain: CompetencyDomain): string {
+  competencyTypeLabel(domain : CompetencyDomain) : string {
     return domain === 'technical' ? 'Compétence technique' : 'Compétence non technique';
   }
 
-  openSkill(id: string): void {
+  openSkill(id : string) : void {
     void this.router.navigate(['/competences', id]);
   }
 }

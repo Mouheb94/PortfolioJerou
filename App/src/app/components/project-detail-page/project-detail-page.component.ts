@@ -10,11 +10,11 @@ import { projects, skills } from '../../data/portfolio-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
 @Component({
-  selector: 'app-project-detail-page',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './project-detail-page.component.html',
-  styleUrl: './project-detail-page.component.css',
+  selector : 'app-project-detail-page',
+  standalone : true,
+  imports : [CommonModule, RouterLink],
+  templateUrl : './project-detail-page.component.html',
+  styleUrl : './project-detail-page.component.css',
 })
 export class ProjectDetailPageComponent {
   readonly state = inject(PortfolioStateService);
@@ -23,7 +23,7 @@ export class ProjectDetailPageComponent {
 
   private readonly projectId = toSignal(
     this.route.paramMap.pipe(map((params) => params.get('id') ?? '')),
-    { initialValue: '' },
+    { initialValue : '' },
   );
 
   private readonly competencyIds = new Set(competencies.map((item) => item.id));
@@ -36,15 +36,15 @@ export class ProjectDetailPageComponent {
     projectDetails.find((item) => item.projectId === this.projectId()) ?? null,
   );
 
-  isObjectiveSectionTitle(item: string): boolean {
+  isObjectiveSectionTitle(item : string) : boolean {
     return /^\d+-/.test(item.trim());
   }
 
-  isObjectiveBullet(item: string): boolean {
+  isObjectiveBullet(item : string) : boolean {
     return item.trim().startsWith('-');
   }
 
-  formatObjectiveText(item: string): string {
+  formatObjectiveText(item : string) : string {
     const value = item.trim();
     if (this.isObjectiveSectionTitle(value)) {
       return value.replace(/^\d+-\s*/, '');
@@ -55,11 +55,11 @@ export class ProjectDetailPageComponent {
     return value;
   }
 
-  getSkillName(skillId: string): string {
+  getSkillName(skillId : string) : string {
     return skills.find((item) => item.id === skillId)?.name ?? skillId;
   }
 
-  openSkill(skillId: string): void {
+  openSkill(skillId : string) : void {
     if (this.competencyIds.has(skillId)) {
       void this.router.navigate(['/competences', skillId]);
       return;

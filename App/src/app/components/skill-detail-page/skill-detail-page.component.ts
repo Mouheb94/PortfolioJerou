@@ -9,11 +9,11 @@ import { projects } from '../../data/portfolio-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
 @Component({
-  selector: 'app-skill-detail-page',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './skill-detail-page.component.html',
-  styleUrl: './skill-detail-page.component.css',
+  selector : 'app-skill-detail-page',
+  standalone : true,
+  imports : [CommonModule, RouterLink],
+  templateUrl : './skill-detail-page.component.html',
+  styleUrl : './skill-detail-page.component.css',
 })
 export class SkillDetailPageComponent {
   readonly state = inject(PortfolioStateService);
@@ -22,7 +22,7 @@ export class SkillDetailPageComponent {
 
   private readonly skillId = toSignal(
     this.route.paramMap.pipe(map((params) => params.get('id') ?? '')),
-    { initialValue: '' },
+    { initialValue : '' },
   );
 
   readonly selectedSkill = computed(() => {
@@ -35,15 +35,15 @@ export class SkillDetailPageComponent {
     return skill;
   });
 
-  masteryScore(level: number): string {
+  masteryScore(level : number) : string {
     return `${Math.round(level / 10)}/10`;
   }
 
-  competencyTypeLabel(domain: 'technical' | 'human'): string {
+  competencyTypeLabel(domain : 'technical' | 'human') : string {
     return domain === 'technical' ? 'Compétence technique' : 'Compétence humaine';
   }
 
-  projectRoute(fragment?: string): string[] {
+  projectRoute(fragment? : string) : string[] {
     if (!fragment) {
       return ['/realisations'];
     }

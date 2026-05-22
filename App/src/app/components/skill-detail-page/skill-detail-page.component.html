@@ -18,24 +18,24 @@
       <h2>Mes éléments de preuve</h2>
   
       <section class="proof-block" *ngFor="let proof of skill.article.proofs; let i = index">
-        <h3>Anecdote {{ i + 1 }}: {{ proof.title }}</h3>
-        <p><strong>Situation:</strong> {{ proof.anecdote }}</p>
-        <p><strong>Mise en œuvre:</strong> {{ proof.implementationProof }}</p>
-        <p><strong>Résultat et valeur ajoutée:</strong> {{ proof.resultAndValue }}</p>
+        <h3>Anecdote {{ i + 1 }} : {{ proof.title }}</h3>
+        <p><strong>Situation :</strong> {{ proof.anecdote }}</p>
+        <p><strong>Mise en œuvre :</strong> {{ proof.implementationProof }}</p>
+        <p><strong>Résultat et valeur ajoutée :</strong> {{ proof.resultAndValue }}</p>
         <a class="realization-link" [routerLink]="projectRoute(proof.realizationFragment)">
-          Voir la réalisation: {{ proof.realizationLabel }}
+          Voir la réalisation : {{ proof.realizationLabel }}
         </a>
       </section>
 
       <h2>Mon autocritique</h2>
-      <p><strong>Niveau de maîtrise:</strong> {{ skill.article.selfReview }}</p>
-      <p><strong>Importance dans le profil:</strong> {{ skill.article.priorityInProfile }}</p>
-      <p><strong>Vitesse d'acquisition:</strong> {{ skill.article.acquisitionSpeed }}</p>
-      <p><strong>Recul critique:</strong> {{ skill.article.advice }}</p>
+      <p><strong>Niveau de maîtrise :</strong> {{ skill.article.selfReview }}</p>
+      <p><strong>Importance dans le profil :</strong> {{ skill.article.priorityInProfile }}</p>
+      <p><strong>Vitesse d'acquisition :</strong> {{ skill.article.acquisitionSpeed }}</p>
+      <p><strong>Recul critique :</strong> {{ skill.article.advice }}</p>
 
       <h2>Mon évolution</h2>
-      <p><strong>Objectif à moyen terme:</strong> {{ skill.article.mediumTermGoal }}</p>
-      <p><strong>Formations et autoformations:</strong></p>
+      <p><strong>Objectif à moyen terme :</strong> {{ skill.article.mediumTermGoal }}</p>
+      <p><strong>Formations et autoformations :</strong></p>
       <ul>
         <li *ngFor="let training of skill.article.trainings">{{ training }}</li>
       </ul>

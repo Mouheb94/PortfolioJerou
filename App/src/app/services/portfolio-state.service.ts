@@ -3,7 +3,7 @@ import { Injectable, computed, effect, inject, signal } from '@angular/core';
 
 import { Locale, TranslationSet, translations } from '../data/translations';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn : 'root' })
 export class PortfolioStateService {
   private readonly doc = inject(DOCUMENT);
 
@@ -22,15 +22,15 @@ export class PortfolioStateService {
     });
   }
 
-  toggleTheme(): void {
-    this.darkTheme.update((v: boolean) => !v);
+  toggleTheme() : void {
+    this.darkTheme.update((v : boolean) => !v);
   }
 
-  scrollTo(id: string): void {
-    this.doc.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  scrollTo(id : string) : void {
+    this.doc.getElementById(id)?.scrollIntoView({ behavior : 'smooth', block : 'start' });
   }
 
-  private readTheme(): boolean {
+  private readTheme() : boolean {
     try {
       const saved = localStorage.getItem('portfolio-theme');
       if (saved === 'light') return false;

@@ -10,7 +10,7 @@
         type="button"
         class="project-card"
         [id]="'project-' + project.id"
-        *ngFor="let project of projects; trackBy: trackByProject"
+        *ngFor="let project of projects; trackBy : trackByProject"
         (click)="openProject(project)"
       >
         <div class="project-copy">

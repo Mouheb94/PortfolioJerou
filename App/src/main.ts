@@ -7,12 +7,12 @@ import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
-	providers: [
+	providers : [
 		provideRouter(
 			appRoutes,
 			withInMemoryScrolling({
-				anchorScrolling: 'enabled',
-				scrollPositionRestoration: 'top',
+				anchorScrolling : 'enabled',
+				scrollPositionRestoration : 'top',
 			}),
 		),
 	],

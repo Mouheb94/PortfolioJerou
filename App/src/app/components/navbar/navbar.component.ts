@@ -10,16 +10,16 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
 type NavKey = keyof TranslationSet['nav'];
 
 interface NavLink {
-  key: NavKey;
-  route: string;
+  key : NavKey;
+  route : string;
 }
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  selector : 'app-navbar',
+  standalone : true,
+  imports : [CommonModule],
+  templateUrl : './navbar.component.html',
+  styleUrl : './navbar.component.css',
 })
 export class NavbarComponent implements OnDestroy {
   readonly state = inject(PortfolioStateService);
@@ -27,49 +27,49 @@ export class NavbarComponent implements OnDestroy {
   readonly suppressSkillsHover = signal(false);
   readonly suppressProjectsHover = signal(false);
 
-  readonly navLinks: NavLink[] = [
-    { key: 'accueil', route: '/accueil' },
-    { key: 'presentation', route: '/presentation' },
-    { key: 'parcours', route: '/parcours' },
-    { key: 'competences', route: '/competences' },
-    { key: 'realisations', route: '/realisations' },
-    { key: 'contact', route: '/contact' },
+  readonly navLinks : NavLink[] = [
+    { key : 'accueil', route : '/accueil' },
+    { key : 'presentation', route : '/presentation' },
+    { key : 'parcours', route : '/parcours' },
+    { key : 'competences', route : '/competences' },
+    { key : 'realisations', route : '/realisations' },
+    { key : 'contact', route : '/contact' },
   ];
   readonly technicalSkillLinks = competencies
     .filter((item) => item.domain === 'technical' && item.id !== 'angular' && item.id !== 'docker')
-    .map((item) => ({ id: item.id, name: item.name }));
+    .map((item) => ({ id : item.id, name : item.name }));
   readonly humanSkillLinks = competencies
     .filter((item) => item.domain === 'human')
-    .map((item) => ({ id: item.id, name: item.name }));
-  readonly projectLinks = projects.map((project) => ({ id: project.id, name: project.title.fr }));
+    .map((item) => ({ id : item.id, name : item.name }));
+  readonly projectLinks = projects.map((project) => ({ id : project.id, name : project.title.fr }));
 
   readonly scrolled = signal(false);
   readonly mobileOpen = signal(false);
 
   @HostListener('window:scroll')
-  onScroll(): void {
+  onScroll() : void {
     this.scrolled.set(window.scrollY > 20);
   }
 
   @HostListener('document:keydown.escape')
-  onEscape(): void {
+  onEscape() : void {
     this.setMobileMenu(false);
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() : void {
     this.setMobileMenu(false);
   }
 
-  closeMenu(): void {
+  closeMenu() : void {
     this.setMobileMenu(false);
   }
 
-  navigate(route: string): void {
+  navigate(route : string) : void {
     this.setMobileMenu(false);
     void this.router.navigateByUrl(route);
   }
 
-  navigateToSkill(skillId: string): void {
+  navigateToSkill(skillId : string) : void {
     this.setMobileMenu(false);
     this.suppressSkillsHover.set(true);
     (document.activeElement as HTMLElement | null)?.blur();
@@ -77,14 +77,14 @@ export class NavbarComponent implements OnDestroy {
     void this.router.navigate(['/competences', skillId]);
   }
 
-  navigateToCompetencesPage(): void {
+  navigateToCompetencesPage() : void {
     this.suppressSkillsHover.set(true);
     (document.activeElement as HTMLElement | null)?.blur();
     window.setTimeout(() => this.suppressSkillsHover.set(false), 260);
     this.navigate('/competences');
   }
 
-  navigateToProject(projectId: string): void {
+  navigateToProject(projectId : string) : void {
     this.setMobileMenu(false);
     this.suppressProjectsHover.set(true);
     (document.activeElement as HTMLElement | null)?.blur();
@@ -92,18 +92,18 @@ export class NavbarComponent implements OnDestroy {
     void this.router.navigate(['/realisations', projectId]);
   }
 
-  navigateToRealisationsPage(): void {
+  navigateToRealisationsPage() : void {
     this.suppressProjectsHover.set(true);
     (document.activeElement as HTMLElement | null)?.blur();
     window.setTimeout(() => this.suppressProjectsHover.set(false), 260);
     this.navigate('/realisations');
   }
 
-  toggleMenu(): void {
+  toggleMenu() : void {
     this.setMobileMenu(!this.mobileOpen());
   }
 
-  private setMobileMenu(open: boolean): void {
+  private setMobileMenu(open : boolean) : void {
     this.mobileOpen.set(open);
     document.body.classList.toggle('mobile-nav-open', open);
   }

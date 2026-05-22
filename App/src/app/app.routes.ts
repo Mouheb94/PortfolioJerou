@@ -9,15 +9,15 @@ import { ProjectsSectionComponent } from './components/projects-section/projects
 import { SkillDetailPageComponent } from './components/skill-detail-page/skill-detail-page.component';
 import { SkillsSectionComponent } from './components/skills-section/skills-section.component';
 
-export const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'accueil' },
-  { path: 'accueil', component: HeroSectionComponent },
-  { path: 'presentation', component: AboutSectionComponent },
-  { path: 'parcours', component: ParcoursSectionComponent },
-  { path: 'competences', component: SkillsSectionComponent },
-  { path: 'competences/:id', component: SkillDetailPageComponent },
-  { path: 'realisations', component: ProjectsSectionComponent },
-  { path: 'realisations/:id', component: ProjectDetailPageComponent },
-  { path: 'contact', component: ContactSectionComponent },
-  { path: '**', redirectTo: 'accueil' },
+export const appRoutes : Routes = [
+  { path : '', pathMatch : 'full', redirectTo : 'accueil' },
+  { path : 'accueil', component : HeroSectionComponent },
+  { path : 'presentation', component : AboutSectionComponent },
+  { path : 'parcours', component : ParcoursSectionComponent },
+  { path : 'competences', component : SkillsSectionComponent },
+  { path : 'competences/:id', component : SkillDetailPageComponent },
+  { path : 'realisations', component : ProjectsSectionComponent },
+  { path : 'realisations/:id', component : ProjectDetailPageComponent },
+  { path : 'contact', component : ContactSectionComponent },
+  { path : '**', redirectTo : 'accueil' },
 ];

@@ -1,107 +1,107 @@
 .contact-container {
-  max-width: 48rem;
+  max-width : 48rem;
 }
 
 .contact-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  flex-shrink: 0;
-  border-radius: 1rem;
-  background: var(--primary-soft);
-  color: var(--primary);
+  display : inline-grid;
+  place-items : center;
+  width : 2.5rem;
+  height : 2.5rem;
+  flex-shrink : 0;
+  border-radius : 1rem;
+  background : var(--primary-soft);
+  color : var(--primary);
 }
 
 .contact-panel {
-  display: grid;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  display : grid;
+  gap : 1.5rem;
+  padding : 1.5rem;
 }
 
 .contact-photo-wrap {
-  width: min(100%, 12.5rem);
-  display: block;
-  margin: 0 auto;
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--primary-border) 88%, var(--border));
-  box-shadow: var(--shadow-card);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  width : min(100%, 12.5rem);
+  display : block;
+  margin : 0 auto;
+  border-radius : 999px;
+  overflow : hidden;
+  border : 1px solid color-mix(in srgb, var(--primary-border) 88%, var(--border));
+  box-shadow : var(--shadow-card);
+  transition : transform 220ms ease, box-shadow 220ms ease;
 }
 
 .contact-photo {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border: 0;
-  border-radius: 999px;
-  object-fit: cover;
-  object-position: center 22%;
-  transform: scale(1.14);
-  transition: transform 220ms ease;
+  width : 100%;
+  aspect-ratio : 1 / 1;
+  border : 0;
+  border-radius : 999px;
+  object-fit : cover;
+  object-position : center 22%;
+  transform : scale(1.14);
+  transition : transform 220ms ease;
 }
 
 .contact-photo-wrap:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px color-mix(in srgb, var(--primary) 30%, transparent);
+  transform : translateY(-2px);
+  box-shadow : 0 14px 30px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
 .contact-photo-wrap:hover .contact-photo {
-  transform: scale(1.2);
+  transform : scale(1.2);
 }
 
 .contact-photo-wrap:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 4px;
+  outline : 2px solid var(--primary);
+  outline-offset : 4px;
 }
 
 .contact-items {
-  display: grid;
-  gap: 1rem;
+  display : grid;
+  gap : 1rem;
 }
 
 .contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-  padding: 0.95rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 0.9rem;
-  background: var(--card);
+  display : flex;
+  align-items : flex-start;
+  gap : 0.9rem;
+  padding : 0.95rem 1rem;
+  border : 1px solid var(--border);
+  border-radius : 0.9rem;
+  background : var(--card);
 }
 
 .contact-label {
-  margin: 0;
-  color: var(--muted-foreground);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  margin : 0;
+  color : var(--muted-foreground);
+  font-size : 0.74rem;
+  font-weight : 700;
+  letter-spacing : 0.16em;
+  text-transform : uppercase;
 }
 
 .contact-link {
-  display: inline-block;
-  margin: 0.35rem 0 0;
-  color: var(--foreground);
-  font-size: 0.96rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 180ms ease;
+  display : inline-block;
+  margin : 0.35rem 0 0;
+  color : var(--foreground);
+  font-size : 0.96rem;
+  font-weight : 600;
+  text-decoration : none;
+  transition : color 180ms ease;
 }
 
 .contact-link:hover {
-  color: var(--primary);
+  color : var(--primary);
 }
 
-@media (max-width: 1024px) {
+@media (max-width : 1024px) {
   .contact-container {
-    max-width: 100%;
+    max-width : 100%;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width : 640px) {
   .contact-photo-wrap,
   .contact-photo {
-    width: min(100%, 9.8rem);
+    width : min(100%, 9.8rem);
   }
 }

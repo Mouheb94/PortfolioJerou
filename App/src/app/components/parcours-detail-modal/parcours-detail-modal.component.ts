@@ -7,15 +7,15 @@ import { competencies } from '../../data/competencies-data';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 
 @Component({
-  selector: 'app-parcours-detail-modal',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './parcours-detail-modal.component.html',
-  styleUrl: './parcours-detail-modal.component.css',
+  selector : 'app-parcours-detail-modal',
+  standalone : true,
+  imports : [CommonModule],
+  templateUrl : './parcours-detail-modal.component.html',
+  styleUrl : './parcours-detail-modal.component.css',
 })
 export class ParcoursDetailModalComponent {
-  @Input() entry: TimelineEntry | null = null;
-  @Input() isOpen: boolean = false;
+  @Input() entry : TimelineEntry | null = null;
+  @Input() isOpen : boolean = false;
   @Output() close = new EventEmitter<void>();
 
   readonly state = inject(PortfolioStateService);
@@ -24,11 +24,11 @@ export class ParcoursDetailModalComponent {
     projects.map((project) => [this.normalize(project.title.fr), project.id] as const),
   );
 
-  onClose(): void {
+  onClose() : void {
     this.close.emit();
   }
 
-  openRelatedSkillsPage(event: Event, skillName: string): void {
+  openRelatedSkillsPage(event : Event, skillName : string) : void {
     event.preventDefault();
     this.onClose();
     const skillId = this.getSkillId(skillName);
@@ -41,12 +41,12 @@ export class ParcoursDetailModalComponent {
     }, 0);
   }
 
-  getSkillId(skillName: string): string | undefined {
+  getSkillId(skillName : string) : string | undefined {
     const found = competencies.find((c) => c.name === skillName);
     return found?.id;
   }
 
-  openRelatedProject(event: Event, projectName: string): void {
+  openRelatedProject(event : Event, projectName : string) : void {
     event.preventDefault();
     this.onClose();
 
@@ -60,7 +60,7 @@ export class ParcoursDetailModalComponent {
     }, 0);
   }
 
-  private normalize(value: string): string {
+  private normalize(value : string) : string {
     return value
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
@@ -69,7 +69,7 @@ export class ParcoursDetailModalComponent {
       .toLowerCase();
   }
 
-  onBackdropClick(event: MouseEvent): void {
+  onBackdropClick(event : MouseEvent) : void {
     if (event.target === event.currentTarget) {
       this.onClose();
     }

@@ -5,15 +5,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
+  selector : 'app-root',
+  standalone : true,
+  imports : [
     NavbarComponent,
     RouterOutlet,
     FooterComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  encapsulation: ViewEncapsulation.None,
+  templateUrl : './app.component.html',
+  styleUrl : './app.component.css',
+  encapsulation : ViewEncapsulation.None,
 })
 export class AppComponent {}
