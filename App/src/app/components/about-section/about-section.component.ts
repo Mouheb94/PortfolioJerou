@@ -42,6 +42,7 @@ export class AboutSectionComponent {
     'autonomie',
     'travail en equipe',
     'amelioration continue',
+    'diplôme de Master Expert en Ingénierie Logicielle',
     'pipelines CI/CD',
     'qualite du code',
   ];
