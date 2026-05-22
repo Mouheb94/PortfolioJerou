@@ -79,7 +79,7 @@ export const projectDetails : ProjectDetail[] = [
     presentation : [
       'MNSI est l’application cœur de métier du système d’information d’Harmonie Mutuelle. Elle permet de gérer les personnes, les contrats individuels et collectifs, les cotisations, les prestations ainsi que les activités de prévoyance liées aux assurés et aux produits d’assurance.',
       'Dans ce contexte, la qualité est critique, car toute anomalie peut impacter directement des données sensibles ou des parcours métier importants.',
-      'Mon rôle sur ce projet, j\'ai assuré la mise en place et le maintien de la stratégie d\'automatisation des tests : rédaction et gestion des cas de test dans Xray, développement des scripts automatisés, et pilotage des builds Jenkins pour garantir la stabilité des livraisons via des campagnes de validation continues.',
+      'Sur ce projet, j\'ai assuré la mise en place et le maintien de la stratégie d\'automatisation des tests : rédaction et gestion des cas de test dans Xray, développement des scripts automatisés, et pilotage des builds Jenkins pour garantir la stabilité des livraisons via des campagnes de validation continues.',
     ],
     objectives : [
       'L\'objectif principal était de fiabiliser les mises en production mensuelles en garantissant que les fonctionnalités existantes continuaient de fonctionner après chaque évolution.',
