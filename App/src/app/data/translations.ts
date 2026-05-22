@@ -258,7 +258,7 @@ paragraphs : [
         },
         {
           year : 'Octobre 2024 — Novembre 2026',
-          title : 'Mastère Expert en Ingénierie du Logiciel (Bac+5) — Niveau 7 RNCP',
+          title : 'Mastère Expert en Ingénierie du Logiciel (Bac+5) — Niveau 7',
           org : 'ISCOD',
           orgLogo : 'https://static.wixstatic.com/media/2565f3_06309f64759a4ffb8a31178d74d8366e~mv2.png',
           orgUrl : 'https://www.iscod.fr/',

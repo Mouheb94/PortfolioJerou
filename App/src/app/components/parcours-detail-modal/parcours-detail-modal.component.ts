@@ -28,8 +28,7 @@ export class ParcoursDetailModalComponent {
     this.close.emit();
   }
 
-  openRelatedSkillsPage(event : Event, skillName : string) : void {
-    event.preventDefault();
+  openRelatedSkillsPage(skillName : string) : void {
     this.onClose();
     const skillId = this.getSkillId(skillName);
     setTimeout(() => {
@@ -46,8 +45,7 @@ export class ParcoursDetailModalComponent {
     return found?.id;
   }
 
-  openRelatedProject(event : Event, projectName : string) : void {
-    event.preventDefault();
+  openRelatedProject(projectName : string) : void {
     this.onClose();
 
     const projectId = this.projectIdByTitle.get(this.normalize(projectName));

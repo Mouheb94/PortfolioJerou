@@ -50,14 +50,14 @@
       <section class="detail-section" *ngIf="entry.workDetails.relatedSkills && entry.workDetails.relatedSkills.length">
         <h3>{{ state.t().parcours.relatedSkills }}</h3>
         <div class="skills-tags">
-          <a
-            href="/competences/{{ getSkillId(skill) }}"
+          <button
+            type="button"
             class="skill-tag"
             *ngFor="let skill of entry.workDetails.relatedSkills"
-            (click)="openRelatedSkillsPage($event, skill)"
+            (click)="openRelatedSkillsPage(skill)"
           >
             {{ skill }}
-          </a>
+          </button>
         </div>
       </section>
 
@@ -65,7 +65,7 @@
         <h3>{{ state.t().parcours.relatedProjects }}</h3>
         <ul class="projects-list">
           <li *ngFor="let project of entry.workDetails.relatedProjects">
-            <a href="#realisations" class="project-link" (click)="openRelatedProject($event, project)">{{ project }}</a>
+            <button type="button" class="project-link" (click)="openRelatedProject(project)">{{ project }}</button>
           </li>
         </ul>
       </section>
